@@ -1,6 +1,6 @@
 //
-//  SkyEyeCommandParser.h
-//  SkyEye
+//  CommandParser.h
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/2/4.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PlayerManager.h"
-@interface SkyEyeCommandParser : NSObject{
+@interface CommandParser : NSObject{
     NSMutableDictionary *dictionaryCommandList;
     NSArray *arrayCommandName, *arrayCommandContent;
 }
@@ -19,7 +19,7 @@
  *
  *  @return: An 2 object Array stores "data type" at index 0, "data content" at index 1
  */
-+ (SkyEyeCommandParser *)shareInstance;
++ (CommandParser *)shareInstance;
 - (id)init;
 - (void)addCommand:(NSString *)name content:(NSArray *)content;
 - (NSString *)commandParser:(NSArray *)content;

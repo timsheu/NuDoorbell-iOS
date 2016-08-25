@@ -1,6 +1,6 @@
 //
 //  SettingViewController.h
-//  SkyEye
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/1/22.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SocketManager.h"
-#import "SkyEyeCommandParser.h"
+#import "CommandParser.h"
 #import "CommandPool.h"
 #import "MultipleSettingTableViewController.h"
 #import "SettingDetailViewController.h"
@@ -26,7 +26,7 @@ enum{
 
 
 @interface SettingViewController : UITableViewController <UITextInputDelegate, MultipleSettingTableViewControllerDelegate>{
-    SkyEyeCommandParser *parser;
+    CommandParser *parser;
     CommandPool *pool;
     NSMutableArray *passedArray;
     NSArray *cameraAddress;

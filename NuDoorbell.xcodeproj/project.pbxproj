@@ -38,8 +38,8 @@
 		563927DC1C92B3CF00717A2A /* CommandPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927D21C92B3CF00717A2A /* CommandPool.m */; };
 		563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927D81C92B3CF00717A2A /* SettingPool.m */; };
 		563927EA1C92B41500717A2A /* RecieveDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E31C92B41500717A2A /* RecieveDataParser.m */; };
-		563927EB1C92B41500717A2A /* SkyEyeCommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E61C92B41500717A2A /* SkyEyeCommandGenerator.m */; };
-		563927EC1C92B41500717A2A /* SkyEyeCommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E81C92B41500717A2A /* SkyEyeCommandParser.m */; };
+		563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E61C92B41500717A2A /* CommandGenerator.m */; };
+		563927EC1C92B41500717A2A /* CommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E81C92B41500717A2A /* CommandParser.m */; };
 		563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */; };
 		563928091C92B48600717A2A /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563928061C92B48600717A2A /* LiveViewController.m */; };
 		56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56468CF01D6D6D8600268070 /* GoogleService-Info.plist */; };
@@ -82,18 +82,18 @@
 		04DA03A52CE2D3A3A9D51F01 /* Pods-SkyEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEye.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEye/Pods-SkyEye.release.xcconfig"; sourceTree = "<group>"; };
 		560112B31CA3EBB000ABB3CE /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		561E84261C4C848A00B62BCF /* SkyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		561E842A1C4C848A00B62BCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		561E842C1C4C848A00B62BCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		561E842A1C4C848A00B62BCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		561E842C1C4C848A00B62BCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		561E842D1C4C848A00B62BCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		561E84331C4C848A00B62BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		561E84351C4C848A00B62BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		561E84381C4C848A00B62BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		561E843A1C4C848A00B62BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		561E843F1C4C848A00B62BCF /* SkyEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		561E84431C4C848A00B62BCF /* SkyEyeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyEyeTests.m; sourceTree = "<group>"; };
+		561E84431C4C848A00B62BCF /* SkyEyeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SkyEyeTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		561E84451C4C848A00B62BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		561E844A1C4C848A00B62BCF /* SkyEyeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyEyeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		561E844E1C4C848A00B62BCF /* SkyEyeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyEyeUITests.m; sourceTree = "<group>"; };
+		561E844E1C4C848A00B62BCF /* SkyEyeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SkyEyeUITests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		561E84501C4C848A00B62BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		562A992F1C5F254D00852B9A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		562A99311C5F255700852B9A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -113,35 +113,35 @@
 		563927A81C92B2C500717A2A /* SettingsPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SettingsPropertyList.plist; path = plist/SettingsPropertyList.plist; sourceTree = "<group>"; };
 		563927A91C92B2C500717A2A /* SystemCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SystemCommandPropertyList.plist; path = plist/SystemCommandPropertyList.plist; sourceTree = "<group>"; };
 		563927AA1C92B2C500717A2A /* VideoCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = VideoCommandPropertyList.plist; path = plist/VideoCommandPropertyList.plist; sourceTree = "<group>"; };
-		563927B71C92B33900717A2A /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerManager.h; path = "SyEye Prototype And Delegate/PlayerManager.h"; sourceTree = "<group>"; };
-		563927B81C92B33900717A2A /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerManager.m; path = "SyEye Prototype And Delegate/PlayerManager.m"; sourceTree = "<group>"; };
-		563927B91C92B33900717A2A /* SocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketManager.h; path = "SyEye Prototype And Delegate/SocketManager.h"; sourceTree = "<group>"; };
-		563927BA1C92B33900717A2A /* SocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocketManager.m; path = "SyEye Prototype And Delegate/SocketManager.m"; sourceTree = "<group>"; };
-		563927D11C92B3CF00717A2A /* CommandPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandPool.h; path = "SyEye Prototype And Delegate/Data Class/CommandPool.h"; sourceTree = "<group>"; };
-		563927D21C92B3CF00717A2A /* CommandPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandPool.m; path = "SyEye Prototype And Delegate/Data Class/CommandPool.m"; sourceTree = "<group>"; };
-		563927D71C92B3CF00717A2A /* SettingPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingPool.h; path = "SyEye Prototype And Delegate/Data Class/SettingPool.h"; sourceTree = "<group>"; };
-		563927D81C92B3CF00717A2A /* SettingPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingPool.m; path = "SyEye Prototype And Delegate/Data Class/SettingPool.m"; sourceTree = "<group>"; };
-		563927E21C92B41500717A2A /* RecieveDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecieveDataParser.h; path = "SyEye Prototype And Delegate/Command Generator/RecieveDataParser.h"; sourceTree = "<group>"; };
-		563927E31C92B41500717A2A /* RecieveDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecieveDataParser.m; path = "SyEye Prototype And Delegate/Command Generator/RecieveDataParser.m"; sourceTree = "<group>"; };
-		563927E51C92B41500717A2A /* SkyEyeCommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkyEyeCommandGenerator.h; path = "SyEye Prototype And Delegate/Command Generator/SkyEyeCommandGenerator.h"; sourceTree = "<group>"; };
-		563927E61C92B41500717A2A /* SkyEyeCommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkyEyeCommandGenerator.m; path = "SyEye Prototype And Delegate/Command Generator/SkyEyeCommandGenerator.m"; sourceTree = "<group>"; };
-		563927E71C92B41500717A2A /* SkyEyeCommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkyEyeCommandParser.h; path = "SyEye Prototype And Delegate/Command Generator/SkyEyeCommandParser.h"; sourceTree = "<group>"; };
-		563927E81C92B41500717A2A /* SkyEyeCommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkyEyeCommandParser.m; path = "SyEye Prototype And Delegate/Command Generator/SkyEyeCommandParser.m"; sourceTree = "<group>"; };
-		563927EF1C92B46D00717A2A /* MultipleSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleSettingTableViewController.h; path = "SkyEye ViewController Group/SettingControllers/MultipleSettingTableViewController.h"; sourceTree = "<group>"; };
-		563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MultipleSettingTableViewController.m; path = "SkyEye ViewController Group/SettingControllers/MultipleSettingTableViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563928051C92B48600717A2A /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiveViewController.h; path = "SkyEye ViewController Group/LiveViewController.h"; sourceTree = "<group>"; };
-		563928061C92B48600717A2A /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LiveViewController.m; path = "SkyEye ViewController Group/LiveViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927B71C92B33900717A2A /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PlayerManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927B81C92B33900717A2A /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlayerManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927B91C92B33900717A2A /* SocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SocketManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927BA1C92B33900717A2A /* SocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SocketManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927D11C92B3CF00717A2A /* CommandPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = CommandPool.h; path = "Data Class/CommandPool.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927D21C92B3CF00717A2A /* CommandPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CommandPool.m; path = "Data Class/CommandPool.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927D71C92B3CF00717A2A /* SettingPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SettingPool.h; path = "Data Class/SettingPool.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927D81C92B3CF00717A2A /* SettingPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SettingPool.m; path = "Data Class/SettingPool.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927E21C92B41500717A2A /* RecieveDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RecieveDataParser.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927E31C92B41500717A2A /* RecieveDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RecieveDataParser.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927E51C92B41500717A2A /* CommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CommandGenerator.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927E61C92B41500717A2A /* CommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CommandGenerator.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927E71C92B41500717A2A /* CommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CommandParser.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927E81C92B41500717A2A /* CommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CommandParser.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563927EF1C92B46D00717A2A /* MultipleSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MultipleSettingTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MultipleSettingTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		563928051C92B48600717A2A /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LiveViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		563928061C92B48600717A2A /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LiveViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5639280B1C92B5DC00717A2A /* SkyEye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyEye-Bridging-Header.h"; sourceTree = "<group>"; };
 		56468CF01D6D6D8600268070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		564B2BDE1D123A4B005B7C20 /* ModbusControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModbusControl.h; path = "SkyEye ViewController Group/ModbusControl.h"; sourceTree = "<group>"; };
-		564B2BDF1D123A4B005B7C20 /* ModbusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ModbusControl.m; path = "SkyEye ViewController Group/ModbusControl.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		565C25D21D420B4000F9EE53 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		565C25D31D420B7500F9EE53 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		564B2BDE1D123A4B005B7C20 /* ModbusControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModbusControl.h; sourceTree = "<group>"; };
+		564B2BDF1D123A4B005B7C20 /* ModbusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ModbusControl.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		565C25D21D420B4000F9EE53 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
+		565C25D31D420B7500F9EE53 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../Constants.m; sourceTree = "<group>"; };
 		568CF8C81CAB7DB700A58490 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		56955CEA1CC222530028E78C /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		56955CEB1CC222530028E78C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		569FAB171CEC44F100D1E547 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = "SkyEye ViewController Group/SettingControllers/SettingViewController.h"; sourceTree = "<group>"; };
-		569FAB181CEC44F100D1E547 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = "SkyEye ViewController Group/SettingControllers/SettingViewController.m"; sourceTree = "<group>"; };
+		569FAB171CEC44F100D1E547 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SettingViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		569FAB181CEC44F100D1E547 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		56E40E0F1C996C4700DDB8A6 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = "FFmpeg-iOS/lib/libavcodec.a"; sourceTree = "<group>"; };
 		56E40E101C996C4700DDB8A6 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = "FFmpeg-iOS/lib/libavdevice.a"; sourceTree = "<group>"; };
 		56E40E111C996C4700DDB8A6 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = "FFmpeg-iOS/lib/libavfilter.a"; sourceTree = "<group>"; };
@@ -212,12 +212,12 @@
 			children = (
 				563927E21C92B41500717A2A /* RecieveDataParser.h */,
 				563927E31C92B41500717A2A /* RecieveDataParser.m */,
-				563927E51C92B41500717A2A /* SkyEyeCommandGenerator.h */,
-				563927E61C92B41500717A2A /* SkyEyeCommandGenerator.m */,
-				563927E71C92B41500717A2A /* SkyEyeCommandParser.h */,
-				563927E81C92B41500717A2A /* SkyEyeCommandParser.m */,
+				563927E51C92B41500717A2A /* CommandGenerator.h */,
+				563927E61C92B41500717A2A /* CommandGenerator.m */,
+				563927E71C92B41500717A2A /* CommandParser.h */,
+				563927E81C92B41500717A2A /* CommandParser.m */,
 			);
-			name = "Command Generator";
+			path = "Command Generator";
 			sourceTree = "<group>";
 		};
 		560AC2D01C7169C10021C819 /* CommandPropertyList */ = {
@@ -320,7 +320,7 @@
 				563927EF1C92B46D00717A2A /* MultipleSettingTableViewController.h */,
 				563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */,
 			);
-			name = SettingControllers;
+			path = SettingControllers;
 			sourceTree = "<group>";
 		};
 		56A9EFA01C585B8A00D08F74 /* ViewController Group */ = {
@@ -332,7 +332,7 @@
 				564B2BDE1D123A4B005B7C20 /* ModbusControl.h */,
 				564B2BDF1D123A4B005B7C20 /* ModbusControl.m */,
 			);
-			name = "ViewController Group";
+			path = "ViewController Group";
 			sourceTree = "<group>";
 		};
 		56A9EFA11C585BB800D08F74 /* Prototype And Delegate */ = {
@@ -347,7 +347,7 @@
 				565C25D21D420B4000F9EE53 /* Constants.h */,
 				565C25D31D420B7500F9EE53 /* Constants.m */,
 			);
-			name = "Prototype And Delegate";
+			path = "Prototype And Delegate";
 			sourceTree = "<group>";
 		};
 		56FA66BF1CB65CED0004DB32 /* FFMpegDecoder */ = {
@@ -602,8 +602,8 @@
 				563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */,
 				56FA66C61CB65CED0004DB32 /* AudioStreamer.m in Sources */,
 				564B2BE01D123A4B005B7C20 /* ModbusControl.m in Sources */,
-				563927EB1C92B41500717A2A /* SkyEyeCommandGenerator.m in Sources */,
-				563927EC1C92B41500717A2A /* SkyEyeCommandParser.m in Sources */,
+				563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */,
+				563927EC1C92B41500717A2A /* CommandParser.m in Sources */,
 				561E842B1C4C848A00B62BCF /* main.m in Sources */,
 				563927EA1C92B41500717A2A /* RecieveDataParser.m in Sources */,
 				563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */,

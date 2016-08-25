@@ -1,6 +1,6 @@
 //
 //  MultipleSettingTableViewController.m
-//  SkyEye
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/2/16.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
@@ -335,7 +335,7 @@
 }
 
 -(void)listWiFiSettings{
-    NSString *command = [SkyEyeCommandGenerator generateInfoCommandWithName:@"List Wi-Fi Parameters"];
+    NSString *command = [CommandGenerator generateInfoCommandWithName:@"List Wi-Fi Parameters"];
     SocketManager *socketManager = [SocketManager shareInstance];
     [socketManager sendCommand:command toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_LIST_WIFI];
 }
@@ -346,7 +346,7 @@
     NSString *subCommand = [NSString stringWithFormat:@"&AP_SSID=%@&AP_AUTH_KEY=%@", localSSID, localPASS];
     NSArray *array = @[subCommand];
     SocketManager *socketManager = [SocketManager shareInstance];
-    NSString *command = [SkyEyeCommandGenerator generateInfoCommandWithName:@"Update Wi-Fi Parameters" parameters:array];
+    NSString *command = [CommandGenerator generateInfoCommandWithName:@"Update Wi-Fi Parameters" parameters:array];
     [socketManager sendCommand:command toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_UPDATE_WIFI];
 }
 
@@ -395,7 +395,7 @@
 #pragma send value to device
 
 -(void)sendValueWithCategory:(NSString *)category{
-    NSString *generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:category]];
+    NSString *generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:category]];
     SocketManager *socketManager = [SocketManager shareInstance];
     DDLogDebug(@"command: %@", generatedCommand);
     if ([category isEqualToString:@"Device Mic"]) {
@@ -410,7 +410,7 @@
     NSString *wifi = @"Update Wi-Fi Parameters";
     SocketManager *socketManager = [SocketManager shareInstance];
     if ([category isEqualToString:@"Update Stream Parameters"]) {
-        generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:category parameters:settingArray]];
+        generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:category parameters:settingArray]];
         [socketManager sendCommand:generatedCommand toCamera:receivedString withTag:SOCKET_READ_TAG_OTHER];
     } else if ([category isEqualToString:@"Update Resolution"]) {
         NSMutableArray *parameters = [[NSMutableArray alloc]init];
@@ -425,13 +425,13 @@
             [parameters addObject:[NSString stringWithFormat:@"&VINWIDTH=640&JPEGENCWIDTH=640"]];
             [parameters addObject:[NSString stringWithFormat:@"&VINHEIGHT=360&JPEGENCHEIGHT=360"]];
         }
-        generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:stream parameters:parameters]];
+        generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:stream parameters:parameters]];
         [socketManager sendCommand:generatedCommand toCamera:receivedString withTag:SOCKET_READ_TAG_OTHER];
     } else if ([category isEqualToString:@"Update Bit Rate"]) {
         NSMutableArray *parameters = [[NSMutableArray alloc]init];
         NSString *bitRate = [settingArray objectAtIndex:0];
         [parameters addObject:[NSString stringWithFormat:@"&BITRATE=%@", bitRate]];
-        generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:stream parameters:parameters]];
+        generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:stream parameters:parameters]];
         [socketManager sendCommand:generatedCommand toCamera:receivedString withTag:SOCKET_READ_TAG_OTHER];
     } else if ([category isEqualToString:wifi]) {
         NSMutableArray *parameters = [[NSMutableArray alloc]init];
@@ -439,7 +439,7 @@
         NSString *pass = [settingArray objectAtIndex:1];
         [parameters addObject:[NSString stringWithFormat:@"&AP_SSID=%@", ssid]];
         [parameters addObject:[NSString stringWithFormat:@"&AP_AUTH_KEY=%@", pass]];
-        generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:category parameters:settingArray]];
+        generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:category parameters:settingArray]];
         [socketManager sendCommand:generatedCommand toCamera:receivedString withTag:SOCKET_READ_TAG_OTHER];
     }
     [socketManager sendCommand:generatedCommand toCamera:receivedString withTag:SOCKET_READ_TAG_SEND_SETTING];
@@ -447,12 +447,12 @@
 
 -(void)sendRestartCommand:(int)option{
     if (option == 0) {
-        NSString *generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:@"Restart Stream"]];
+        NSString *generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:@"Restart Stream"]];
         SocketManager *socketManager = [SocketManager shareInstance];
         DDLogDebug(@"command: %@", generatedCommand);
         [socketManager sendCommand:generatedCommand toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_INFO_REBOOT];
     }else if (option == 1){
-        NSString *generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:@"Restart Wi-Fi"]];
+        NSString *generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:@"Restart Wi-Fi"]];
         SocketManager *socketManager = [SocketManager shareInstance];
         DDLogDebug(@"command: %@", generatedCommand);
         [socketManager sendCommand:generatedCommand toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_INFO_REBOOT];
@@ -468,10 +468,10 @@
     NSString *generatedCommand;
     switch (tag) {
         case SOCKET_READ_TAG_LIST_STREAM:
-            generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:@"List Stream Parameters"]];
+            generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:@"List Stream Parameters"]];
             break;
         case SOCKET_READ_TAG_LIST_WIFI:
-            generatedCommand = [NSString stringWithString:[SkyEyeCommandGenerator generateInfoCommandWithName:@"List Wi-Fi Parameters"]];
+            generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:@"List Wi-Fi Parameters"]];
             break;
             
         default:

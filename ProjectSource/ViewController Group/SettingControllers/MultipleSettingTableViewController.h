@@ -1,6 +1,6 @@
 //
 //  MultipleSettingTableViewController.h
-//  SkyEye
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/2/16.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
@@ -10,7 +10,7 @@
 #import "PlayerManager.h"
 
 #import "SocketManager.h"
-#import "SkyEyeCommandGenerator.h"
+#import "CommandGenerator.h"
 #import "SocketManager.h"
 #import <KSCrash.h>
 #import <KSCrash/KSCrashInstallation+Alert.h>

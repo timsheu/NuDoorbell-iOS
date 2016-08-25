@@ -1,6 +1,6 @@
 //
 //  LiveViewController.m
-//  SkyEye
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/1/22.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
@@ -372,7 +372,7 @@
     socketManager = [SocketManager shareInstance];
     socketManager.delegate = self;
     NSString *category = @"List Stream Parameters";
-    NSString *command = [SkyEyeCommandGenerator generateInfoCommandWithName:category];
+    NSString *command = [CommandGenerator generateInfoCommandWithName:category];
     [socketManager sendCommand:command toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_LIST_STREAM_ALIVE];
     checkTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(streamNotResponse) userInfo:nil repeats:NO];
 }

@@ -1,14 +1,14 @@
 //
-//  SkyEyeCommandParser.m
-//  SkyEye
+//  CommandParser.m
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/2/4.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
 //
 
-#import "SkyEyeCommandParser.h"
+#import "CommandParser.h"
 
-@implementation SkyEyeCommandParser
+@implementation CommandParser
 - (id)init{
     if (self = [super init]) {
         dictionaryCommandList = [[NSMutableDictionary alloc]init];
@@ -47,7 +47,7 @@
 }
 
 + (id) shareInstance{
-    static SkyEyeCommandParser* parser = nil;
+    static CommandParser* parser = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         parser = [[self alloc] init];

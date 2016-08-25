@@ -1,13 +1,13 @@
 //
-//  SkyEyeCommandGenerator.m
-//  SkyEye
+//  CommandGenerator.m
+//  
 //
 //  Created by Chia-Cheng Hsu on 2016/2/22.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
 //
 
-#import "SkyEyeCommandGenerator.h"
-@implementation SkyEyeCommandGenerator
+#import "CommandGenerator.h"
+@implementation CommandGenerator
 
 /**
  *  dictionary content:
