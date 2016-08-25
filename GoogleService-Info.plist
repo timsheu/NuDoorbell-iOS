@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>924285319412-u4heea8csfsccmq80fq5jet430a5h4rs.apps.googleusercontent.com</string>
+	<string>570423562407-cgvliddgvmh4lr8kdoa0i503d2ggd899.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.924285319412-u4heea8csfsccmq80fq5jet430a5h4rs</string>
+	<string>com.googleusercontent.apps.570423562407-cgvliddgvmh4lr8kdoa0i503d2ggd899</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDT8xnGenrDQ7UxAZ3Y3Pr_K-DOHzkopuw</string>
+	<string>AIzaSyCA4FRSaceLVwgynDTmyUJefi7DBBhfifk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>924285319412</string>
+	<string>570423562407</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.nuvoton.nuwicam</string>
+	<string>com.nuvoton.nudoorbell</string>
 	<key>PROJECT_ID</key>
-	<string>numaker-nuwicam-c27aa</string>
+	<string>nudoorbell</string>
 	<key>STORAGE_BUCKET</key>
-	<string>numaker-nuwicam-c27aa.appspot.com</string>
+	<string>nudoorbell.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:924285319412:ios:1dffcceb3e0412ff</string>
+	<string>1:570423562407:ios:d606c40b1537fbad</string>
 	<key>DATABASE_URL</key>
-	<string>https://numaker-nuwicam-c27aa.firebaseio.com</string>
+	<string>https://nudoorbell.firebaseio.com</string>
 </dict>
 </plist>

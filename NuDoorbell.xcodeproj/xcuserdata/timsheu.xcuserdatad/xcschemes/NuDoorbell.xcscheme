@@ -31,7 +31,7 @@
                BlueprintIdentifier = "561E84251C4C848A00B62BCF"
                BuildableName = "SkyEye.app"
                BlueprintName = "SkyEye"
-               ReferencedContainer = "container:NuWicam.xcodeproj">
+               ReferencedContainer = "container:NuDoorbell.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -63,7 +63,7 @@
                BlueprintIdentifier = "561E843E1C4C848A00B62BCF"
                BuildableName = "SkyEyeTests.xctest"
                BlueprintName = "SkyEyeTests"
-               ReferencedContainer = "container:NuWicam.xcodeproj">
+               ReferencedContainer = "container:NuDoorbell.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -73,7 +73,7 @@
                BlueprintIdentifier = "561E84491C4C848A00B62BCF"
                BuildableName = "SkyEyeUITests.xctest"
                BlueprintName = "SkyEyeUITests"
-               ReferencedContainer = "container:NuWicam.xcodeproj">
+               ReferencedContainer = "container:NuDoorbell.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -83,7 +83,7 @@
             BlueprintIdentifier = "561E84251C4C848A00B62BCF"
             BuildableName = "SkyEye.app"
             BlueprintName = "SkyEye"
-            ReferencedContainer = "container:NuWicam.xcodeproj">
+            ReferencedContainer = "container:NuDoorbell.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -106,7 +106,7 @@
             BlueprintIdentifier = "561E84251C4C848A00B62BCF"
             BuildableName = "SkyEye.app"
             BlueprintName = "SkyEye"
-            ReferencedContainer = "container:NuWicam.xcodeproj">
+            ReferencedContainer = "container:NuDoorbell.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -125,7 +125,7 @@
             BlueprintIdentifier = "561E84251C4C848A00B62BCF"
             BuildableName = "SkyEye.app"
             BlueprintName = "SkyEye"
-            ReferencedContainer = "container:NuWicam.xcodeproj">
+            ReferencedContainer = "container:NuDoorbell.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

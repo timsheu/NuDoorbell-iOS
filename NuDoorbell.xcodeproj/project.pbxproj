@@ -42,7 +42,7 @@
 		563927EC1C92B41500717A2A /* SkyEyeCommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E81C92B41500717A2A /* SkyEyeCommandParser.m */; };
 		563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */; };
 		563928091C92B48600717A2A /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563928061C92B48600717A2A /* LiveViewController.m */; };
-		56468CEF1D6C4D2E00268070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56468CEE1D6C4D2E00268070 /* GoogleService-Info.plist */; };
+		56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56468CF01D6D6D8600268070 /* GoogleService-Info.plist */; };
 		564B2BE01D123A4B005B7C20 /* ModbusControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 564B2BDF1D123A4B005B7C20 /* ModbusControl.m */; };
 		565C25D41D420B7500F9EE53 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C25D31D420B7500F9EE53 /* Constants.m */; };
 		568CF8C91CAB7DB700A58490 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 568CF8C81CAB7DB700A58490 /* libc++.tbd */; };
@@ -132,7 +132,7 @@
 		563928051C92B48600717A2A /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiveViewController.h; path = "SkyEye ViewController Group/LiveViewController.h"; sourceTree = "<group>"; };
 		563928061C92B48600717A2A /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LiveViewController.m; path = "SkyEye ViewController Group/LiveViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5639280B1C92B5DC00717A2A /* SkyEye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyEye-Bridging-Header.h"; sourceTree = "<group>"; };
-		56468CEE1D6C4D2E00268070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56468CF01D6D6D8600268070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		564B2BDE1D123A4B005B7C20 /* ModbusControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModbusControl.h; path = "SkyEye ViewController Group/ModbusControl.h"; sourceTree = "<group>"; };
 		564B2BDF1D123A4B005B7C20 /* ModbusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ModbusControl.m; path = "SkyEye ViewController Group/ModbusControl.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		565C25D21D420B4000F9EE53 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			name = "Command Generator";
 			sourceTree = "<group>";
 		};
-		560AC2D01C7169C10021C819 /* SkyEye CommandPropertyList */ = {
+		560AC2D01C7169C10021C819 /* CommandPropertyList */ = {
 			isa = PBXGroup;
 			children = (
 				563927A01C92B2C500717A2A /* ConfigCommandPropertyList.plist */,
@@ -228,7 +228,7 @@
 				563927A91C92B2C500717A2A /* SystemCommandPropertyList.plist */,
 				563927AA1C92B2C500717A2A /* VideoCommandPropertyList.plist */,
 			);
-			name = "SkyEye CommandPropertyList";
+			name = CommandPropertyList;
 			sourceTree = "<group>";
 		};
 		5617529E1C7444CB00B28CCA /* Data Class */ = {
@@ -245,12 +245,12 @@
 		561E841D1C4C848A00B62BCF = {
 			isa = PBXGroup;
 			children = (
-				56468CEE1D6C4D2E00268070 /* GoogleService-Info.plist */,
+				56468CF01D6D6D8600268070 /* GoogleService-Info.plist */,
 				56955CEA1CC222530028E78C /* Default-568h.png */,
 				56955CEB1CC222530028E78C /* Default-568h@2x.png */,
-				561E84281C4C848A00B62BCF /* SkyEye */,
-				561E84421C4C848A00B62BCF /* SkyEyeTests */,
-				561E844D1C4C848A00B62BCF /* SkyEyeUITests */,
+				561E84281C4C848A00B62BCF /* ProjectSource */,
+				561E84421C4C848A00B62BCF /* ProjectTests */,
+				561E844D1C4C848A00B62BCF /* ProjectUITests */,
 				561E84271C4C848A00B62BCF /* Products */,
 				E2832C1EF2317BCD4B17F651 /* Frameworks */,
 				94786E5F95BB11D8088BCAFD /* Pods */,
@@ -267,13 +267,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		561E84281C4C848A00B62BCF /* SkyEye */ = {
+		561E84281C4C848A00B62BCF /* ProjectSource */ = {
 			isa = PBXGroup;
 			children = (
 				56FA66BF1CB65CED0004DB32 /* FFMpegDecoder */,
-				560AC2D01C7169C10021C819 /* SkyEye CommandPropertyList */,
-				56A9EFA11C585BB800D08F74 /* SkyEye Prototype And Delegate */,
-				56A9EFA01C585B8A00D08F74 /* SkyEye ViewController Group */,
+				560AC2D01C7169C10021C819 /* CommandPropertyList */,
+				56A9EFA11C585BB800D08F74 /* Prototype And Delegate */,
+				56A9EFA01C585B8A00D08F74 /* ViewController Group */,
 				561E842C1C4C848A00B62BCF /* AppDelegate.h */,
 				561E842D1C4C848A00B62BCF /* AppDelegate.m */,
 				561E84321C4C848A00B62BCF /* Main.storyboard */,
@@ -283,7 +283,7 @@
 				561E84371C4C848A00B62BCF /* LaunchScreen.storyboard */,
 				561E843A1C4C848A00B62BCF /* Info.plist */,
 			);
-			path = SkyEye;
+			path = ProjectSource;
 			sourceTree = "<group>";
 		};
 		561E84291C4C848A00B62BCF /* Supporting Files */ = {
@@ -294,22 +294,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		561E84421C4C848A00B62BCF /* SkyEyeTests */ = {
+		561E84421C4C848A00B62BCF /* ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
 				561E84431C4C848A00B62BCF /* SkyEyeTests.m */,
 				561E84451C4C848A00B62BCF /* Info.plist */,
 			);
-			path = SkyEyeTests;
+			path = ProjectTests;
 			sourceTree = "<group>";
 		};
-		561E844D1C4C848A00B62BCF /* SkyEyeUITests */ = {
+		561E844D1C4C848A00B62BCF /* ProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
 				561E844E1C4C848A00B62BCF /* SkyEyeUITests.m */,
 				561E84501C4C848A00B62BCF /* Info.plist */,
 			);
-			path = SkyEyeUITests;
+			path = ProjectUITests;
 			sourceTree = "<group>";
 		};
 		569C53F61C801D990072D81B /* SettingControllers */ = {
@@ -323,7 +323,7 @@
 			name = SettingControllers;
 			sourceTree = "<group>";
 		};
-		56A9EFA01C585B8A00D08F74 /* SkyEye ViewController Group */ = {
+		56A9EFA01C585B8A00D08F74 /* ViewController Group */ = {
 			isa = PBXGroup;
 			children = (
 				569C53F61C801D990072D81B /* SettingControllers */,
@@ -332,10 +332,10 @@
 				564B2BDE1D123A4B005B7C20 /* ModbusControl.h */,
 				564B2BDF1D123A4B005B7C20 /* ModbusControl.m */,
 			);
-			name = "SkyEye ViewController Group";
+			name = "ViewController Group";
 			sourceTree = "<group>";
 		};
-		56A9EFA11C585BB800D08F74 /* SkyEye Prototype And Delegate */ = {
+		56A9EFA11C585BB800D08F74 /* Prototype And Delegate */ = {
 			isa = PBXGroup;
 			children = (
 				563927B71C92B33900717A2A /* PlayerManager.h */,
@@ -347,7 +347,7 @@
 				565C25D21D420B4000F9EE53 /* Constants.h */,
 				565C25D31D420B7500F9EE53 /* Constants.m */,
 			);
-			name = "SkyEye Prototype And Delegate";
+			name = "Prototype And Delegate";
 			sourceTree = "<group>";
 		};
 		56FA66BF1CB65CED0004DB32 /* FFMpegDecoder */ = {
@@ -487,7 +487,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 561E84211C4C848A00B62BCF /* Build configuration list for PBXProject "NuWicam" */;
+			buildConfigurationList = 561E84211C4C848A00B62BCF /* Build configuration list for PBXProject "NuDoorbell" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -514,7 +514,7 @@
 			files = (
 				563927B61C92B2C500717A2A /* VideoCommandPropertyList.plist in Resources */,
 				56955CEC1CC222530028E78C /* Default-568h.png in Resources */,
-				56468CEF1D6C4D2E00268070 /* GoogleService-Info.plist in Resources */,
+				56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */,
 				563927B41C92B2C500717A2A /* SettingsPropertyList.plist in Resources */,
 				561E84391C4C848A00B62BCF /* LaunchScreen.storyboard in Resources */,
 				563927B51C92B2C500717A2A /* SystemCommandPropertyList.plist in Resources */,
@@ -765,7 +765,7 @@
 					"\"${PODS_ROOT}/Headers/Public/OAStackView\"",
 					"\"$(SRCROOT)/FFmpeg-iOS\"",
 				);
-				INFOPLIST_FILE = SkyEye/Info.plist;
+				INFOPLIST_FILE = ProjectSource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -783,7 +783,7 @@
 					"-framework",
 					"\"Security\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nuvoton.nuwicam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nuvoton.nudoorbell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SkyEye/SkyEye-Bridging-Header.h";
@@ -812,7 +812,7 @@
 					"\"${PODS_ROOT}/Headers/Public/OAStackView\"",
 					"\"$(SRCROOT)/FFmpeg-iOS\"",
 				);
-				INFOPLIST_FILE = SkyEye/Info.plist;
+				INFOPLIST_FILE = ProjectSource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -830,7 +830,7 @@
 					"-framework",
 					"\"Security\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nuvoton.nuwicam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nuvoton.nudoorbell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SkyEye/SkyEye-Bridging-Header.h";
@@ -891,7 +891,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		561E84211C4C848A00B62BCF /* Build configuration list for PBXProject "NuWicam" */ = {
+		561E84211C4C848A00B62BCF /* Build configuration list for PBXProject "NuDoorbell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				561E84511C4C848A00B62BCF /* Debug */,

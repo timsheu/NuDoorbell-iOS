@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NuWicam.xcodeproj">
+      location = "group:/Users/timsheu/Documents/Project/iOS/NuDoorbell/NuDoorbell-iOS/NuDoorbell.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
