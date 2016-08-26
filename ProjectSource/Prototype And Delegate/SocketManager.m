@@ -80,10 +80,11 @@
 -(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err{
     DDLogDebug(@"error code: %ld", (long)err.code);
     _isConnected = NO;
+    NSString *port = [[PlayerManager.sharedInstance dictionarySetting]objectForKey:@"Public Port"];
     if (err.code >=4 && err.code < 7) {
         [_delegate hostNotResponse:tagLocal command:commandToBeSent];
     }else if (err.code == 61){
-        [self connectHost:localURL withPort:@"8000" withTag:tagLocal];
+        [self connectHost:localURL withPort:port withTag:tagLocal];
     }
 }
 
@@ -263,9 +264,10 @@
         splitURL = [split objectAtIndex:2];
     }
     localURL = splitURL;
+    NSString *port = [dic objectForKey:@"Public Port"];
     if (_isConnected == NO || ![socket.connectedHost isEqualToString:_hostURL]){
         DDLogDebug(@"connect to host; send command set");
-        return [self connectHost:splitURL withPort:@"80" withTag:tag];
+        return [self connectHost:splitURL withPort:port withTag:tag];
     }else{
         [self sendData];
         return YES;

@@ -4,6 +4,16 @@
 <dict>
 	<key>Setup Camera</key>
 	<dict>
+		<key>First</key>
+		<string>YES</string>
+		<key>Public Port</key>
+		<string>80</string>
+		<key>Private Port</key>
+		<string></string>
+		<key>Public IP</key>
+		<string>192.168.100.1</string>
+		<key>Private IP</key>
+		<string></string>
 		<key>Wi-Fi AP Setup</key>
 		<dict>
 			<key>SSID</key>

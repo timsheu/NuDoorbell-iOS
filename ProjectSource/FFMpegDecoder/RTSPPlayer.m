@@ -115,11 +115,9 @@
 
     for (int i=0; i<pFormatCtx->nb_streams; i++) {
         if (pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO) {
-            DDLogDebug(@"found video stream");
             videoStream=i;
-        }
-        
-        if (pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_AUDIO) {
+            DDLogDebug(@"found video stream");
+        }else if (pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_AUDIO) {
             audioStream=i;
             DDLogDebug(@"found audio stream");
         }
@@ -232,7 +230,7 @@ initError:
     int frameFinished=0;
 
     while (!frameFinished && av_read_frame(pFormatCtx, &packet) >=0 ) {
-//        DDLogDebug(@"packet index: %d", packet.stream_index);
+        DDLogDebug(@"packet index: %d", packet.stream_index);
         // Is this a packet from the video stream?
         if(packet.stream_index==videoStream) {
             // Decode video frame
@@ -246,11 +244,13 @@ initError:
             [audioPacketQueueLock unlock];
             
             if (!primed) {
+                NSLog(@"start audio");
                 primed=YES;
                 [_audioController _startAudio];
             }
             
             if (emptyAudioBuffer) {
+                NSLog(@"not empty buffer");
                 [_audioController enqueueBuffer:emptyAudioBuffer];
             }
         }

@@ -14,6 +14,8 @@
 #import <KSCrash/KSCrashInstallationEmail.h>
 #import <KSCrash/KSCrashInstallationVictory.h>
 #import "PlayerManager.h"
+#import "FCMExecutive.h"
+
 @import Firebase;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

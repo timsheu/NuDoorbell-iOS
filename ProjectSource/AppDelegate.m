@@ -50,7 +50,13 @@
     // Add observer for InstanceID token refresh callback.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenRefreshNotification:)
                                                  name:kFIRInstanceIDTokenRefreshNotification object:nil];
-    
+    NSDictionary *dic = [[PlayerManager sharedInstance].dictionarySetting objectForKey:@"Setup Camera"];
+    NSString *isFirst = [dic objectForKey:@"First"];
+    if ([isFirst isEqualToString:@"YES"] || isFirst == nil) {
+        isFirst = @"NO";
+        [[PlayerManager sharedInstance] resetData];
+        [dic setValue:isFirst forKey:@"First"];
+    }
     return YES;
 }
 
@@ -65,7 +71,8 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     NSLog(@"Message ID: %@", userInfo[@"gcm.message_id"]);
     
     // Pring full message.
-    NSLog(@"%@", userInfo);
+//    NSLog(@"%@", userInfo);
+    [[FCMExecutive sharedInstance] retrivedMessage:userInfo];
 }
 // [END receive_message]
 
