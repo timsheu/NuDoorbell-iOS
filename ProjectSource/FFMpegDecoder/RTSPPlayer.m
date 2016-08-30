@@ -230,7 +230,7 @@ initError:
     int frameFinished=0;
 
     while (!frameFinished && av_read_frame(pFormatCtx, &packet) >=0 ) {
-        DDLogDebug(@"packet index: %d", packet.stream_index);
+//        DDLogDebug(@"packet index: %d", packet.stream_index);
         // Is this a packet from the video stream?
         if(packet.stream_index==videoStream) {
             // Decode video frame
@@ -250,7 +250,7 @@ initError:
             }
             
             if (emptyAudioBuffer) {
-                NSLog(@"not empty buffer");
+//                NSLog(@"not empty buffer");
                 [_audioController enqueueBuffer:emptyAudioBuffer];
             }
         }

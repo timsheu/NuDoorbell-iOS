@@ -12,7 +12,9 @@
 
 #define SHMADIA_LOGIN_DEFAULT_PORT 5542
 #define SHMADIA_LOGIN_PACKET_LENGTH 344 // 8+64+1+4+255+4+4+4, See EventMsgDef.h
-
+#define SHMADIA_LOGIN_RESPONSE_LENGTH 32 // 8+4*6, See EventMsgDef.h
+#define TEST_UUID @"00000001"
+#define SERVER_IP @"192.168.8.15"
 enum{
     SHMADIA_TAG_DEFAULT = 0,
     SHMADIA_TAG_READ_PACKET_LENGTH,
@@ -22,8 +24,8 @@ enum{
 
 @class PlayerManager;
 @protocol ShmadiaDelegate <NSObject>
-- (void) didConnectedToHost;
-- (void) didReadData:(NSData *) data;
+- (void) didConnectedToShmadia;
+- (void) didReadDataFromShmadia:(NSData *) data;
 @end
 
 @interface ShmadiaConnectManager : NSObject <GCDAsyncSocketDelegate>{
@@ -45,6 +47,7 @@ enum{
 - (void) connectHost:(NSString *)hostURL withPort:(NSString *)hostPort withTag:(int) tag;
 - (void) disconnectFormHost;
 - (void) writeLoginData:(NSData *)data withTag:(int) tag;
+- (void) writeDefaultLoginDataToShmadia;
 - (void) setupShmadiaLoginRequestPackage:(NSString *)fcmToken;
 
 @end

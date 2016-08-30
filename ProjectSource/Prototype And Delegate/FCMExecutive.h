@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "EventMsgDef.h"
 #import "ShmadiaConnectManager.h"
 
 @class PlayerManager;
 
 @protocol FCMExecutiveDelegate <NSObject>
-
+- (void) restartLiveStream;
 @end
 
 @interface FCMExecutive : NSObject{
@@ -24,5 +23,6 @@
 - (id) init;
 + (FCMExecutive *) sharedInstance;
 @property (nonatomic, weak) id <FCMExecutiveDelegate> delegate;
-- (void)retrivedMessage:(NSDictionary *)dictionary;
+@property (nonatomic, strong) NSString *fcmToken;
+- (void) retrivedMessage:(NSDictionary *)dictionary;
 @end
