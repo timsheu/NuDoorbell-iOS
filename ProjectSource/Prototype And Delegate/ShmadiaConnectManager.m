@@ -75,6 +75,7 @@
             if (data.length == SHMADIA_LOGIN_RESPONSE_LENGTH - 8) {
                 [mutableData appendData:data];
                 [_delegate didReadDataFromShmadia:mutableData];
+                DDLogDebug(@"%@: data: %@", TAG, data);
             }else {
                 DDLogDebug(@"%@: data length is no equal to 344, should never happen.", TAG);
             }
@@ -117,6 +118,7 @@
     if (socket && _isConnected) {
         DDLogDebug(@"%@: %lu, %d", TAG, sizeof(shmadiaLoginRequest), shmadiaLoginRequest.sMsgHdr.u32MsgLen);
         NSData *data = [NSData dataWithBytes:&shmadiaLoginRequest length:shmadiaLoginRequest.sMsgHdr.u32MsgLen];
+        DDLogDebug(@"%@, data: %@", TAG, data);
         [socket readDataToLength:8 withTimeout:-1 tag:SHMADIA_TAG_READ_PACKET_LENGTH];
         [socket writeData:data withTimeout:-1 tag:SHMADIA_TAG_WRITE_LOGIN];
     }

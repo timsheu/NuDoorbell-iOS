@@ -57,6 +57,14 @@
     if (![version isEqualToString:@"1.0.2"] || version == nil) {
         [[PlayerManager sharedInstance] resetData];
     }
+    
+    NSString *token = [dic objectForKey:@"FCM Token"];
+    if (token != nil) {
+        ShmadiaConnectManager *manager = [ShmadiaConnectManager sharedInstance];
+        manager.delegate = self;
+        NSString *port = [NSString stringWithFormat:@"%d", SHMADIA_LOGIN_DEFAULT_PORT];
+        [manager connectHost:SERVER_IP withPort:port withTag:SHMADIA_TAG_WRITE_LOGIN];
+    }
     return YES;
 }
 
@@ -120,8 +128,8 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
                (int)response.sMsgHdr.u32MsgLen,
                (int)response.eResult,
                (int)response.bDevOnline,
-               [self ipConversion:(int)response.u32DevPublicIP],
-               [self ipConversion:(int)response.u32DevPrivateIP],
+               [self ipConversion:response.u32DevPublicIP],
+               [self ipConversion:response.u32DevPrivateIP],
                (int)response.u32DevHTTPPort,
                (int)response.u32DevRTSPPort);
     NSString *publicIP = [self ipConversion:(int)response.u32DevPublicIP];
