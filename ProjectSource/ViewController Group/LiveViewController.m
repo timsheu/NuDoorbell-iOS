@@ -7,7 +7,7 @@
 //
 
 #import "LiveViewController.h"
-
+#define TAG @"LiveViewController"
 @interface LiveViewController ()
 
 @end
@@ -53,6 +53,7 @@
         [self.tabBarController.tabBar setHidden:NO];
         return;
     }
+    FCMExecutive.sharedInstance.delegate = self;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -81,6 +82,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [outletBuffering startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -242,6 +244,7 @@
 
 
 -(void)displayLiveNextFrame:(NSTimer *)timer {
+    _outletOffline.text = @"ONLINE";
     _outletSeekSlider.value = 1;
     if (![_video stepFrame]) {
         [timer invalidate];
@@ -346,7 +349,8 @@
     _video = nil;
     localPath = path;
     localTime = time;
-    [self isDeviceAlive];
+//    [self isDeviceAlive];
+    [self updateCameraSettings];
 }
 
 - (void)streamNotResponse{
@@ -378,15 +382,19 @@
 }
 
 - (void)updateCameraSettings{
-    modbusControl = [ModbusControl sharedInstance];
-    modbusControl.delegate = self;
-    _outletOffline.text = @"ONLINE";
+//    modbusControl = [ModbusControl sharedInstance];
+//    modbusControl.delegate = self;
+    DDLogDebug(@"%@: update camera settings", TAG);
+    [outletBuffering startAnimating];
     [checkTimer invalidate];
     checkTimer = nil;
     BOOL useTCPFlag = NO;
+    if (_video != nil) {
+        [self stopVideo];
+        _video = nil;
+    }
     _video = [[RTSPPlayer alloc] initWithVideo:localPath usesTcp:useTCPFlag];
     if (_video == nil) {
-        [self stopVideo];
         return;
     }
     _video.outputWidth = _outletLiveView.bounds.size.width;
@@ -405,7 +413,7 @@
     // fps
     // nFrame for China: 25 frame per second
     // palFrame: 30 frame per second
-    float palFrame = 1.0/30; // PAL Mode
+    float palFrame = 1.0/15; // for nudoorbell
     dotTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(flashRedDot) userInfo:nil repeats:YES];
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            while (isPlaying) {
@@ -482,6 +490,16 @@
 
 - (void)enableTabBar{
     [self.tabBarController.tabBar setUserInteractionEnabled:YES];
+}
+
+#pragma following: FCMExecutiveDelegate
+
+- (void)restartLiveStream{
+    NSDictionary *cameraDic = [PlayerManager.sharedInstance.dictionarySetting objectForKey:@"Setup Camera"];
+    NSMutableArray *history = [cameraDic objectForKey:@"History"];
+    localPath = [cameraDic objectForKey:@"URL"];
+    [history setObject:localPath atIndexedSubscript:0];
+    [self updateCameraSettings];
 }
 
 @end

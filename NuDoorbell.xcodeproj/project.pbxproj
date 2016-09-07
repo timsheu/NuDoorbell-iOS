@@ -45,6 +45,8 @@
 		56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56468CF01D6D6D8600268070 /* GoogleService-Info.plist */; };
 		564B2BE01D123A4B005B7C20 /* ModbusControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 564B2BDF1D123A4B005B7C20 /* ModbusControl.m */; };
 		565C25D41D420B7500F9EE53 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C25D31D420B7500F9EE53 /* Constants.m */; };
+		56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */ = {isa = PBXBuildFile; fileRef = 56842B761D6EF20E002CD283 /* FCMExecutive.m */; };
+		568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 568C0A6D1D700F280045E6DE /* ShmadiaConnectManager.m */; };
 		568CF8C91CAB7DB700A58490 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 568CF8C81CAB7DB700A58490 /* libc++.tbd */; };
 		56955CEC1CC222530028E78C /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 56955CEA1CC222530028E78C /* Default-568h.png */; };
 		56955CED1CC222530028E78C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56955CEB1CC222530028E78C /* Default-568h@2x.png */; };
@@ -137,6 +139,11 @@
 		564B2BDF1D123A4B005B7C20 /* ModbusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ModbusControl.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		565C25D21D420B4000F9EE53 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		565C25D31D420B7500F9EE53 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../Constants.m; sourceTree = "<group>"; };
+		56842B751D6EF20E002CD283 /* FCMExecutive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMExecutive.h; sourceTree = "<group>"; };
+		56842B761D6EF20E002CD283 /* FCMExecutive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMExecutive.m; sourceTree = "<group>"; };
+		568C0A681D700BAF0045E6DE /* EventMsgDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventMsgDef.h; sourceTree = "<group>"; };
+		568C0A6C1D700F280045E6DE /* ShmadiaConnectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShmadiaConnectManager.h; sourceTree = "<group>"; };
+		568C0A6D1D700F280045E6DE /* ShmadiaConnectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShmadiaConnectManager.m; sourceTree = "<group>"; };
 		568CF8C81CAB7DB700A58490 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		56955CEA1CC222530028E78C /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		56955CEB1CC222530028E78C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -346,6 +353,11 @@
 				560AC2CD1C7164190021C819 /* Command Generator */,
 				565C25D21D420B4000F9EE53 /* Constants.h */,
 				565C25D31D420B7500F9EE53 /* Constants.m */,
+				568C0A681D700BAF0045E6DE /* EventMsgDef.h */,
+				56842B751D6EF20E002CD283 /* FCMExecutive.h */,
+				56842B761D6EF20E002CD283 /* FCMExecutive.m */,
+				568C0A6C1D700F280045E6DE /* ShmadiaConnectManager.h */,
+				568C0A6D1D700F280045E6DE /* ShmadiaConnectManager.m */,
 			);
 			path = "Prototype And Delegate";
 			sourceTree = "<group>";
@@ -470,12 +482,20 @@
 				KnownAssetTags = (
 					LiveTapGesture,
 				);
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Nuvoton;
 				TargetAttributes = {
 					561E84251C4C848A00B62BCF = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = XZ7PL3RVBP;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					561E843E1C4C848A00B62BCF = {
 						CreatedOnToolsVersion = 7.2;
@@ -602,9 +622,11 @@
 				563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */,
 				56FA66C61CB65CED0004DB32 /* AudioStreamer.m in Sources */,
 				564B2BE01D123A4B005B7C20 /* ModbusControl.m in Sources */,
+				568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */,
 				563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */,
 				563927EC1C92B41500717A2A /* CommandParser.m in Sources */,
 				561E842B1C4C848A00B62BCF /* main.m in Sources */,
+				56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */,
 				563927EA1C92B41500717A2A /* RecieveDataParser.m in Sources */,
 				563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */,
 				563927BB1C92B33900717A2A /* PlayerManager.m in Sources */,
@@ -702,7 +724,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

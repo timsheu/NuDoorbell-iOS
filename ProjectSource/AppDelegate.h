@@ -14,8 +14,14 @@
 #import <KSCrash/KSCrashInstallationEmail.h>
 #import <KSCrash/KSCrashInstallationVictory.h>
 #import "PlayerManager.h"
+#import "FCMExecutive.h"
+#import <arpa/inet.h>
+
 @import Firebase;
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ShmadiaDelegate>{
+    NSString *TAG, *refreshedToken;
+    BOOL tokenRefreshed;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

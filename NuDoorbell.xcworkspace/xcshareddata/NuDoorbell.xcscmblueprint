@@ -1,0 +1,104 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ADC923D26AE56310D2FFE0C1D54A805D6C230353",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ADC923D26AE56310D2FFE0C1D54A805D6C230353" : 0,
+    "D700A0963F7CD60E93D067F4E3D37DACE86B38FB" : 0,
+    "36E5F7BFAE2C04440B4E6207A5EF50A88BE3806C" : 0,
+    "503FB8DA5906D883580886D2BB42BB38F5C4027B" : 0,
+    "625F25A5CC32F50D14D2E17852AEDDD7BBFE16B8" : 0,
+    "D7D001597948FEA4893B9B873405806C3B9825C0" : 0,
+    "01FEA1EDF4256EF1E629DF28AAA0A790DEF4EC87" : 0,
+    "72C7F6A74863CD2A943F8E481C33C31526287442" : 0,
+    "3A40A2AFF0DF78D11DFB98B4313819254461E2D3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9C70FBB6-4DCB-41F0-B1AC-9118BDEB843F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ADC923D26AE56310D2FFE0C1D54A805D6C230353" : "NuDoorbell-iOS\/",
+    "D700A0963F7CD60E93D067F4E3D37DACE86B38FB" : "..\/NuPlayer",
+    "36E5F7BFAE2C04440B4E6207A5EF50A88BE3806C" : "..\/..\/Android\/NuWicam%20Player",
+    "503FB8DA5906D883580886D2BB42BB38F5C4027B" : "..\/NuWicam%20Player",
+    "625F25A5CC32F50D14D2E17852AEDDD7BBFE16B8" : "..\/DFURTSPPlayer",
+    "D7D001597948FEA4893B9B873405806C3B9825C0" : "..\/..\/Android\/NuPlayer",
+    "01FEA1EDF4256EF1E629DF28AAA0A790DEF4EC87" : "..\/iFrameExtractor",
+    "72C7F6A74863CD2A943F8E481C33C31526287442" : "..\/..\/..\/Backup\/wsn\/SmartLightingDemo_0317_with%20smart%20lighting_5",
+    "3A40A2AFF0DF78D11DFB98B4313819254461E2D3" : "..\/..\/..\/Backup\/wsn\/smartLightingiPad\/SmartLighing"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NuDoorbell",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NuDoorbell.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alb423\/iFrameExtractor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01FEA1EDF4256EF1E629DF28AAA0A790DEF4EC87"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/timsheu\/NuWicam-Player-Android.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36E5F7BFAE2C04440B4E6207A5EF50A88BE3806C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3A40A2AFF0DF78D11DFB98B4313819254461E2D3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/timsheu\/NuWicam-Player.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "503FB8DA5906D883580886D2BB42BB38F5C4027B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/durfu\/DFURTSPPlayer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "625F25A5CC32F50D14D2E17852AEDDD7BBFE16B8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72C7F6A74863CD2A943F8E481C33C31526287442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72C7F6A74863CD2A943F8E481C33C31526287442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72C7F6A74863CD2A943F8E481C33C31526287442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72C7F6A74863CD2A943F8E481C33C31526287442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72C7F6A74863CD2A943F8E481C33C31526287442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.168.0.160\/home\/git\/WSN\/SmartLightingDemo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72C7F6A74863CD2A943F8E481C33C31526287442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/timsheu\/NuDoorbell-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ADC923D26AE56310D2FFE0C1D54A805D6C230353"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/timsheu\/NuPlayer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D700A0963F7CD60E93D067F4E3D37DACE86B38FB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/timsheu\/NuPlayer-Android.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D7D001597948FEA4893B9B873405806C3B9825C0"
+    }
+  ]
+}

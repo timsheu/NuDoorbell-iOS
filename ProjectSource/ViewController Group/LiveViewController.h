@@ -13,7 +13,7 @@
 #import "MultipleSettingTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ModbusControl.h"
-
+#import "FCMExecutive.h"
 #ifdef USE_DFU_RTSP_PLAYER
 #import "RTSPPlayer.h"
 #endif
@@ -21,7 +21,7 @@
 
 #define TAG_OF_GESTURE 100;
 
-@interface LiveViewController : UIViewController <UITabBarDelegate, SocketManagerDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, ModbusControlDelegate>{
+@interface LiveViewController : UIViewController <UITabBarDelegate, SocketManagerDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, ModbusControlDelegate, FCMExecutiveDelegate>{
     int lightValue;
     NSString *resolution;
     BOOL isConnectedToModbus;
