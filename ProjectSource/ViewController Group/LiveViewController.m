@@ -47,13 +47,15 @@
     _outletSeekSlider.enabled = NO;
     [self initCamera:cameraString.intValue];
     [self.tabBarController.tabBar setUserInteractionEnabled:NO];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(enableTabBar) userInfo:nil repeats:NO];
+//    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(enableTabBar) userInfo:nil repeats:NO];
+    [self enableTabBar];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         _outletTapGesture.enabled = NO;
         [self.tabBarController.tabBar setHidden:NO];
         return;
     }
     FCMExecutive.sharedInstance.delegate = self;
+    [self dismissTabBars:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

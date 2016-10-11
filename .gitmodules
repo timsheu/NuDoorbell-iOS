@@ -1,0 +1,3 @@
+[submodule "ModifiedKxMovie"]
+	path = ModifiedKxMovie
+	url = https://github.com/timsheu/ModifiedKxMovie.git
