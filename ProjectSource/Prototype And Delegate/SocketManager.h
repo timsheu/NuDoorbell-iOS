@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GCDAsyncSocket.h"
 #import "CommandPool.h"
 #import "PlayerManager.h"
 #import "RecieveDataParser.h"
+#import "GCDAsyncSocket.h" // for TCP
 
 @protocol SocketManagerDelegate <NSObject>
 @optional

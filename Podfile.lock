@@ -1,11 +1,7 @@
 PODS:
-  - CocoaAsyncSocket (7.4.3):
-    - CocoaAsyncSocket/All (= 7.4.3)
-  - CocoaAsyncSocket/All (7.4.3):
-    - CocoaAsyncSocket/GCD
-    - CocoaAsyncSocket/RunLoop
-  - CocoaAsyncSocket/GCD (7.4.3)
-  - CocoaAsyncSocket/RunLoop (7.4.3)
+  - CocoaAsyncSocket (7.5.0):
+    - CocoaAsyncSocket/GCD (= 7.5.0)
+  - CocoaAsyncSocket/GCD (7.5.0)
   - CocoaLumberjack (2.3.0):
     - CocoaLumberjack/Default (= 2.3.0)
     - CocoaLumberjack/Extensions (= 2.3.0)
@@ -14,78 +10,77 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
-  - Firebase/Analytics (3.4.0):
-    - FirebaseAnalytics (~> 3.3)
-  - Firebase/Core (3.4.0):
-    - Firebase/Analytics
-  - Firebase/Messaging (3.4.0):
-    - Firebase/Analytics
-    - FirebaseMessaging (= 1.1.1)
-  - FirebaseAnalytics (3.3.0):
+  - EasyToast (1.1.1)
+  - Firebase/Core (3.7.1):
+    - FirebaseAnalytics (= 3.4.4)
+    - FirebaseCore (= 3.4.3)
+  - Firebase/Messaging (3.7.1):
+    - Firebase/Core
+    - FirebaseMessaging (= 1.2.0)
+  - FirebaseAnalytics (3.4.4):
+    - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
+  - FirebaseCore (3.4.3):
+    - GoogleInterchangeUtilities (~> 1.2)
     - GoogleUtilities (~> 1.2)
   - FirebaseInstanceID (1.0.8)
-  - FirebaseMessaging (1.1.1):
+  - FirebaseMessaging (1.2.0):
     - FirebaseAnalytics (~> 3.3)
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleIPhoneUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
-  - GoogleInterchangeUtilities (1.2.1):
-    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleInterchangeUtilities (1.2.2):
+    - GoogleSymbolUtilities (~> 1.1)
   - GoogleIPhoneUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
-  - GoogleSymbolUtilities (1.1.1)
-  - GoogleUtilities (1.3.1):
-    - GoogleSymbolUtilities (~> 1.0)
-  - iOS-QR-Code-Encoder (0.0.1)
-  - JHChainableAnimations (1.3.0)
-  - KSCrash (1.8.0):
-    - KSCrash/Installations (= 1.8.0)
-  - KSCrash/Installations (1.8.0):
+  - GoogleSymbolUtilities (1.1.2)
+  - GoogleUtilities (1.3.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - KSCrash (1.8.13):
+    - KSCrash/Installations (= 1.8.13)
+  - KSCrash/Installations (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting
-  - KSCrash/no-arc (1.8.0)
-  - KSCrash/Recording (1.8.0):
-    - KSCrash/no-arc
-  - KSCrash/Reporting (1.8.0):
+  - KSCrash/Recording (1.8.13)
+  - KSCrash/Reporting (1.8.13):
     - KSCrash/Recording
-    - KSCrash/Reporting/Filters (= 1.8.0)
-    - KSCrash/Reporting/MessageUI (= 1.8.0)
-    - KSCrash/Reporting/Sinks (= 1.8.0)
-    - KSCrash/Reporting/Tools (= 1.8.0)
-  - KSCrash/Reporting/Filters (1.8.0):
+    - KSCrash/Reporting/Filters (= 1.8.13)
+    - KSCrash/Reporting/MessageUI (= 1.8.13)
+    - KSCrash/Reporting/Sinks (= 1.8.13)
+    - KSCrash/Reporting/Tools (= 1.8.13)
+  - KSCrash/Reporting/Filters (1.8.13):
     - KSCrash/Recording
-    - KSCrash/Reporting/Filters/Alert (= 1.8.0)
-    - KSCrash/Reporting/Filters/AppleFmt (= 1.8.0)
-    - KSCrash/Reporting/Filters/Base (= 1.8.0)
-    - KSCrash/Reporting/Filters/Basic (= 1.8.0)
-    - KSCrash/Reporting/Filters/GZip (= 1.8.0)
-    - KSCrash/Reporting/Filters/JSON (= 1.8.0)
-    - KSCrash/Reporting/Filters/Sets (= 1.8.0)
-    - KSCrash/Reporting/Filters/Stringify (= 1.8.0)
-    - KSCrash/Reporting/Filters/Tools (= 1.8.0)
-  - KSCrash/Reporting/Filters/Alert (1.8.0):
+    - KSCrash/Reporting/Filters/Alert (= 1.8.13)
+    - KSCrash/Reporting/Filters/AppleFmt (= 1.8.13)
+    - KSCrash/Reporting/Filters/Base (= 1.8.13)
+    - KSCrash/Reporting/Filters/Basic (= 1.8.13)
+    - KSCrash/Reporting/Filters/GZip (= 1.8.13)
+    - KSCrash/Reporting/Filters/JSON (= 1.8.13)
+    - KSCrash/Reporting/Filters/Sets (= 1.8.13)
+    - KSCrash/Reporting/Filters/Stringify (= 1.8.13)
+    - KSCrash/Reporting/Filters/Tools (= 1.8.13)
+  - KSCrash/Reporting/Filters/Alert (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/AppleFmt (1.8.0):
+  - KSCrash/Reporting/Filters/AppleFmt (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Base (1.8.0):
+  - KSCrash/Reporting/Filters/Base (1.8.13):
     - KSCrash/Recording
-  - KSCrash/Reporting/Filters/Basic (1.8.0):
-    - KSCrash/Recording
-    - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/GZip (1.8.0):
+  - KSCrash/Reporting/Filters/Basic (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/JSON (1.8.0):
+  - KSCrash/Reporting/Filters/GZip (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Sets (1.8.0):
+  - KSCrash/Reporting/Filters/JSON (1.8.13):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Sets (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/AppleFmt
     - KSCrash/Reporting/Filters/Base
@@ -93,47 +88,43 @@ PODS:
     - KSCrash/Reporting/Filters/GZip
     - KSCrash/Reporting/Filters/JSON
     - KSCrash/Reporting/Filters/Stringify
-  - KSCrash/Reporting/Filters/Stringify (1.8.0):
+  - KSCrash/Reporting/Filters/Stringify (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Tools (1.8.0):
+  - KSCrash/Reporting/Filters/Tools (1.8.13):
     - KSCrash/Recording
-  - KSCrash/Reporting/MessageUI (1.8.0):
+  - KSCrash/Reporting/MessageUI (1.8.13):
     - KSCrash/Recording
-  - KSCrash/Reporting/Sinks (1.8.0):
+  - KSCrash/Reporting/Sinks (1.8.13):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters
     - KSCrash/Reporting/Tools
-  - KSCrash/Reporting/Tools (1.8.0):
+  - KSCrash/Reporting/Tools (1.8.13):
     - KSCrash/Recording
-  - ObjectiveLibModbus (0.0.2)
 
 DEPENDENCIES:
-  - CocoaAsyncSocket (~> 7.4.3)
-  - CocoaLumberjack
+  - CocoaAsyncSocket
+  - CocoaLumberjack (~> 2.3.0)
+  - EasyToast
   - Firebase/Core
   - Firebase/Messaging
-  - iOS-QR-Code-Encoder (~> 0.0.1)
-  - JHChainableAnimations (~> 1.3.0)
-  - KSCrash (~> 1.6)
-  - ObjectiveLibModbus (~> 0.0)
+  - KSCrash
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
-  Firebase: 754562547af419cc2f4b15247fee419081924bc2
-  FirebaseAnalytics: 228be2991cb28efb96cdafc4d62f64680e615c69
+  EasyToast: 55458541fb244efcae1478d0d4d2352ea24abadf
+  Firebase: be473484f0d515e72ffd04acf22f981773c23e58
+  FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
+  FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  FirebaseMessaging: 6bc7cd2ecb875c1a9c0f8b94956398aa3145bbb8
-  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  FirebaseMessaging: 789d23fd796594dfb55dcf36cd325541df887c22
+  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleIPhoneUtilities: 63f25e93a3ddcb66884d182aab3a660d98f1479b
-  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
-  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
-  iOS-QR-Code-Encoder: 5aef73d5d6ecdb2031ced14e0e6eadfb8c637514
-  JHChainableAnimations: 22085fcb04ca87349e584573558e637f659fd769
-  KSCrash: edfa8d39f0908806ccf9a1cfa67067ede40a883f
-  ObjectiveLibModbus: 3c41055ff8953757130966974d9405d199790f79
+  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
+  GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  KSCrash: 4c3a83f133b60f4bd57e05235ebf8d46e36d378d
 
-PODFILE CHECKSUM: cafaeeb4021ed3de34e5345f895aecd81b135275
+PODFILE CHECKSUM: 54ed9b89d8cafdcf1f06ff2eb9f78a3d76dc1821
 
-COCOAPODS: 1.0.0.beta.8
+COCOAPODS: 1.0.1

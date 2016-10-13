@@ -8,12 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "SettingPool.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Constants.h"
+#import "CocoaLumberJack.h"
 
-#ifndef USE_DFU_RTSP_PLAYER
-#define USE_DFU_RTSP_PLAYER
-#endif
 
 enum{
     SOCKET_READ_TAG_SEND_SETTING            = 5,

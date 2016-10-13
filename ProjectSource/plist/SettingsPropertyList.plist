@@ -39,7 +39,7 @@
 		<key>Name</key>
 		<string>LOCAL-IP</string>
 		<key>URL</key>
-		<string>rtsp://192.168.100.1/cam1/h264</string>
+		<string>rtsp://192.168.8.4/cam1/h264</string>
 		<key>Resolution</key>
 		<string>1</string>
 		<key>Encode Quality</key>

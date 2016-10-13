@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "PlayerManager.h"
-
-#import "SocketManager.h"
 #import "CommandGenerator.h"
 #import "SocketManager.h"
-#import <KSCrash.h>
-#import <KSCrash/KSCrashInstallation+Alert.h>
-#import <KSCrash/KSCrashInstallationStandard.h>
-#import <KSCrash/KSCrashInstallationQuincyHockey.h>
-#import <KSCrash/KSCrashInstallationEmail.h>
-#import <KSCrash/KSCrashInstallationVictory.h>
+#import "KSCrash.h"
+#import "KSCrashInstallation+Alert.h"
+#import "KSCrashInstallationStandard.h"
+#import "KSCrashInstallationQuincyHockey.h"
+#import "KSCrashInstallationEmail.h"
+#import "KSCrashInstallationVictory.h"
 
 #import <MessageUI/MessageUI.h>
 

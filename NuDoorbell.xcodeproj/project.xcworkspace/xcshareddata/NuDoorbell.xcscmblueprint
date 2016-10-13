@@ -7,14 +7,14 @@
     "52C3056B323C2357402EF0DCACAA7FF55A8F4DD5" : 0,
     "ADC923D26AE56310D2FFE0C1D54A805D6C230353" : 0
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FCA5ADF5-39B5-43A6-AC43-24FBC57628E7",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6C2FE040-8448-4D7E-99C0-DDD81B9EB6AF",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "52C3056B323C2357402EF0DCACAA7FF55A8F4DD5" : "NuDoorbell-iOS\/ModifiedKxMovie\/",
     "ADC923D26AE56310D2FFE0C1D54A805D6C230353" : "NuDoorbell-iOS\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "NuDoorbell",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NuDoorbell.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NuDoorbell.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/timsheu\/ModifiedKxMovie.git",

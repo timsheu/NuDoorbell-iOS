@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LiveViewController.h"
 
 @interface SettingDetailViewController : UIViewController{
     NSString *receivedString;

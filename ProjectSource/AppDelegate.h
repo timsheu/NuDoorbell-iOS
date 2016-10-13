@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <KSCrash.h>
-#import <KSCrash/KSCrashInstallation+Alert.h>
-#import <KSCrash/KSCrashInstallationStandard.h>
-#import <KSCrash/KSCrashInstallationQuincyHockey.h>
-#import <KSCrash/KSCrashInstallationEmail.h>
-#import <KSCrash/KSCrashInstallationVictory.h>
+#import "KSCrash.h"
+#import "KSCrashInstallation+Alert.h"
+#import "KSCrashInstallationStandard.h"
+#import "KSCrashInstallationQuincyHockey.h"
+#import "KSCrashInstallationEmail.h"
+#import "KSCrashInstallationVictory.h"
 #import "PlayerManager.h"
 #import "FCMExecutive.h"
 #import <arpa/inet.h>

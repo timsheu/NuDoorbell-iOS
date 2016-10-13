@@ -1,21 +1,25 @@
-platform :ios, '7.1'
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
 
-target "SkyEye" do
-	pod 'CocoaAsyncSocket', '~> 7.4.3'
-	pod 'JHChainableAnimations', '~> 1.3.0'
-	pod 'iOS-QR-Code-Encoder', '~> 0.0.1'
-	pod 'ObjectiveLibModbus', '~> 0.0'
-    pod 'KSCrash', '~> 1.6'
-    pod 'CocoaLumberjack'
-	pod 'Firebase/Core'
-	pod 'Firebase/Messaging'
-end
+target 'SkyEye' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'CocoaAsyncSocket'
+  pod 'EasyToast'
+  pod 'CocoaLumberjack', '~> 2.3.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  pod 'KSCrash' 
+  # Pods for SkyEye
 
-post_install do |installer_representation|
-    installer_representation.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['ARCHS'] = 'armv7 armv7s arm64'
-            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
-        end
-    end
+  target 'SkyEyeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SkyEyeUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end
