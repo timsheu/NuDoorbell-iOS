@@ -50,6 +50,12 @@
 		569FAB191CEC44F100D1E547 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569FAB181CEC44F100D1E547 /* SettingViewController.m */; };
 		56E40E171C996CAA00DDB8A6 /* liblzma.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E40E161C996CAA00DDB8A6 /* liblzma.tbd */; };
 		74C9288F86C22EBA234B0E8B /* Pods_SkyEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246D6E0AD8B1ED9FCD4602A8 /* Pods_SkyEye.framework */; };
+		A84177161DAF7E26004EAEB3 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A84177131DAF7E26004EAEB3 /* AudioRecorder.m */; };
+		A84177171DAF7E26004EAEB3 /* MicRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A84177151DAF7E26004EAEB3 /* MicRecorder.m */; };
+		A841771E1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */; };
+		A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */; };
+		A84177211DAF86D1004EAEB3 /* AnsweringUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */; };
+		A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */; };
 		A876F52E1DACBAC3007A3541 /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */; };
 		A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A876F5231DACBAC3007A3541 /* KxAudioManager.m */; };
 		A876F5371DACBAC3007A3541 /* kxmovie.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A876F5261DACBAC3007A3541 /* kxmovie.bundle */; };
@@ -155,6 +161,16 @@
 		5B530DDAB4E065CB9745FE5A /* Pods-SkyEyeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeUITests/Pods-SkyEyeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		600650676AC96E3D7BD49A60 /* Pods-SkyEyeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeUITests/Pods-SkyEyeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		710D7CA8F66082B656F6B026 /* Pods-SkyEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEye/Pods-SkyEye.debug.xcconfig"; sourceTree = "<group>"; };
+		A84177121DAF7E26004EAEB3 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		A84177131DAF7E26004EAEB3 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		A84177141DAF7E26004EAEB3 /* MicRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicRecorder.h; sourceTree = "<group>"; };
+		A84177151DAF7E26004EAEB3 /* MicRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicRecorder.m; sourceTree = "<group>"; };
+		A841771A1DAF8607004EAEB3 /* SkyEyeCommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeCommandGenerator.h; sourceTree = "<group>"; };
+		A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandGenerator.m; sourceTree = "<group>"; };
+		A841771C1DAF8607004EAEB3 /* SkyEyeCommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeCommandParser.h; sourceTree = "<group>"; };
+		A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandParser.m; sourceTree = "<group>"; };
+		A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnsweringUI.xib; path = ProjectSource/AnsweringUI/AnsweringUI.xib; sourceTree = SOURCE_ROOT; };
+		A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweringUI.swift; sourceTree = "<group>"; };
 		A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 		A876F4B51DACBAC2007A3541 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		A876F4B61DACBAC2007A3541 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
@@ -326,6 +342,10 @@
 		560AC2CD1C7164190021C819 /* Command Generator */ = {
 			isa = PBXGroup;
 			children = (
+				A841771A1DAF8607004EAEB3 /* SkyEyeCommandGenerator.h */,
+				A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */,
+				A841771C1DAF8607004EAEB3 /* SkyEyeCommandParser.h */,
+				A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */,
 				563927E21C92B41500717A2A /* RecieveDataParser.h */,
 				563927E31C92B41500717A2A /* RecieveDataParser.m */,
 				563927E51C92B41500717A2A /* CommandGenerator.h */,
@@ -361,6 +381,7 @@
 		561E841D1C4C848A00B62BCF = {
 			isa = PBXGroup;
 			children = (
+				A84177111DAF7E26004EAEB3 /* MicRecorder */,
 				A876F4B01DACBAC2007A3541 /* ModifiedKxMovie */,
 				56468CF01D6D6D8600268070 /* GoogleService-Info.plist */,
 				56955CEA1CC222530028E78C /* Default-568h.png */,
@@ -444,6 +465,8 @@
 			children = (
 				569C53F61C801D990072D81B /* SettingControllers */,
 				A876F5431DACD62C007A3541 /* StartViewController.swift */,
+				A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */,
+				A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */,
 			);
 			path = "ViewController Group";
 			sourceTree = "<group>";
@@ -479,6 +502,17 @@
 				5B530DDAB4E065CB9745FE5A /* Pods-SkyEyeUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A84177111DAF7E26004EAEB3 /* MicRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				A84177121DAF7E26004EAEB3 /* AudioRecorder.h */,
+				A84177131DAF7E26004EAEB3 /* AudioRecorder.m */,
+				A84177141DAF7E26004EAEB3 /* MicRecorder.h */,
+				A84177151DAF7E26004EAEB3 /* MicRecorder.m */,
+			);
+			path = MicRecorder;
 			sourceTree = "<group>";
 		};
 		A876F4B01DACBAC2007A3541 /* ModifiedKxMovie */ = {
@@ -837,6 +871,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84177211DAF86D1004EAEB3 /* AnsweringUI.xib in Resources */,
 				563927B61C92B2C500717A2A /* VideoCommandPropertyList.plist in Resources */,
 				56955CEC1CC222530028E78C /* Default-568h.png in Resources */,
 				56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */,
@@ -997,6 +1032,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A876F5381DACBAC3007A3541 /* KxMovieDecoder.m in Sources */,
+				A84177171DAF7E26004EAEB3 /* MicRecorder.m in Sources */,
 				560112B51CA3EBDD00ABB3CE /* SocketManager.m in Sources */,
 				561E842E1C4C848A00B62BCF /* AppDelegate.m in Sources */,
 				565C25D41D420B7500F9EE53 /* Constants.m in Sources */,
@@ -1009,13 +1045,17 @@
 				A876F5391DACBAC3007A3541 /* KxMovieGLView.m in Sources */,
 				A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */,
 				563927EC1C92B41500717A2A /* CommandParser.m in Sources */,
+				A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */,
 				561E842B1C4C848A00B62BCF /* main.m in Sources */,
 				56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */,
 				A876F53A1DACBAC3007A3541 /* KxMovieViewController.m in Sources */,
+				A841771E1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m in Sources */,
 				563927EA1C92B41500717A2A /* RecieveDataParser.m in Sources */,
+				A84177161DAF7E26004EAEB3 /* AudioRecorder.m in Sources */,
 				563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */,
 				563927BB1C92B33900717A2A /* PlayerManager.m in Sources */,
 				563927DC1C92B3CF00717A2A /* CommandPool.m in Sources */,
+				A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1162,6 +1202,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1192,6 +1233,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/Documents/Document/Project/iOS/NuDoorbell/NuDoorbell-iOS/ProjectSource/SkyEye-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -1208,6 +1250,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1238,6 +1281,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/Documents/Document/Project/iOS/NuDoorbell/NuDoorbell-iOS/ProjectSource/SkyEye-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALID_ARCHS = "armv7 arm64 armv7s";

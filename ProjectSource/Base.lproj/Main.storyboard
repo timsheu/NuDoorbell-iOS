@@ -229,7 +229,7 @@
             </objects>
             <point key="canvasLocation" x="3652" y="1004"/>
         </scene>
-        <!--NuWicam Player-->
+        <!--NuDoorbell Messenger-->
         <scene sceneID="DtF-t4-ML5">
             <objects>
                 <viewController id="1Yh-s7-prR" customClass="StartViewController" customModule="SkyEye" customModuleProvider="target" sceneMemberID="viewController">
@@ -352,7 +352,7 @@
                             <constraint firstItem="y6O-UA-xaT" firstAttribute="centerX" secondItem="f7b-G4-bC8" secondAttribute="centerX" id="jVF-lW-evZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="NuWicam Player" id="uLO-yh-piC"/>
+                    <navigationItem key="navigationItem" title="NuDoorbell Messenger" id="uLO-yh-piC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0T-tb-riS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

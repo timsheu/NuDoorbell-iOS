@@ -279,4 +279,51 @@
     tagLocal = value;
 }
 
+- (BOOL)sendCommandData:(NSData *)command toCamera:(NSString *)cameraSerial withTag:(int)tag{
+    NSString *string = [[NSString alloc] initWithData:command encoding:NSUTF8StringEncoding];
+    DDLogDebug(@"send command data: %@", string);
+    commandToBeSent = string;
+    commandToBeSentInData = [NSData dataWithData:command];
+    cameraSerialLocal = [NSString stringWithString:cameraSerial];
+    tagLocal = tag;
+    
+    PlayerManager *playerManager = [PlayerManager sharedInstance];
+    NSDictionary *dic = [playerManager.dictionarySetting objectForKey:cameraSerial];
+    NSString *fullURL = [dic objectForKey:@"URL"];
+    NSArray *split = [fullURL componentsSeparatedByString:@"/"];
+    NSString *splitURL;
+    if (split.count == 1) {
+        splitURL = [split objectAtIndex:0];
+    }else{
+        splitURL = [split objectAtIndex:2];
+    }
+    localURL = splitURL;
+    NSString *port = [dic objectForKey:@"port"];
+    if (_isConnected == NO || ![socket.connectedHost isEqualToString:_hostURL]){
+        return [self connectHost:splitURL withPort:port withTag:tag];
+    }else{
+        [self sendAudioData];
+        return NO;
+    }
+}
+- (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket{
+    socketSwap = newSocket;
+    [_delegate acceptNewSocket];
+//    DDLogDebug(@"did accept socket");
+}
+
+- (void)waitSocketConnection{
+    BOOL ret = [socketSwap acceptOnPort:8080 error:nil];
+//    DDLogDebug(@"wait socket connection");
+}
+
+- (void)sendMicAudio:(NSData *)data{
+    [socketSwap writeData:data withTimeout:-1 tag:SOCKET_UPLOAD_AUDIO_STREAM];
+//    DDLogDebug(@"send mic audio");
+}
+
+- (void)disconnectMicSocket{
+    [socketSwap disconnect];
+    [socket disconnect];
+}
 @end

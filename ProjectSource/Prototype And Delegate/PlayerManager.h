@@ -30,6 +30,7 @@ enum{
     SOCKET_READ_TAG_UPDATE_WIFI             = 35,
     SOCKET_READ_TAG_LIST_STREAM_ALIVE       = 36,
 
+    SOCKET_UPLOAD_AUDIO_STREAM              = 60
 };
 
 @interface PlayerManager : NSObject{

@@ -1,6 +1,6 @@
 //
 //  SocketManager.h
-//  
+//  SkyEye
 //
 //  Created by Chia-Cheng Hsu on 2016/1/27.
 //  Copyright © 2016年 Nuvoton. All rights reserved.
@@ -19,6 +19,7 @@
 - (void) updateCameraSettings;
 - (void) didConnectToHostWithTag:(int)tag;
 - (void) updateWiFiSettingsToTable;
+- (void) acceptNewSocket; 
 @end
 
 @interface SocketManager : NSObject <GCDAsyncSocketDelegate>{
@@ -46,7 +47,9 @@
 
 - (BOOL)connectHost:(NSString *)hostURL withPort:(NSString *)hostPort withTag:(int)tag;
 - (BOOL)sendCommand:(NSString *)commandString toCamera:(NSString *)cameraSerial withTag:(int)tag;
+- (BOOL)sendCommandData:(NSData *)command toCamera:(NSString *)cameraSerial withTag:(int)tag;
 - (void)setTag:(int)value commandCategory:(NSString *)string;
 - (void)waitSocketConnection;
+- (void)sendMicAudio:(NSData *)data;
 - (void)disconnectMicSocket;
 @end
