@@ -298,7 +298,7 @@
         splitURL = [split objectAtIndex:2];
     }
     localURL = splitURL;
-    NSString *port = [dic objectForKey:@"port"];
+    NSString *port = [dic objectForKey:@"Audio Port"];
     if (_isConnected == NO || ![socket.connectedHost isEqualToString:_hostURL]){
         return [self connectHost:splitURL withPort:port withTag:tag];
     }else{
@@ -309,17 +309,17 @@
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket{
     socketSwap = newSocket;
     [_delegate acceptNewSocket];
-//    DDLogDebug(@"did accept socket");
+    DDLogDebug(@"did accept socket");
 }
 
 - (void)waitSocketConnection{
     BOOL ret = [socketSwap acceptOnPort:8080 error:nil];
-//    DDLogDebug(@"wait socket connection");
+    DDLogDebug(@"wait socket connection");
 }
 
 - (void)sendMicAudio:(NSData *)data{
     [socketSwap writeData:data withTimeout:-1 tag:SOCKET_UPLOAD_AUDIO_STREAM];
-//    DDLogDebug(@"send mic audio");
+    DDLogDebug(@"send mic audio");
 }
 
 - (void)disconnectMicSocket{

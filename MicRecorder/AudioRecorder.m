@@ -56,6 +56,7 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
         _isRecording = NO;
         refToSelf = self;
         bufferSize = 4000;
+        _cameraSerial = @"Setup Camera";
     }
     return self;
 }
@@ -82,7 +83,7 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
     format->mReserved = 0;
 }
 
-- (void)startRecording {
+- (void)startRecordingMic {
     // tell n329 that iOS opened a socket for her
     socketManager = [SocketManager shareInstance];
     socketManager.delegate = self;
@@ -91,7 +92,7 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
     [socketManager sendCommandData:command toCamera:_cameraSerial withTag:SOCKET_UPLOAD_AUDIO_STREAM];
 }
 
-- (void)stopRecording {
+- (void)stopRecordingMic {
     socketManager = [SocketManager shareInstance];
     [socketManager disconnectMicSocket];
     recordState.recording = false;

@@ -9,7 +9,8 @@ target 'SkyEye' do
   pod 'CocoaLumberjack', '~> 2.3.0'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
-  pod 'KSCrash' 
+  pod 'KSCrash'
+  pod 'Toast'
   # Pods for SkyEye
 
   target 'SkyEyeTests' do

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271B8EB029B0D12669BFD7EB /* Pods_SkyEyeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032FA6807E5CDBCC5C3F9D21 /* Pods_SkyEyeUITests.framework */; };
 		560112B51CA3EBDD00ABB3CE /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927BA1C92B33900717A2A /* SocketManager.m */; };
 		561E842B1C4C848A00B62BCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 561E842A1C4C848A00B62BCF /* main.m */; };
 		561E842E1C4C848A00B62BCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 561E842D1C4C848A00B62BCF /* AppDelegate.m */; };
@@ -50,6 +51,7 @@
 		569FAB191CEC44F100D1E547 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569FAB181CEC44F100D1E547 /* SettingViewController.m */; };
 		56E40E171C996CAA00DDB8A6 /* liblzma.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E40E161C996CAA00DDB8A6 /* liblzma.tbd */; };
 		74C9288F86C22EBA234B0E8B /* Pods_SkyEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246D6E0AD8B1ED9FCD4602A8 /* Pods_SkyEye.framework */; };
+		A6AD7F6E0E563FF8B179460D /* Pods_SkyEyeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B202A968F37C3ACF698FA295 /* Pods_SkyEyeTests.framework */; };
 		A84177161DAF7E26004EAEB3 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A84177131DAF7E26004EAEB3 /* AudioRecorder.m */; };
 		A84177171DAF7E26004EAEB3 /* MicRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A84177151DAF7E26004EAEB3 /* MicRecorder.m */; };
 		A841771E1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */; };
@@ -91,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032FA6807E5CDBCC5C3F9D21 /* Pods_SkyEyeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyEyeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DA03A52CE2D3A3A9D51F01 /* Pods-SkyEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEye.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEye/Pods-SkyEye.release.xcconfig"; sourceTree = "<group>"; };
 		246D6E0AD8B1ED9FCD4602A8 /* Pods_SkyEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5212DA6BD44E96B3C483B878 /* Pods-SkyEyeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeTests/Pods-SkyEyeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +290,7 @@
 		A876F52D1DACBAC3007A3541 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A876F5431DACD62C007A3541 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A89800901DAE364C0092475A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../../../../../Users/cchsu20/Library/Developer/Xcode/DerivedData/NuDoorbell-fegdfsigywodrparukbaiesimugd/Build/Products/Debug-iphoneos/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
+		B202A968F37C3ACF698FA295 /* Pods_SkyEyeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyEyeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD67257C51EECF0C4D1728D /* Pods-SkyEyeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeTests/Pods-SkyEyeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -326,6 +330,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6AD7F6E0E563FF8B179460D /* Pods_SkyEyeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271B8EB029B0D12669BFD7EB /* Pods_SkyEyeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +752,8 @@
 				562A99311C5F255700852B9A /* AudioToolbox.framework */,
 				562A992F1C5F254D00852B9A /* AVFoundation.framework */,
 				246D6E0AD8B1ED9FCD4602A8 /* Pods_SkyEye.framework */,
+				B202A968F37C3ACF698FA295 /* Pods_SkyEyeTests.framework */,
+				032FA6807E5CDBCC5C3F9D21 /* Pods_SkyEyeUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

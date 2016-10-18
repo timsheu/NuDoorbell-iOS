@@ -7,14 +7,15 @@
 //
 
 #import "AppDelegate.h"
-
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+#pragma mark application
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    application.applicationIconBadgeNumber = 0;
     tokenRefreshed = NO;
     TAG = @"AppDelegate";
     // Override point for customization after application launch.
@@ -47,12 +48,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenRefreshNotification:)
                                                  name:kFIRInstanceIDTokenRefreshNotification object:nil];
     NSString *version = [dic objectForKey:@"Version"];
-    if (![version isEqualToString:@"1.0.2"] || version == nil) {
+    if (![version isEqualToString:@"1.0.3"] || version == nil) {
         [[PlayerManager sharedInstance] resetData];
     }
     
     NSString *token = [dic objectForKey:@"FCM Token"];
-    if (token != nil) {
+    if (token != nil && ![token isEqualToString:@""]) {
+        DDLogDebug(@"%@: FCM token: %@", TAG, token);
         ShmadiaConnectManager *manager = [ShmadiaConnectManager sharedInstance];
         manager.delegate = self;
         NSString *port = [NSString stringWithFormat:@"%d", SHMADIA_LOGIN_DEFAULT_PORT];
@@ -74,6 +76,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     // Pring full message.
     NSLog(@"%@: %@", TAG, userInfo);
     [[FCMExecutive sharedInstance] retrivedMessage:userInfo];
+    
 }
 // [END receive_message]
 
@@ -93,16 +96,31 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    DDLogDebug(@"%@, enter foreground", TAG);
+    application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [self connectToFcm];
-
+    DDLogDebug(@"%@, applicationDidBecomeActive", TAG);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[FIRInstanceID instanceID] setAPNSToken:deviceToken type:FIRInstanceIDAPNSTokenTypeSandbox];
+    // for production
+    //     [[FIRInstanceID instanceID] setAPNSToken:deviceToken type:FIRInstanceIDAPNSTokenTypeProd];
+    NSLog(@"Did Register for Remote Notifications with Device Token (%@)", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Did Fail to Register for Remote Notifications");
+    NSLog(@"%@, %@", error, error.localizedDescription);
+    
 }
 
 #pragma following: Shmadia delegate
@@ -142,7 +160,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     // should be done.
     tokenRefreshed = YES;
     refreshedToken = [[FIRInstanceID instanceID] token];
-    [[PlayerManager.sharedInstance dictionarySetting] setObject:refreshedToken forKey:@"FCM Token"];
+    PlayerManager *playerManager = [PlayerManager sharedInstance];
+    NSMutableDictionary *dic = [playerManager.dictionarySetting objectForKey:@"Setup Camera"];
+    [dic setObject:refreshedToken forKey:@"FCM Token"];
+    [playerManager updateSettingPropertyList];
     NSLog(@"InstanceID token: %@", refreshedToken);
     ShmadiaConnectManager *manager = [ShmadiaConnectManager sharedInstance];
     manager.delegate = self;
@@ -174,7 +195,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 }
 // [END connect_to_fcm]
 
-#pragma following: utilities
+#pragma mark utilities
 
 - (NSString *) ipConversion:(uint32_t)number{
     NSString *result = @"-1";

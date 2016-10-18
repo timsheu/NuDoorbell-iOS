@@ -39,6 +39,19 @@ class StartViewController: UIViewController, FCMExecutiveDelegate{
         self.view.showToast("Doorbell URL updated! Please reconnect!", position: .Bottom, popTime: 3, dismissOnTap: false)
     }
     
+    func openLiveStream() {
+        let dummy = ""
+        let alert = UIAlertController(title: "Ringing!", message: "Doorbell is ringing, show live stream now?", preferredStyle: .Alert)
+        let cancel = UIAlertAction(title: "Nope.", style: .Default, handler: nil)
+        let stream = UIAlertAction(title: "Now Thanks!", style: .Default, handler: {
+            (action: UIAlertAction!) -> Void in
+            self.liveButton(dummy)
+        })
+        alert.addAction(cancel)
+        alert.addAction(stream)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     private func setupCameraURL(){
         let dic = playerManager?.dictionarySetting["Setup Camera"] as! NSDictionary
         if let URL = dic["URL"]{

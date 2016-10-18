@@ -4,6 +4,8 @@
 <dict>
 	<key>Setup Camera</key>
 	<dict>
+		<key>Audio Port</key>
+		<string>80</string>
 		<key>FCM Token</key>
 		<string></string>
 		<key>Version</key>
@@ -13,7 +15,7 @@
 		<key>RTSPPort</key>
 		<string></string>
 		<key>PublicIPAddr</key>
-		<string>192.168.8.5</string>
+		<string>192.168.100.1</string>
 		<key>PrivateIPAddr</key>
 		<string></string>
 		<key>Wi-Fi AP Setup</key>
@@ -39,7 +41,7 @@
 		<key>Name</key>
 		<string>LOCAL-IP</string>
 		<key>URL</key>
-		<string>rtsp://192.168.8.4/cam1/h264</string>
+		<string>rtsp://192.168.100.1/cam1/h264</string>
 		<key>Resolution</key>
 		<string>1</string>
 		<key>Encode Quality</key>

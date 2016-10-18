@@ -45,6 +45,7 @@
             NSDictionary *apsAlert = [dictionary objectForKey:@"aps"];
             NSDictionary *alert = [apsAlert objectForKey:@"alert"];
             DDLogDebug(@"%@: aps: %@", TAG, [alert objectForKey:@"body"]);
+            [_delegate openLiveStream];
         } else if ([messageType isEqualToString:@"IP Data"]){
             NSArray *messageInfoArray = @[@"PublicIPAddr", @"PrivateIPAddr", @"HTTPPort", @"RTSPPort"];
             NSString *retriveInfo;

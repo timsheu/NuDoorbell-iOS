@@ -101,6 +101,7 @@ PODS:
     - KSCrash/Reporting/Tools
   - KSCrash/Reporting/Tools (1.8.13):
     - KSCrash/Recording
+  - Toast (3.0)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
@@ -109,6 +110,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
   - KSCrash
+  - Toast
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
@@ -124,7 +126,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   KSCrash: 4c3a83f133b60f4bd57e05235ebf8d46e36d378d
+  Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: 54ed9b89d8cafdcf1f06ff2eb9f78a3d76dc1821
+PODFILE CHECKSUM: 7fcc8ba21312df351bad1cfc11398f2e6b4e1bdf
 
 COCOAPODS: 1.0.1

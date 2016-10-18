@@ -14,6 +14,7 @@
 
 @protocol FCMExecutiveDelegate <NSObject>
 - (void) restartLiveStream;
+- (void) openLiveStream;
 @end
 
 @interface FCMExecutive : NSObject{

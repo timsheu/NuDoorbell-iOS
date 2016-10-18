@@ -48,8 +48,8 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
 
 + (id) sharedInstance;
 - (void)setupAudioFormat:(AudioStreamBasicDescription*)format;
-- (void)startRecording;
-- (void)stopRecording;
+- (void)startRecordingMic;
+- (void)stopRecordingMic;
 - (void)startPlayback;
 - (void)stopPlayback;
 - (void)feedSamplesToEngine:(UInt32)audioDataBytesCapacity audioData:(void *)audioData;

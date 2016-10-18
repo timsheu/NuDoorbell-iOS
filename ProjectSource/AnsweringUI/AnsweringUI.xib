@@ -21,7 +21,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agd-s1-SBd">
                     <rect key="frame" x="221" y="0.0" width="128" height="128"/>
-                    <color key="backgroundColor" red="0.0729509522552894" green="0.74029967516504658" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" image="phone-call"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -33,7 +33,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2A-aa-gbf">
                     <rect key="frame" x="31" y="0.0" width="128" height="128"/>
-                    <color key="backgroundColor" red="0.83691289506033451" green="0.0" blue="0.20827159296514483" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="S2A-aa-gbf" secondAttribute="height" multiplier="1:1" id="tuU-ST-9Xr"/>
                     </constraints>
@@ -68,7 +68,7 @@
                     <exclude reference="xQJ-3j-l6Z"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="683" y="1019"/>
+            <point key="canvasLocation" x="842" y="1036"/>
         </view>
     </objects>
     <resources>

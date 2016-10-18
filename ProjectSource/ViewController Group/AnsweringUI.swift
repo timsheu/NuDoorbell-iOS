@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import EasyToast
 @objc class AnsweringUI: UIView {
     let TAG = "AnsweringUI"
     var isAnswer = false
@@ -18,13 +18,19 @@ import UIKit
     @IBAction func answer(sender: AnyObject){
         print("\(TAG): answer button")
         if isAnswer == false {
-            isAnswer = MicRecorder.sharedInstance().startRecord()
+            answerButton.enabled = false
+            hangUpButton.enabled = true
+            isAnswer = true
+            AudioRecorder.sharedInstance().startRecordingMic()
         }
     }
     @IBAction func hangUp(sender: AnyObject) {
         print("\(TAG): hangUp button")
         if isAnswer == true{
-            isAnswer = MicRecorder.sharedInstance().stopRecord()
+            answerButton.enabled = true
+            hangUpButton.enabled = false
+            isAnswer = false
+            AudioRecorder.sharedInstance().stopRecordingMic()
         }
     }
     
@@ -44,6 +50,7 @@ import UIKit
         callingView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         hangUpButton.layer.masksToBounds = true
         hangUpButton.layer.cornerRadius = 15
+        hangUpButton.enabled = false
         answerButton.layer.masksToBounds = true
         answerButton.layer.cornerRadius = 15
         addSubview(callingView)
