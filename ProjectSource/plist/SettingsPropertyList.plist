@@ -9,7 +9,7 @@
 		<key>FCM Token</key>
 		<string></string>
 		<key>Version</key>
-		<string>1.0.2</string>
+		<string>1.0.4</string>
 		<key>HTTPPort</key>
 		<string>80</string>
 		<key>RTSPPort</key>
@@ -21,9 +21,9 @@
 		<key>Wi-Fi AP Setup</key>
 		<dict>
 			<key>SSID</key>
-			<string>ssid</string>
+			<string>Kenny-AF23</string>
 			<key>password</key>
-			<string>password</string>
+			<string>Kenny-AF23</string>
 		</dict>
 		<key>Transmission</key>
 		<string>UDP</string>

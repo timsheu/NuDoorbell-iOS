@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "KxMovieViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,6 +16,17 @@
 
 #pragma mark application
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    PlayerManager *manager = [PlayerManager sharedInstance];
+    NSDictionary *cameraDic = [manager.dictionarySetting objectForKey:@"Setup Camera"];
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
+    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    [DDLog addLogger:fileLogger];
+    
     application.applicationIconBadgeNumber = 0;
     tokenRefreshed = NO;
     TAG = @"AppDelegate";
@@ -38,7 +50,6 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     // [END register_for_notifications]
-    NSDictionary *dic = [PlayerManager.sharedInstance.dictionarySetting objectForKey:@"Setup Camera"];
     
     // [START configure_firebase]
     [FIRApp configure];
@@ -47,12 +58,11 @@
     // Add observer for InstanceID token refresh callback.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenRefreshNotification:)
                                                  name:kFIRInstanceIDTokenRefreshNotification object:nil];
-    NSString *version = [dic objectForKey:@"Version"];
-    if (![version isEqualToString:@"1.0.3"] || version == nil) {
+    NSString *version = [cameraDic objectForKey:@"Version"];
+    if (![version isEqualToString:@"1.0.4"] || version == nil) {
         [[PlayerManager sharedInstance] resetData];
     }
-    
-    NSString *token = [dic objectForKey:@"FCM Token"];
+    NSString *token = [cameraDic objectForKey:@"FCM Token"];
     if (token != nil && ![token isEqualToString:@""]) {
         DDLogDebug(@"%@: FCM token: %@", TAG, token);
         ShmadiaConnectManager *manager = [ShmadiaConnectManager sharedInstance];
@@ -162,6 +172,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     refreshedToken = [[FIRInstanceID instanceID] token];
     PlayerManager *playerManager = [PlayerManager sharedInstance];
     NSMutableDictionary *dic = [playerManager.dictionarySetting objectForKey:@"Setup Camera"];
+    if (refreshedToken == nil) {
+        NSLog(@"%@: token is nil", TAG);
+        return;
+    }
     [dic setObject:refreshedToken forKey:@"FCM Token"];
     [playerManager updateSettingPropertyList];
     NSLog(@"InstanceID token: %@", refreshedToken);
@@ -202,12 +216,9 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     number = ntohl(number);
     struct in_addr a;
     a.s_addr = number;
-    char *remote = inet_ntoa(a);
-    if (remote) {
-        result = [NSString stringWithUTF8String:remote];
-    }else {
-        DDLogDebug(@"%@: convert to nil, should never happen", TAG);
-    }
+    char remote[INET_ADDRSTRLEN];
+    inet_ntop(AF_INET, &(a.s_addr), remote, INET_ADDRSTRLEN);
+    result = [NSString stringWithUTF8String:remote];
     return result;
 }
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import EasyToast
+
 @objc class AnsweringUI: UIView {
     let TAG = "AnsweringUI"
     var isAnswer = false
@@ -15,22 +15,22 @@ import EasyToast
     @IBOutlet var hangUpButton: UIButton!
     @IBOutlet var answerButton: UIButton!
     
-    @IBAction func answer(sender: AnyObject){
+    @IBAction func answer(_ sender: AnyObject){
         print("\(TAG): answer button")
         if isAnswer == false {
-            answerButton.enabled = false
-            hangUpButton.enabled = true
+            answerButton.isEnabled = false
+            hangUpButton.isEnabled = true
             isAnswer = true
-            AudioRecorder.sharedInstance().startRecordingMic()
+            (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic()
         }
     }
-    @IBAction func hangUp(sender: AnyObject) {
+    @IBAction func hangUp(_ sender: AnyObject) {
         print("\(TAG): hangUp button")
         if isAnswer == true{
-            answerButton.enabled = true
-            hangUpButton.enabled = false
+            answerButton.isEnabled = true
+            hangUpButton.isEnabled = false
             isAnswer = false
-            AudioRecorder.sharedInstance().stopRecordingMic()
+            (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
         }
     }
     
@@ -44,22 +44,22 @@ import EasyToast
         setupView()
     }
     
-    private func setupView(){
+    fileprivate func setupView(){
         callingView = loadViewFromNid()
         callingView.frame = bounds
-        callingView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        callingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         hangUpButton.layer.masksToBounds = true
         hangUpButton.layer.cornerRadius = 15
-        hangUpButton.enabled = false
+        hangUpButton.isEnabled = false
         answerButton.layer.masksToBounds = true
         answerButton.layer.cornerRadius = 15
         addSubview(callingView)
     }
     
-    private func loadViewFromNid() -> UIView{
-        let bundle = NSBundle(forClass: self.dynamicType)
+    fileprivate func loadViewFromNid() -> UIView{
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "AnsweringUI", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
     /*

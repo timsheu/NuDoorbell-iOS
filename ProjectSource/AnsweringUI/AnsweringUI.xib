@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnsweringUI" customModule="SkyEye" customModuleProvider="target">
             <connections>
-                <outlet property="answerButton" destination="agd-s1-SBd" id="F4T-ew-G1G"/>
-                <outlet property="callingView" destination="iN0-l3-epB" id="KiC-7F-7dV"/>
-                <outlet property="hangUpButton" destination="S2A-aa-gbf" id="49K-ZC-Zt7"/>
+                <outlet property="answerButton" destination="agd-s1-SBd" id="kFt-E6-21v"/>
+                <outlet property="callingView" destination="iN0-l3-epB" id="aw0-EB-8BI"/>
+                <outlet property="hangUpButton" destination="S2A-aa-gbf" id="lX7-bC-QQ5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,20 +21,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agd-s1-SBd">
-                    <rect key="frame" x="221" y="0.0" width="128" height="128"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="phone-call"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornetRadius" value="15"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="answer:" destination="-1" eventType="touchUpInside" id="l4l-tG-kQH"/>
+                        <action selector="answer:" destination="-1" eventType="touchUpInside" id="2Ds-GW-DrD"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2A-aa-gbf">
-                    <rect key="frame" x="31" y="0.0" width="128" height="128"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="S2A-aa-gbf" secondAttribute="height" multiplier="1:1" id="tuU-ST-9Xr"/>
                     </constraints>
@@ -45,7 +44,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="hangUp:" destination="-1" eventType="touchUpInside" id="hhC-GX-io7"/>
+                        <action selector="hangUp:" destination="-1" eventType="touchUpInside" id="Vtj-ST-gmE"/>
                     </connections>
                 </button>
             </subviews>
@@ -72,7 +71,7 @@
         </view>
     </objects>
     <resources>
-        <image name="phone-call" width="128" height="128"/>
-        <image name="phone-hang" width="128" height="128"/>
+        <image name="phone-call" width="170" height="170"/>
+        <image name="phone-hang" width="170" height="170"/>
     </resources>
 </document>

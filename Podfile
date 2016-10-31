@@ -5,12 +5,12 @@ target 'SkyEye' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'CocoaAsyncSocket'
-  pod 'EasyToast'
   pod 'CocoaLumberjack', '~> 2.3.0'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'KSCrash'
   pod 'Toast'
+  pod 'ASToast'
   # Pods for SkyEye
 
   target 'SkyEyeTests' do

@@ -264,7 +264,7 @@
         splitURL = [split objectAtIndex:2];
     }
     localURL = splitURL;
-    NSString *port = [dic objectForKey:@"Public Port"];
+    NSString *port = [dic objectForKey:@"HTTPPort"];
     if (_isConnected == NO || ![socket.connectedHost isEqualToString:_hostURL]){
         DDLogDebug(@"connect to host; send command set");
         return [self connectHost:splitURL withPort:port withTag:tag];

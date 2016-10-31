@@ -53,7 +53,8 @@
         historyArray = [NSMutableArray arrayWithObject:@"History Records"];
         [historyArray addObjectsFromArray:[cameraDic objectForKey:@"History"]];
     }else{
-        [self listWiFiSettings];
+        //TODO: list wifi settings commented
+//        [self listWiFiSettings];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChangeSetting:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
@@ -167,8 +168,8 @@
         NSMutableDictionary *dic = [manager.dictionarySetting objectForKey:@"Setup Camera"];
         NSMutableDictionary *wifiDic = [dic objectForKey:@"Wi-Fi AP Setup"];
         if (wifiDic == nil) {
-            NSString *SSID = @"NuWicam";
-            NSString *PASS = @"12345678";
+            NSString *SSID = @"Kenny-AF23";
+            NSString *PASS = @"Kenny-AF23";
             [wifiDic setObject:SSID forKey:@"AP_SSID"];
             [wifiDic setObject:PASS forKey:@"AP_AUTH_KEY"];
         }
@@ -192,7 +193,7 @@
         } else if (indexPath.row == 3){
             [button setHidden:NO];
             restartWiFiButton = button;
-            [restartWiFiButton setTitle:@"Restart Wi-Fi to take effect." forState:UIControlStateNormal];
+            [restartWiFiButton setTitle:@"Click to set Wi-Fi." forState:UIControlStateNormal];
         }
         [dic setObject:wifiDic forKey:@"Wi-Fi AP Setup"];
     }else if ( [receivedString isEqualToString:@"APP Version"]){
@@ -218,7 +219,7 @@
         alert.tag = 0;
         [alert show];
     }else if([button isEqual:restartWiFiButton]){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Restart Required" message:@"Wi-Fi will restart, is it okay?" delegate:self cancelButtonTitle:@"Don't restart now" otherButtonTitles:@"Restart", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Setup Confirm" message:@"Wi-Fi setting will change, is it okay?" delegate:self cancelButtonTitle:@"Don't change" otherButtonTitles:@"Confirm", nil];
         alert.tag = 1;
         [alert show];
     }else if([button isEqual:sendReportButton]){
@@ -263,12 +264,12 @@
     }else if([textField isEqual:textfieldSSID]){
         NSString *string = [NSString stringWithString:textfieldSSID.text];
         NSMutableDictionary *wifiDic = [cameraDic objectForKey:@"Wi-Fi AP Setup"];
-        [wifiDic setObject:string forKey:@"SSID"];
+        [wifiDic setObject:string forKey:@"AP_SSID"];
         [self updateWiFiSettings];
     }else if([textField isEqual:textfieldPASS]){
         NSString *string = [NSString stringWithString:textfieldPASS.text];
         NSMutableDictionary *wifiDic = [cameraDic objectForKey:@"Wi-Fi AP Setup"];
-        [wifiDic setObject:string forKey:@"PASS"];
+        [wifiDic setObject:string forKey:@"AP_AUTH_KEY"];
         [self updateWiFiSettings];
     }
 }
@@ -343,7 +344,7 @@
 -(void)updateWiFiSettings{
     NSString *localSSID = [NSString stringWithString:textfieldSSID.text];
     NSString *localPASS = [NSString stringWithString:textfieldPASS.text];
-    NSString *subCommand = [NSString stringWithFormat:@"&AP_SSID=%@&AP_AUTH_KEY=%@", localSSID, localPASS];
+    NSString *subCommand = [NSString stringWithFormat:@"&ssid=%@&password=%@", localSSID, localPASS];
     NSArray *array = @[subCommand];
     SocketManager *socketManager = [SocketManager shareInstance];
     NSString *command = [CommandGenerator generateInfoCommandWithName:@"Update Wi-Fi Parameters" parameters:array];
@@ -452,10 +453,11 @@
         DDLogDebug(@"command: %@", generatedCommand);
         [socketManager sendCommand:generatedCommand toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_INFO_REBOOT];
     }else if (option == 1){
-        NSString *generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:@"Restart Wi-Fi"]];
-        SocketManager *socketManager = [SocketManager shareInstance];
-        DDLogDebug(@"command: %@", generatedCommand);
-        [socketManager sendCommand:generatedCommand toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_INFO_REBOOT];
+        [self updateWiFiSettings];
+//        NSString *generatedCommand = [NSString stringWithString:[CommandGenerator generateInfoCommandWithName:@"Restart Wi-Fi"]];
+//        SocketManager *socketManager = [SocketManager shareInstance];
+//        DDLogDebug(@"command: %@", generatedCommand);
+//        [socketManager sendCommand:generatedCommand toCamera:@"Setup Camera" withTag:SOCKET_READ_TAG_INFO_REBOOT];
     }
     
 }

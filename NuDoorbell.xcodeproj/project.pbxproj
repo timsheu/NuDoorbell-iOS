@@ -58,6 +58,7 @@
 		A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */; };
 		A84177211DAF86D1004EAEB3 /* AnsweringUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */; };
 		A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */; };
+		A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */; };
 		A876F52E1DACBAC3007A3541 /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */; };
 		A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A876F5231DACBAC3007A3541 /* KxAudioManager.m */; };
 		A876F5371DACBAC3007A3541 /* kxmovie.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A876F5261DACBAC3007A3541 /* kxmovie.bundle */; };
@@ -174,6 +175,7 @@
 		A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandParser.m; sourceTree = "<group>"; };
 		A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnsweringUI.xib; path = ProjectSource/AnsweringUI/AnsweringUI.xib; sourceTree = SOURCE_ROOT; };
 		A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweringUI.swift; sourceTree = "<group>"; };
+		A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastReceiver.swift; sourceTree = "<group>"; };
 		A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 		A876F4B51DACBAC2007A3541 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		A876F4B61DACBAC2007A3541 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				A876F5431DACD62C007A3541 /* StartViewController.swift */,
 				A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */,
 				A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */,
+				A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */,
 			);
 			path = "ViewController Group";
 			sourceTree = "<group>";
@@ -837,6 +840,8 @@
 					561E84251C4C848A00B62BCF = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = XZ7PL3RVBP;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -848,9 +853,11 @@
 					};
 					561E843E1C4C848A00B62BCF = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = XZ7PL3RVBP;
 					};
 					561E84491C4C848A00B62BCF = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = XZ7PL3RVBP;
 					};
 				};
 			};
@@ -1053,6 +1060,7 @@
 				A876F5391DACBAC3007A3541 /* KxMovieGLView.m in Sources */,
 				A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */,
 				563927EC1C92B41500717A2A /* CommandParser.m in Sources */,
+				A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */,
 				A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */,
 				561E842B1C4C848A00B62BCF /* main.m in Sources */,
 				56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */,
@@ -1211,7 +1219,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = XZ7PL3RVBP;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1243,6 +1252,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/Documents/Document/Project/iOS/NuDoorbell/NuDoorbell-iOS/ProjectSource/SkyEye-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALID_ARCHS = "armv7 arm64 armv7s";
@@ -1259,7 +1269,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = XZ7PL3RVBP;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1290,6 +1301,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/Documents/Document/Project/iOS/NuDoorbell/NuDoorbell-iOS/ProjectSource/SkyEye-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALID_ARCHS = "armv7 arm64 armv7s";
@@ -1300,6 +1312,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5212DA6BD44E96B3C483B878 /* Pods-SkyEyeTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nuvoton.SkyEyeTests;
@@ -1311,6 +1325,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EAD67257C51EECF0C4D1728D /* Pods-SkyEyeTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nuvoton.SkyEyeTests;
@@ -1322,6 +1338,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 600650676AC96E3D7BD49A60 /* Pods-SkyEyeUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nuvoton.SkyEyeUITests;
@@ -1335,6 +1353,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B530DDAB4E065CB9745FE5A /* Pods-SkyEyeUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nuvoton.SkyEyeUITests;

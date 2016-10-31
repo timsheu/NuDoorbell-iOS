@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import EasyToast
-class StartViewController: UIViewController, FCMExecutiveDelegate{
+
+class StartViewController: UIViewController, FCMExecutiveDelegate, BCRDelegate{
     let TAG = "StartViewController:"
     var playerManager: PlayerManager?
     var cameraURL: String?
     
-    @IBAction func liveButton(sender: AnyObject) {
+    @IBAction func liveButton(_ sender: AnyObject) {
         if cameraURL != nil {
-            let parameters: NSMutableDictionary = NSMutableDictionary.init(capacity: 1)
-            parameters[KxMovieParameterDisableDeinterlacing] = true
-            let kxmovie = KxMovieViewController.movieViewControllerWithContentPath(cameraURL, parameters: parameters as [NSObject : AnyObject])
-            presentViewController(kxmovie as! KxMovieViewController, animated: true, completion: nil)
+            let parameters = [KxMovieParameterDisableDeinterlacing:true]
+            
+            let kxmovie = KxMovieViewController.movieViewController(withContentPath: cameraURL, parameters: parameters as [AnyHashable: Any])
+            present(kxmovie as! KxMovieViewController, animated: true, completion: nil)
         }
     }
 
@@ -26,6 +26,8 @@ class StartViewController: UIViewController, FCMExecutiveDelegate{
         super.viewDidLoad()
         playerManager = PlayerManager.sharedInstance()
         setupCameraURL()
+        BroadcastReceiver.sharedInstance().delegate = self
+        BroadcastReceiver.sharedInstance().openBCReceiver()
         // Do any additional setup after loading the view.
     }
 
@@ -36,29 +38,35 @@ class StartViewController: UIViewController, FCMExecutiveDelegate{
     
     func restartLiveStream() {
         setupCameraURL()
-        self.view.showToast("Doorbell URL updated! Please reconnect!", position: .Bottom, popTime: 3, dismissOnTap: false)
+        
+//        self.view.showToast("Doorbell URL updated! Please reconnect!", duration: 3, position: .Bottom, completion: false)
     }
     
     func openLiveStream() {
         let dummy = ""
-        let alert = UIAlertController(title: "Ringing!", message: "Doorbell is ringing, show live stream now?", preferredStyle: .Alert)
-        let cancel = UIAlertAction(title: "Nope.", style: .Default, handler: nil)
-        let stream = UIAlertAction(title: "Now Thanks!", style: .Default, handler: {
+        let alert = UIAlertController(title: "Ringing!", message: "Doorbell is ringing, show live stream now?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Nope.", style: .default, handler: nil)
+        let stream = UIAlertAction(title: "Now Thanks!", style: .default, handler: {
             (action: UIAlertAction!) -> Void in
-            self.liveButton(dummy)
+            self.liveButton(dummy as AnyObject)
         })
         alert.addAction(cancel)
         alert.addAction(stream)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    private func setupCameraURL(){
+    fileprivate func setupCameraURL(){
         let dic = playerManager?.dictionarySetting["Setup Camera"] as! NSDictionary
         if let URL = dic["URL"]{
         cameraURL = URL as? String
         }
         print("\(TAG) camera URL: \(cameraURL)")
         FCMExecutive.sharedInstance().delegate = self
+    }
+    
+    //MARK: BCRDelegate
+    func showToast(message: String) {
+        self.view.makeToast(message)
     }
     /*
     // MARK: - Navigation

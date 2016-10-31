@@ -68,7 +68,7 @@
         NSDictionary *dic = [commandPool.arrayConfigCommandList objectAtIndex:1];
         NSString *baseCommand = [NSString stringWithString:[dic objectForKey:@"Base Command"]];
         NSString *generatedCommand = [NSString stringWithString:baseCommand];
-        NSMutableArray *commandArray = [NSMutableArray arrayWithObjects:head, generatedCommand, nil];
+        NSMutableArray *commandArray = [NSMutableArray arrayWithObjects:@"GET /", generatedCommand, nil];
         [commandArray addObjectsFromArray:array];
         [commandArray addObject:tail];
         returnString = [self appendHeaderString:commandArray];
