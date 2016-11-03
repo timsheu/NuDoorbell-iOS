@@ -68,6 +68,13 @@ class StartViewController: UIViewController, FCMExecutiveDelegate, BCRDelegate{
     func showToast(message: String) {
         self.view.makeToast(message)
     }
+    
+    func updateCameraURL() {
+        let cameraDic = playerManager?.dictionarySetting["Setup Camera"] as! NSMutableDictionary
+        if let URL = cameraDic["URL"]{
+            cameraURL = URL as? String
+        }
+    }
     /*
     // MARK: - Navigation
 

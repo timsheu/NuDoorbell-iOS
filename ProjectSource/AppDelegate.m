@@ -59,7 +59,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenRefreshNotification:)
                                                  name:kFIRInstanceIDTokenRefreshNotification object:nil];
     NSString *version = [cameraDic objectForKey:@"Version"];
-    if (![version isEqualToString:@"1.0.4"] || version == nil) {
+    if (![version isEqualToString:APP_VERSION] || version == nil) {
         [[PlayerManager sharedInstance] resetData];
     }
     NSString *token = [cameraDic objectForKey:@"FCM Token"];

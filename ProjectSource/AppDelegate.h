@@ -17,6 +17,7 @@
 #import "FCMExecutive.h"
 #import <arpa/inet.h>
 
+#define APP_VERSION @"1.0.5"
 
 @import Firebase;
 @interface AppDelegate : UIResponder <UIApplicationDelegate, ShmadiaDelegate>{

@@ -9,7 +9,7 @@
 		<key>FCM Token</key>
 		<string></string>
 		<key>Version</key>
-		<string>1.0.4</string>
+		<string>1.0.5</string>
 		<key>HTTPPort</key>
 		<string>80</string>
 		<key>RTSPPort</key>

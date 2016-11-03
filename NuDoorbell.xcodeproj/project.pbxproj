@@ -175,6 +175,7 @@
 		A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandParser.m; sourceTree = "<group>"; };
 		A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnsweringUI.xib; path = ProjectSource/AnsweringUI/AnsweringUI.xib; sourceTree = SOURCE_ROOT; };
 		A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweringUI.swift; sourceTree = "<group>"; };
+		A855D2141DC7262900B10892 /* SkyEye.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyEye.entitlements; sourceTree = "<group>"; };
 		A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastReceiver.swift; sourceTree = "<group>"; };
 		A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 		A876F4B51DACBAC2007A3541 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
@@ -389,6 +390,7 @@
 		561E841D1C4C848A00B62BCF = {
 			isa = PBXGroup;
 			children = (
+				A855D2141DC7262900B10892 /* SkyEye.entitlements */,
 				A84177111DAF7E26004EAEB3 /* MicRecorder */,
 				A876F4B01DACBAC2007A3541 /* ModifiedKxMovie */,
 				56468CF01D6D6D8600268070 /* GoogleService-Info.plist */,
@@ -1216,6 +1218,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SkyEye.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -1266,6 +1269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SkyEye.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;

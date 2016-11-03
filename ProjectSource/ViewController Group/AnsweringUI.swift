@@ -18,19 +18,13 @@ import UIKit
     @IBAction func answer(_ sender: AnyObject){
         print("\(TAG): answer button")
         if isAnswer == false {
-            answerButton.isEnabled = false
-            hangUpButton.isEnabled = true
-            isAnswer = true
-            (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic()
+            isAnswering(option: true)
         }
     }
     @IBAction func hangUp(_ sender: AnyObject) {
         print("\(TAG): hangUp button")
         if isAnswer == true{
-            answerButton.isEnabled = true
-            hangUpButton.isEnabled = false
-            isAnswer = false
-            (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
+            isAnswering(option: false)
         }
     }
     
@@ -61,6 +55,18 @@ import UIKit
         let nib = UINib(nibName: "AnsweringUI", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
+    }
+    
+    func isAnswering(option: Bool){
+        answerButton.isEnabled = !option
+        hangUpButton.isEnabled = option
+        isAnswer = option
+        if option == true {
+            (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic()
+        }else {
+            (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
+        }
+        
     }
     /*
     // Only override drawRect: if you perform custom drawing.
