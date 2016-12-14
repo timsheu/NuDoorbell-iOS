@@ -61,11 +61,25 @@ import UIKit
         answerButton.isEnabled = !option
         hangUpButton.isEnabled = option
         isAnswer = option
-        if option == true {
-            (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic()
-        }else {
-            (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
+        let settingDic = PlayerManager.sharedInstance().dictionarySetting
+        let cameraDic = settingDic?["Setup Camera"] as! NSDictionary
+        let isHTTP = cameraDic["Voice HTTP"] as! Bool
+        let cameraURL = cameraDic["PublicIPAddr"] as! String
+        let port = cameraDic["HTTPPort"] as! String
+        if isHTTP == true {
+            if option == true {
+                (AudioRecorder.sharedInstance() as AnyObject).startRecordingMicHttp(cameraURL, port: __uint16_t(port)!)
+            }else{
+                (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMicHttp()
+            }
+        }else{
+            if option == true {
+                (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic()
+            }else {
+                (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
+            }
         }
+        
         
     }
     /*

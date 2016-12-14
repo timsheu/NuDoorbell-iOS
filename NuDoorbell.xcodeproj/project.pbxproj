@@ -74,6 +74,7 @@
 		A876F5411DACBB5F007A3541 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A876F51E1DACBAC2007A3541 /* libswresample.a */; };
 		A876F5421DACBB5F007A3541 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A876F51F1DACBAC2007A3541 /* libswscale.a */; };
 		A876F5441DACD62C007A3541 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876F5431DACD62C007A3541 /* StartViewController.swift */; };
+		A8D3EA761DFE9ECC008CC452 /* SendVoiceHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D3EA751DFE9ECC008CC452 /* SendVoiceHttp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +294,7 @@
 		A876F52D1DACBAC3007A3541 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A876F5431DACD62C007A3541 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A89800901DAE364C0092475A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../../../../../Users/cchsu20/Library/Developer/Xcode/DerivedData/NuDoorbell-fegdfsigywodrparukbaiesimugd/Build/Products/Debug-iphoneos/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
+		A8D3EA751DFE9ECC008CC452 /* SendVoiceHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendVoiceHttp.swift; sourceTree = "<group>"; };
 		B202A968F37C3ACF698FA295 /* Pods_SkyEyeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyEyeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD67257C51EECF0C4D1728D /* Pods-SkyEyeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeTests/Pods-SkyEyeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -498,6 +500,7 @@
 				56842B761D6EF20E002CD283 /* FCMExecutive.m */,
 				568C0A6C1D700F280045E6DE /* ShmadiaConnectManager.h */,
 				568C0A6D1D700F280045E6DE /* ShmadiaConnectManager.m */,
+				A8D3EA751DFE9ECC008CC452 /* SendVoiceHttp.swift */,
 			);
 			path = "Prototype And Delegate";
 			sourceTree = "<group>";
@@ -1057,6 +1060,7 @@
 				A876F5441DACD62C007A3541 /* StartViewController.swift in Sources */,
 				563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */,
 				A876F53B1DACBAC3007A3541 /* README.md in Sources */,
+				A8D3EA761DFE9ECC008CC452 /* SendVoiceHttp.swift in Sources */,
 				568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */,
 				563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */,
 				A876F5391DACBAC3007A3541 /* KxMovieGLView.m in Sources */,

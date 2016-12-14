@@ -50,6 +50,8 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
 - (void)setupAudioFormat:(AudioStreamBasicDescription*)format;
 - (void)startRecordingMic;
 - (void)stopRecordingMic;
+- (void)startRecordingMicHttp:(NSString *)ip Port:(uint16_t)port;
+- (void)stopRecordingMicHttp;
 - (void)startPlayback;
 - (void)stopPlayback;
 - (void)feedSamplesToEngine:(UInt32)audioDataBytesCapacity audioData:(void *)audioData;

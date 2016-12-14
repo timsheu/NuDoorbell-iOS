@@ -1,7 +1,11 @@
 #import "AudioRecorder.h"
+#import "SkyEye-Swift.h"
 
 #define AUDIO_DATA_TYPE_FORMAT float
-
+@interface AudioRecorder()<SendVoiceHttpDelegate>{
+    SendVoiceHttp *svh;
+}
+@end
 @implementation AudioRecorder
 
 AudioRecorder *refToSelf;
@@ -50,9 +54,34 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
     [rec feedSamplesToEngine:inBuffer->mAudioDataBytesCapacity audioData:inBuffer->mAudioData];
 }
 
+void AudioInputCallbackHttp(void * inUserData,  // Custom audio metadata
+                        AudioQueueRef inAQ,
+                        AudioQueueBufferRef inBuffer,
+                        const AudioTimeStamp * inStartTime,
+                        UInt32 inNumberPacketDescriptions,
+                        const AudioStreamPacketDescription * inPacketDescs) {
+    
+    RecordState *recordState = (RecordState*) inUserData;
+    OSStatus status = AudioFileWritePackets(recordState->audioFile,
+                                            false,
+                                            inBuffer->mAudioDataByteSize,
+                                            inPacketDescs,
+                                            recordState->currentPacket,
+                                            &inNumberPacketDescriptions,
+                                            inBuffer->mAudioData);
+    if (status == 0) {
+        recordState->currentPacket += inNumberPacketDescriptions;
+    }
+    AudioQueueEnqueueBuffer(recordState->queue, inBuffer, 0, NULL);
+    
+    AudioRecorder *rec = refToSelf;
+    [rec sendData:inBuffer->mAudioData size:inBuffer->mAudioDataBytesCapacity];
+}
+
 - (id)init
 {
     if (self = [super init]) {
+        svh = [[SendVoiceHttp alloc] init];
         _isRecording = NO;
         refToSelf = self;
         bufferSize = 4000;
@@ -95,6 +124,24 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
 - (void)stopRecordingMic {
     socketManager = [SocketManager shareInstance];
     [socketManager disconnectMicSocket];
+    [self stopRecordingMicHttp];
+}
+
+- (void)startRecordingMicHttp:(NSString *)ip Port:(uint16_t)port{
+    if (svh == nil) {
+        svh = [[SendVoiceHttp alloc] initWithIp:ip port:port];
+    }else {
+        [svh setupSVHWithIp:ip port:port];
+    }
+    svh.delegate = self;
+    [svh connectVoiceHttpSocket];
+}
+
+- (void)didConnectedSendVoiceHttp{
+    [self startHttpSendingVoice];
+}
+
+- (void)stopRecordingMicHttp{
     recordState.recording = false;
     
     AudioQueueStop(recordState.queue, true);
@@ -113,6 +160,11 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
     NSMutableData *tempData = [NSMutableData dataWithBytes:audioData length:(NSUInteger)audioDataBytesCapacity];
     [socketManager sendMicAudio:tempData];
 //    [_delegate audioDataInCommand:command];
+}
+
+- (void)sendData:(void *)voice size:(UInt32)size{
+    NSData *temp = [NSData dataWithBytes:voice length:size];
+    [svh writeVoiceDataWithData:temp];
 }
 
 - (void)acceptNewSocket{
@@ -156,6 +208,37 @@ void AudioInputCallback(void * inUserData,  // Custom audio metadata
         status = AudioQueueStart(recordState.queue, NULL);
     }
 }
+
+- (void)startHttpSendingVoice{
+    [self setupAudioFormat:&recordState.dataFormat];
+    
+    recordState.currentPacket = 0;
+    
+    OSStatus status;
+    
+    status = AudioQueueNewInput(&recordState.dataFormat,
+                                AudioInputCallbackHttp,
+                                &recordState,
+                                CFRunLoopGetCurrent(),
+                                kCFRunLoopCommonModes,
+                                0,
+                                &recordState.queue);
+    
+    if (status == 0) {
+        
+        for (int i = 0; i < NUM_BUFFERS; i++) {
+            AudioQueueAllocateBuffer(recordState.queue, bufferSize, &recordState.buffers[i]);
+            AudioQueueEnqueueBuffer(recordState.queue, recordState.buffers[i], 0, nil);
+        }
+        
+        status = AudioFileCreateWithURL(filePath, kAudioFileAIFFType, &recordState.dataFormat, kAudioFileFlags_EraseFile, &recordState.audioFile);
+        
+        recordState.recording = true;
+        _isRecording = recordState.recording;
+        status = AudioQueueStart(recordState.queue, NULL);
+    }
+}
+
 
 - (void)startPlayback{
     m_audioFormat.dataFormat.mFormatID = kAudioFormatLinearPCM;

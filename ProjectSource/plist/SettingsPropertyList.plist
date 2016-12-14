@@ -4,6 +4,8 @@
 <dict>
 	<key>Setup Camera</key>
 	<dict>
+		<key>Voice HTTP</key>
+		<true/>
 		<key>Audio Port</key>
 		<string>80</string>
 		<key>FCM Token</key>

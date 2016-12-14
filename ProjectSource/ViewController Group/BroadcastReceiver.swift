@@ -49,7 +49,7 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
         isConnected = true
     }
     
-    func udpSocket(_ sock: GCDAsyncUdpSocket, didNotConnect error: Error) {
+    func udpSocket(_ sock: GCDAsyncUdpSocket, didNotConnect error: Error?) {
         print("\(TAG): didNotConnect")
         isConnected = false
         if retry >= 0 {
@@ -76,11 +76,11 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
         print("\(TAG): didSendDataWithTag")
     }
     
-    func udpSocketDidClose(_ sock: GCDAsyncUdpSocket, withError error: Error) {
+    func udpSocketDidClose(_ sock: GCDAsyncUdpSocket, withError error: Error?) {
         print("\(TAG): udpSocketDidClose")
     }
     
-    func udpSocket(_ sock: GCDAsyncUdpSocket, didNotSendDataWithTag tag: Int, dueToError error: Error) {
+    func udpSocket(_ sock: GCDAsyncUdpSocket, didNotSendDataWithTag tag: Int, dueToError error: Error?) {
         print("\(TAG): didNotSendDataWithTag")
     }
     

@@ -9,6 +9,7 @@
 #include "FCMExecutive.h"
 #include "AudioRecorder.h"
 #import "GCDAsyncUdpSocket.h"
+#import "GCDAsyncSocket.h"
 #import <arpa/inet.h>
 
 //#import <KSCrash/KSCrash.h>
