@@ -11,10 +11,10 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
-  - Firebase/Core (3.10.0):
+  - Firebase/Core (3.11.0):
     - FirebaseAnalytics (= 3.6.0)
-    - FirebaseCore (= 3.4.5)
-  - Firebase/Messaging (3.10.0):
+    - FirebaseCore (= 3.4.6)
+  - Firebase/Messaging (3.11.0):
     - Firebase/Core
     - FirebaseMessaging (= 1.2.1)
   - FirebaseAnalytics (3.6.0):
@@ -23,7 +23,7 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.4.5):
+  - FirebaseCore (3.4.6):
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.8)
@@ -102,6 +102,7 @@ PODS:
     - KSCrash/Reporting/Tools
   - KSCrash/Reporting/Tools (1.11.2):
     - KSCrash/Recording
+  - SharkORM (2.0.9)
   - Toast (3.1.0)
 
 DEPENDENCIES:
@@ -111,23 +112,25 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
   - KSCrash
+  - SharkORM
   - Toast
 
 SPEC CHECKSUMS:
   ASToast: 31c5e0c8050b85d86416867c42e7b1ee43c88fcd
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
-  Firebase: 387f37c7dca894a02708da9ff35ba147040eae9e
+  Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
-  FirebaseCore: 1e383fdfe37b6b5d6ff88e84204bdee30276af0f
+  FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FirebaseMessaging: acf66347e43c5637c697060c3001d25c809a4131
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   KSCrash: 8acc46aca72b2772d5d1e3cba1da9173db4d705e
+  SharkORM: 4a7702d6b4deee7ac4454ff5c092141a05cdcebf
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: 18c604508f881565552daa11767662c7f691fe0e
+PODFILE CHECKSUM: a3ba9fcfcb9698d23882329ab87bed3b656b7e81
 
 COCOAPODS: 1.1.1

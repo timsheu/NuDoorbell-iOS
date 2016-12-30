@@ -16,11 +16,12 @@
 #import "PlayerManager.h"
 #import "FCMExecutive.h"
 #import <arpa/inet.h>
+#import "SharkORM.h"
 
 #define APP_VERSION @"1.0.5"
 
 @import Firebase;
-@interface AppDelegate : UIResponder <UIApplicationDelegate, ShmadiaDelegate>{
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ShmadiaDelegate, SRKDelegate>{
     NSString *TAG, *refreshedToken;
     BOOL tokenRefreshed;
 }

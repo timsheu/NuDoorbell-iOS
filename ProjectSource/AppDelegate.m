@@ -16,6 +16,8 @@
 
 #pragma mark application
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [SharkORM setDelegate:self];
+    [SharkORM openDatabaseNamed:@"device_list"];
     PlayerManager *manager = [PlayerManager sharedInstance];
     NSDictionary *cameraDic = [manager.dictionarySetting objectForKey:@"Setup Camera"];
     
