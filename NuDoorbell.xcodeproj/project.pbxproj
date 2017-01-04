@@ -59,6 +59,9 @@
 		A84177211DAF86D1004EAEB3 /* AnsweringUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */; };
 		A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */; };
 		A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */; };
+		A8676AF51E163F860087EB4C /* EditDBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */; };
+		A8676AF61E163F860087EB4C /* SetDBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF31E163F860087EB4C /* SetDBTableViewController.swift */; };
+		A8676AF71E163F860087EB4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF41E163F860087EB4C /* ViewController.swift */; };
 		A86ACAE41E0B810600CDE311 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86ACAE31E0B810600CDE311 /* DeviceData.swift */; };
 		A876F52E1DACBAC3007A3541 /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */; };
 		A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A876F5231DACBAC3007A3541 /* KxAudioManager.m */; };
@@ -179,6 +182,9 @@
 		A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweringUI.swift; sourceTree = "<group>"; };
 		A855D2141DC7262900B10892 /* SkyEye.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyEye.entitlements; sourceTree = "<group>"; };
 		A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastReceiver.swift; sourceTree = "<group>"; };
+		A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditDBTableViewController.swift; path = SettingControllers/EditDBTableViewController.swift; sourceTree = "<group>"; };
+		A8676AF31E163F860087EB4C /* SetDBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDBTableViewController.swift; path = SettingControllers/SetDBTableViewController.swift; sourceTree = "<group>"; };
+		A8676AF41E163F860087EB4C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SettingControllers/ViewController.swift; sourceTree = "<group>"; };
 		A86ACAE31E0B810600CDE311 /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
 		A876F4B51DACBAC2007A3541 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
@@ -477,6 +483,9 @@
 		56A9EFA01C585B8A00D08F74 /* ViewController Group */ = {
 			isa = PBXGroup;
 			children = (
+				A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */,
+				A8676AF31E163F860087EB4C /* SetDBTableViewController.swift */,
+				A8676AF41E163F860087EB4C /* ViewController.swift */,
 				569C53F61C801D990072D81B /* SettingControllers */,
 				A876F5431DACD62C007A3541 /* StartViewController.swift */,
 				A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */,
@@ -843,7 +852,7 @@
 				KnownAssetTags = (
 					LiveTapGesture,
 				);
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Nuvoton;
 				TargetAttributes = {
 					561E84251C4C848A00B62BCF = {
@@ -1079,9 +1088,11 @@
 				A876F5441DACD62C007A3541 /* StartViewController.swift in Sources */,
 				563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */,
 				A876F53B1DACBAC3007A3541 /* README.md in Sources */,
+				A8676AF71E163F860087EB4C /* ViewController.swift in Sources */,
 				A86ACAE41E0B810600CDE311 /* DeviceData.swift in Sources */,
 				A8D3EA761DFE9ECC008CC452 /* SendVoiceHttp.swift in Sources */,
 				568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */,
+				A8676AF61E163F860087EB4C /* SetDBTableViewController.swift in Sources */,
 				563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */,
 				A876F5391DACBAC3007A3541 /* KxMovieGLView.m in Sources */,
 				A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */,
@@ -1089,6 +1100,7 @@
 				A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */,
 				A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */,
 				561E842B1C4C848A00B62BCF /* main.m in Sources */,
+				A8676AF51E163F860087EB4C /* EditDBTableViewController.swift in Sources */,
 				56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */,
 				A876F53A1DACBAC3007A3541 /* KxMovieViewController.m in Sources */,
 				A841771E1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m in Sources */,
@@ -1165,8 +1177,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1188,7 +1202,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1209,8 +1223,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1226,10 +1242,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1239,6 +1256,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 710D7CA8F66082B656F6B026 /* Pods-SkyEye.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
@@ -1290,6 +1308,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04DA03A52CE2D3A3A9D51F01 /* Pods-SkyEye.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
@@ -1314,7 +1333,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ModifiedKxMovie/FFmpeg-iOS/lib",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

@@ -21,7 +21,7 @@
 import UIKit
 
 class DeviceData: SRKObject {
-    dynamic var serial: Int = 0                 // Serial number of the device
+    dynamic var name: String?                   // Device name
     dynamic var deviceType: String?             // NuDoorbell, SkyEye, NuWiCam
     dynamic var publicIP: String?               // public ip of the device
     dynamic var privateIP: String?              // private ip of the device
@@ -48,4 +48,28 @@ class DeviceData: SRKObject {
     dynamic var history4: String?               // Device history list
     dynamic var history5: String?               // Device history list
     
+    override init() {
+        super.init()
+        name = "NuDoorbell"
+        deviceType = "NuDoorbell"
+        publicIP = "192.168.100.1"
+        privateIP = "192.168.100.1"
+        httpPort = 80
+        rtspPort = 554
+        isVoiceUploadHttp = false
+        isAdaptive = false
+        isFixedQuality = false
+        isFixedBitrate = false
+        isTCPTransmission = true
+        isMute = true
+        isStorageAvailable = true
+        isRecorderOn = false
+        resolution = "QVGA"
+        encodeQulaity = 30
+        bitRate = 1000
+        fps = 20
+        ssid = "NuDoorbell"
+        password = "12345678"
+        history1 = "192.168.100.1"
+    }
 }
