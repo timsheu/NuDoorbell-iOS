@@ -16,8 +16,8 @@ class StartViewController: UIViewController, FCMExecutiveDelegate, BCRDelegate{
     @IBAction func liveButton(_ sender: AnyObject) {
         if cameraURL != nil {
             let parameters = [KxMovieParameterDisableDeinterlacing:true]
-            
-            let kxmovie = KxMovieViewController.movieViewController(withContentPath: cameraURL, parameters: parameters as [AnyHashable: Any])
+            let deviceID: NSNumber = 0
+            let kxmovie = KxMovieViewController.movieViewController(withContentPath: cameraURL, parameters: parameters as [AnyHashable: Any], deviceID: deviceID)
             present(kxmovie as! KxMovieViewController, animated: true, completion: nil)
         }
     }

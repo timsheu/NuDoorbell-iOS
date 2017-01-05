@@ -9,6 +9,7 @@
 import UIKit
 
 @objc class AnsweringUI: UIView {
+    var deviceID: NSNumber = 0
     let TAG = "AnsweringUI"
     var isAnswer = false
     @IBOutlet var callingView: UIView!
@@ -61,11 +62,12 @@ import UIKit
         answerButton.isEnabled = !option
         hangUpButton.isEnabled = option
         isAnswer = option
-        let settingDic = PlayerManager.sharedInstance().dictionarySetting
-        let cameraDic = settingDic?["Setup Camera"] as! NSDictionary
-        let isHTTP = cameraDic["Voice HTTP"] as! Bool
-        let cameraURL = cameraDic["PublicIPAddr"] as! String
-        let port = cameraDic["HTTPPort"] as! String
+        let result = DeviceData.query().where(withFormat: "id = %@", withParameters: [deviceID]).fetch()
+        let deviceData = result?[0] as! DeviceData
+        let isHTTP = deviceData.isVoiceUploadHttp;
+        let cameraURL = "rtsp://" + deviceData.publicIP! + "/cam1/h264"
+        let port = String.init(deviceData.httpPort)
+        print("isAnswering: \(isHTTP), \(cameraURL), \(port)")
         if isHTTP == true {
             if option == true {
                 (AudioRecorder.sharedInstance() as AnyObject).startRecordingMicHttp(cameraURL, port: __uint16_t(port)!)
@@ -79,8 +81,10 @@ import UIKit
                 (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
             }
         }
-        
-        
+    }
+    
+    func setDeviceID(deviceID: NSNumber){
+        self.deviceID = deviceID
     }
     /*
     // Only override drawRect: if you perform custom drawing.

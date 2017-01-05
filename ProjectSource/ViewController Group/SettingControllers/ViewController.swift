@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SetDBTableDelegate, EditDBTableDelegate{
-    var items = Array<NSDictionary>()
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, EditDBTableDelegate{
+    var items = Array<[String: Any]>()
     var onClickIndex: IndexPath?
     @IBOutlet weak var collection: UICollectionView!
     override func viewDidLoad() {
@@ -21,9 +21,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let publicIP = device.publicIP
             let privateIP = device.privateIP
             let type = device.deviceType
-            let dic: [String: Any] = ["name": name!, "id": id!, "publicIP": publicIP!, "privateIP": privateIP!, "type": type!]
-            print("Dic: \(dic)")
-            items.append(dic as NSDictionary)
+            let item: [String: Any] = ["name": name!, "id": id!, "publicIP": publicIP!, "privateIP": privateIP!, "type": type!]
+            print("Dic: \(item)")
+            items.append(item)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -75,15 +75,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Plus" {
-            let table = segue.destination as! SetDBTableViewController
-            table.delegate = self
-        }else if segue.identifier == "Edit"{
-            let table = segue.destination as! EditDBTableViewController
-            let dic = items[(onClickIndex?.item)!]
-            table.passData(dictionary: dic)
-            table.delegate = self
+        let table = segue.destination as! EditDBTableViewController
+        var dic = [String: Any]();
+        table.delegate = self
+        if segue.identifier == "Edit" {
+            dic = items[(onClickIndex?.item)!]
         }
+        table.passData(dictionary: dic)
     }
     
     //MARK: SetDBTable delegate
@@ -96,14 +94,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         deviceData.privateIP = setting["publicIP"]!
         _ = deviceData.commit()
         print("device count: \(DeviceData.query().count())")
-        let dic = NSMutableDictionary.init(dictionary: setting)
+        var dic = setting
         dic["id"] = String.init(describing: deviceData.id)
-        items.append(dic as NSDictionary)
+        items.append(dic)
         collection.reloadData()
     }
     
     //MARK: EditDBTable delegate
-    func editDevice(setting: [String : Any]) {
+    func editDevice(setting: [String: Any]) {
         print("editDevice: \(setting)")
         if let row = setting["id"]{
             let queryString = String(format: "id = %@", row as! NSNumber)
@@ -116,16 +114,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             deviceData.privateIP = setting["publicIP"] as? String
             _ = deviceData.commit()
             
-            let item = items[(onClickIndex?.item)!]
-            let newItem = NSMutableDictionary.init(dictionary: item)
-            newItem["type"] = setting["type"] as! String
-            newItem["name"] = setting["name"] as! String
-            newItem["publicIP"] = setting["publicIP"] as! String
-            newItem["privateIP"] = setting["publicIP"] as! String
-            items[(onClickIndex?.item)!] = newItem as NSDictionary
-            collection.reloadData()
+            var item = items[(onClickIndex?.item)!]
+            item["type"] = setting["type"] as! String
+            item["name"] = setting["name"] as! String
+            item["publicIP"] = setting["publicIP"] as! String
+            item["privateIP"] = setting["publicIP"] as! String
+            items[(onClickIndex?.item)!] = item
+        }else{
+            let deviceData = DeviceData();
+            deviceData.name = setting["name"] as? String
+            deviceData.deviceType = setting["type"] as? String
+            deviceData.publicIP = setting["publicIP"] as? String
+            deviceData.privateIP = setting["publicIP"] as? String
+            _ = deviceData.commit()
+            print("device count: \(DeviceData.query().count())")
+            var item = setting
+            item["id"] = deviceData.id
+            items.append(item)
         }
-    
+        collection.reloadData()
     }
     
     //MARK: short/long click event
@@ -134,6 +141,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let point = gesture.location(in: collection)
         let indexpath = collection.indexPathForItem(at: point)
         onClickIndex = indexpath
+        let item = items[(onClickIndex?.item)!]
+        if let ip = item["publicIP"]{
+            let ip = ip as! String
+            let cameraURL = "rtsp" + ip + "/cam1/h264"
+            let parameters = [KxMovieParameterDisableDeinterlacing:true]
+            let deviceID: NSNumber = item["id"] as! NSNumber
+            let kxmovie = KxMovieViewController.movieViewController(withContentPath: cameraURL, parameters: parameters as [AnyHashable: Any], deviceID: deviceID)
+            present(kxmovie as! KxMovieViewController, animated: true, completion: nil)
+        }
+
     }
     
     func longPress(gesture: UILongPressGestureRecognizer){

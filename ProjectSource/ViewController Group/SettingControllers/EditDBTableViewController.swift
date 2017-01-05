@@ -16,7 +16,7 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
     var nameTextField: UITextField?
     var urlTextField: UITextField?
     var typeSegment: UISegmentedControl?
-    var receiveDictionary: NSMutableDictionary?
+    var receiveDictionary = [String: Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -65,7 +65,7 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
             label.text = "Name"
             nameTextField = cell.viewWithTag(31) as? UITextField
             nameTextField?.delegate = self
-            if let name = receiveDictionary?["name"]{
+            if let name = receiveDictionary["name"]{
                 nameTextField?.text = name as? String
             }else {
                 nameTextField?.text = "NuDoorbell"
@@ -76,7 +76,7 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
             label.text = "URL"
             urlTextField = cell.viewWithTag(31) as? UITextField
             urlTextField?.delegate = self
-            if let publicIP = receiveDictionary?["publicIP"] {
+            if let publicIP = receiveDictionary["publicIP"] {
                 urlTextField?.text = publicIP as? String
             }else{
                 urlTextField?.text = "192.168.100.1"
@@ -86,7 +86,7 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
             let label = cell.viewWithTag(32) as! UILabel
             label.text = "Type"
             typeSegment = cell.viewWithTag(33) as? UISegmentedControl
-            if let type = receiveDictionary?["type"]{
+            if let type = receiveDictionary["type"]{
                 let type = type as! String
                 switch type {
                 case "NuDoorbell":
@@ -101,6 +101,8 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
                 default:
                     break
                 }
+            }else{
+                typeSegment?.selectedSegmentIndex = 0
             }
             typeSegment?.addTarget(self, action: #selector(EditDBTableViewController.segmentedValueChanged(_:)), for: .valueChanged)
             break;
@@ -133,10 +135,15 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
         }else if typeSegment?.selectedSegmentIndex == 2{
             type = "NuWicam"
         }
-        let id = receiveDictionary?["id"]
-        let map = ["name": name, "publicIP": url, "type": type, "id": id]
+        
+        var map = ["name": name, "publicIP": url, "type": type] as [String: Any]
+        
+        if let id = receiveDictionary["id"]{
+            map["id"] = id
+        }
+        
         print("Map: \(map)\n")
-        delegate?.editDevice(setting: map as [String: Any])
+        delegate?.editDevice(setting: map)
         _ = navigationController?.popViewController(animated: true)
         
     }
@@ -159,8 +166,8 @@ class EditDBTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     //MARK: receive data from last controller
-    func passData(dictionary: NSDictionary) -> Void {
-        receiveDictionary = NSMutableDictionary.init(dictionary: dictionary)
+    func passData(dictionary: [String: Any]) -> Void {
+        receiveDictionary = dictionary
         print("\(receiveDictionary)")
     }
     

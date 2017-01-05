@@ -60,7 +60,6 @@
 		A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */; };
 		A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */; };
 		A8676AF51E163F860087EB4C /* EditDBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */; };
-		A8676AF61E163F860087EB4C /* SetDBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF31E163F860087EB4C /* SetDBTableViewController.swift */; };
 		A8676AF71E163F860087EB4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF41E163F860087EB4C /* ViewController.swift */; };
 		A86ACAE41E0B810600CDE311 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86ACAE31E0B810600CDE311 /* DeviceData.swift */; };
 		A876F52E1DACBAC3007A3541 /* build-ffmpeg.sh in Resources */ = {isa = PBXBuildFile; fileRef = A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */; };
@@ -183,7 +182,6 @@
 		A855D2141DC7262900B10892 /* SkyEye.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyEye.entitlements; sourceTree = "<group>"; };
 		A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastReceiver.swift; sourceTree = "<group>"; };
 		A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditDBTableViewController.swift; path = SettingControllers/EditDBTableViewController.swift; sourceTree = "<group>"; };
-		A8676AF31E163F860087EB4C /* SetDBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDBTableViewController.swift; path = SettingControllers/SetDBTableViewController.swift; sourceTree = "<group>"; };
 		A8676AF41E163F860087EB4C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SettingControllers/ViewController.swift; sourceTree = "<group>"; };
 		A86ACAE31E0B810600CDE311 /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		A876F4B11DACBAC2007A3541 /* build-ffmpeg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-ffmpeg.sh"; sourceTree = "<group>"; };
@@ -484,7 +482,6 @@
 			isa = PBXGroup;
 			children = (
 				A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */,
-				A8676AF31E163F860087EB4C /* SetDBTableViewController.swift */,
 				A8676AF41E163F860087EB4C /* ViewController.swift */,
 				569C53F61C801D990072D81B /* SettingControllers */,
 				A876F5431DACD62C007A3541 /* StartViewController.swift */,
@@ -1092,7 +1089,6 @@
 				A86ACAE41E0B810600CDE311 /* DeviceData.swift in Sources */,
 				A8D3EA761DFE9ECC008CC452 /* SendVoiceHttp.swift in Sources */,
 				568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */,
-				A8676AF61E163F860087EB4C /* SetDBTableViewController.swift in Sources */,
 				563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */,
 				A876F5391DACBAC3007A3541 /* KxMovieGLView.m in Sources */,
 				A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */,
