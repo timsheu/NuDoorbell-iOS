@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SettingPool.h"
-#import "Constants.h"
-#import "CocoaLumberJack.h"
-
 
 enum{
     SOCKET_READ_TAG_SEND_SETTING            = 5,
@@ -36,7 +33,6 @@ enum{
 @interface PlayerManager : NSObject{
     NSString *path;
     NSString *ssid, *pass;
-    DDFileLogger *fileLogger;
 }
 
 @property (strong, nonatomic) NSMutableDictionary *cameraAddress;

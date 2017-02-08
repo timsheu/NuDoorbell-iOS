@@ -2,8 +2,9 @@
 #import "SkyEye-Swift.h"
 
 #define AUDIO_DATA_TYPE_FORMAT float
-@interface AudioRecorder()<SendVoiceHttpDelegate>{
+@interface AudioRecorder()<SendVoiceHttpDelegate, HTTPSocketDelegate>{
     SendVoiceHttp *svh;
+    HTTPSocketManager *httpSocketManager;
 }
 @end
 @implementation AudioRecorder
@@ -26,7 +27,7 @@ void AQOutputCallback(void *inUserData, AudioQueueRef queue, AudioQueueBufferRef
         AudioFileClose(recordStateQ->audioFile);
     }
     NSData *data = [NSData dataWithBytes:queueBuffer->mAudioData length:queueBuffer->mAudioDataBytesCapacity];
-    DDLogDebug(@"%@", data);
+    NSLog(@"%@", data);
     
 }
 
@@ -112,18 +113,31 @@ void AudioInputCallbackHttp(void * inUserData,  // Custom audio metadata
     format->mReserved = 0;
 }
 
-- (void)startRecordingMic {
+- (void)startRecordingMic:(NSNumber *)deviceID {
     // tell n329 that iOS opened a socket for her
-    socketManager = [SocketManager shareInstance];
-    socketManager.delegate = self;
-    [socketManager waitSocketConnection];
-    NSData *command = [SkyEyeCommandGenerator generateContinousAudioCommand:8000 channel:1 volume:100];
-    [socketManager sendCommandData:command toCamera:_cameraSerial withTag:SOCKET_UPLOAD_AUDIO_STREAM];
+    httpSocketManager = [HTTPSocketManager sharedInstance];
+    httpSocketManager.delegate = self;
+    [httpSocketManager waitSocketConnection];
+    SRKQuery *query = [[DeviceData query]whereWithFormat:[NSString stringWithFormat:@"id = %@", deviceID]];
+    SRKResultSet *result = query.fetch;
+    DeviceData *deviceData = result[0];
+    [httpSocketManager connectWithHost:deviceData.publicIP port:80];
+//    socketManager = [SocketManager shareInstance];
+//    socketManager.delegate = self;
+//    [socketManager waitSocketConnection];
+//    NSData *command = [SkyEyeCommandGenerator generateContinousAudioCommand:8000 channel:1 volume:100];
+//    [socketManager sendCommandData:command toCamera:_cameraSerial withTag:SOCKET_UPLOAD_AUDIO_STREAM];
+}
+
+- (void)didConnected{
+    NSString *command = [NuPlayerCommand uploadAudioSocketWithPort:@"8080"];
+    NSData *commandData = [command dataUsingEncoding:NSUTF8StringEncoding];
+    [httpSocketManager writeWithData:commandData];
 }
 
 - (void)stopRecordingMic {
-    socketManager = [SocketManager shareInstance];
-    [socketManager disconnectMicSocket];
+    httpSocketManager = [HTTPSocketManager sharedInstance];
+    [httpSocketManager disconnectMicSocket];
     [self stopRecordingMicHttp];
 }
 
@@ -158,7 +172,7 @@ void AudioInputCallbackHttp(void * inUserData,  // Custom audio metadata
 - (void)feedSamplesToEngine:(UInt32)audioDataBytesCapacity audioData:(void *)audioData {
     
     NSMutableData *tempData = [NSMutableData dataWithBytes:audioData length:(NSUInteger)audioDataBytesCapacity];
-    [socketManager sendMicAudio:tempData];
+    [httpSocketManager sendMicAudioWithData:tempData];
 //    [_delegate audioDataInCommand:command];
 }
 

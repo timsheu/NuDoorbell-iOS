@@ -11,8 +11,8 @@
 #import "GCDAsyncSocket.h"
 
 #define SHMADIA_LOGIN_DEFAULT_PORT 5542
-#define SHMADIA_LOGIN_PACKET_LENGTH 344 // 8+64+1+4+255+4+4+4, See EventMsgDef.h
-#define SHMADIA_LOGIN_RESPONSE_LENGTH 32 // 8+4*6, See EventMsgDef.h
+#define SHMADIA_LOGIN_PACKET_LENGTH 348 // 12+64+1+4+255+4+4+4, See EventMsgDef.h
+#define SHMADIA_LOGIN_RESPONSE_LENGTH 36 // 12+4*6, See EventMsgDef.h
 #define TEST_UUID @"00000001"
 #define SERVER_IP @"192.168.8.9"
 enum{

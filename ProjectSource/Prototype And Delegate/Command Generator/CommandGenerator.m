@@ -80,7 +80,7 @@
     NSString *returnString = @"";
     for (NSString *s in array) {
         returnString = [returnString stringByAppendingString:s];
-        DDLogDebug(@"append string, %@", s);
+        NSLog(@"append string, %@", s);
     }
     return returnString;
 }

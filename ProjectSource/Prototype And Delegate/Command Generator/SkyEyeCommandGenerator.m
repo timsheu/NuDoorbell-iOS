@@ -139,7 +139,7 @@
 }
 
 + (NSData *)generateUploadAudioCommand:(NSData *)audioData sampleRate:(int)sampleRate channel:(int)channel volume:(int)volume{
-//    DDLogDebug(@"generate, %@", audioData);
+//    NSLog(@"generate, %@", audioData);
     NSString *baseCommand = @"audio.input";
     NSString *srString = [NSString stringWithFormat:@"&samplerate=%d", sampleRate];
     NSString *chString = [NSString stringWithFormat:@"&channel=%d", channel];
@@ -147,7 +147,7 @@
     NSString *head = @"GET /";
     NSString *tail = @" HTTP/1.1\r\n";
     NSString *host = [NSString stringWithFormat:@"Host: 0.0.0.0\r\n"]; // the skyeye does not parse this host address, put it dummy
-    NSString *contentType = @"Content-Type: audio/wav\r\n";
+    NSString *contentType = @"Content-Type: audio/l16\r\n";
     NSString *contentLength = [NSString stringWithFormat:@"Content-Length: %d\r\n\r\n", (int)audioData.length];
     NSArray *array = [NSArray arrayWithObjects:
                       [head dataUsingEncoding:NSUTF8StringEncoding],
@@ -164,7 +164,7 @@
 }
 
 + (NSData *)generateContinousAudioCommand:(int)sampleRate channel:(int)channel volume:(int)volume{
-    //    DDLogDebug(@"generate, %@", audioData);
+    //    NSLog(@"generate, %@", audioData);
     NSString *baseCommand = @"audio.input";
     NSString *ptString = @"?protocol=tcp";
     NSString *srString = [NSString stringWithFormat:@"&samplerate=%d", sampleRate];
@@ -199,7 +199,7 @@
     NSString *returnString = @"";
     for (NSString *s in array) {
         returnString = [returnString stringByAppendingString:s];
-        DDLogDebug(@"apped string, %@", s);
+        NSLog(@"apped string, %@", s);
     }
     return returnString;
 }

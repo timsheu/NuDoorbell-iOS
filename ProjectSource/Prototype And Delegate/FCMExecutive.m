@@ -36,7 +36,7 @@
                 messageType = @"Ring";
             }
             NSString *log = [dictionary objectForKey:string];
-            DDLogDebug(@"%@: %@, %@", TAG, string, log);
+            NSLog(@"%@: %@, %@", TAG, string, log);
         }
         PlayerManager *manager = [PlayerManager sharedInstance];
         NSDictionary *dic = [manager.dictionarySetting objectForKey:@"Setup Camera"];
@@ -44,7 +44,7 @@
         if ([messageType isEqualToString:@"Ring"]) {
             NSDictionary *apsAlert = [dictionary objectForKey:@"aps"];
             NSDictionary *alert = [apsAlert objectForKey:@"alert"];
-            DDLogDebug(@"%@: aps: %@", TAG, [alert objectForKey:@"body"]);
+            NSLog(@"%@: aps: %@", TAG, [alert objectForKey:@"body"]);
             [_delegate openLiveStream];
         } else if ([messageType isEqualToString:@"IP Data"]){
             NSArray *messageInfoArray = @[@"PublicIPAddr", @"PrivateIPAddr", @"HTTPPort", @"RTSPPort"];
@@ -54,7 +54,7 @@
                 if (retriveInfo) {
                     [dic setValue:retriveInfo forKey:string];
                 }else {
-                    DDLogDebug(@"%@: key \"%@\" has nil info", TAG, string);
+                    NSLog(@"%@: key \"%@\" has nil info", TAG, string);
                 }
             }
             [self modifyURLWithPublicIP];

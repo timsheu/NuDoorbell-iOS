@@ -8,7 +8,8 @@
 
 //Change Log:
 //
-//  2016-08-05 - Create login message
+//  2016-08-05 - Create login and event message
+//	2016-12-15 - Create firmware message and added signature word at message header
 //
 
 #ifndef __EVENT_MSG_DEF_H__
@@ -20,26 +21,7 @@
 /////////////////// Message Type Define//////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-// BOOLEAN MACRO
-#if defined(FALSE)	&&	FALSE != 0
-	#error FALSE is not defined as 0.
-#else
-	#undef FALSE
-#endif
-
-#if defined(TRUE)	&&	TRUE != 1
-	#error TRUE is not defined as 1.
-#else
-	#undef TRUE
-#endif
-
-/* Type definition */
-//typedef enum {
-//	FALSE		= 0,
-//	TRUE		= 1,
-//} BOOL;
-/*__BOOL MACRO */
-
+#define SIGNATURE_WORD		0x525566
 
 // Event Message Type
 typedef enum {
@@ -52,7 +34,11 @@ typedef enum {
 	eEVENTMSG_EVENT_NOTIFY_RESP		= 0x0201,		//Device event notify response message
 
 	//Client message	start from 0x0300
+	eEVENTMSG_GET_FW_VER			= 0x0300,		//Client get firmware version number request
+	eEVENTMSG_GET_FW_VER_RESP		= 0x0301,		//Client get firmware version number response 
 
+	eEVENTMSG_FW_DOWNLOAD			= 0x0302,		//Client firmware download request
+	eEVENTMSG_FW_DOWNLOAD_RESP		= 0x0303,		//Client firmware download response 
 }E_EVENTMSG_TYPE;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -64,6 +50,8 @@ typedef enum {
 	eEVENTMSG_RET_SUCCESS			= 0,
 	eEVENTMSG_RET_UUID_INVALID		= -1,
 	eEVENTMSG_RET_ACCESS_LIMITED	= -2,
+	eEVENTMSG_RET_FW_VER_UNKNOWN	= -3,
+	eEVENTMSG_RET_FW_DOWNLOAD_FAIL	= -4,
 }E_EVENTMSG_RET_CODE;
 
 typedef enum {
@@ -75,16 +63,27 @@ typedef enum {
 typedef enum{
 	eEVENT_MOTION_DET = 0,				//motion detect
 	eEVENT_RING = 1,					//ringing
+	eEVENT_BATTERY_LOW = 2				//battery low
 }E_EVENT_TYPE;
+
+typedef enum{
+	eFW_DOWNLOAD_TYPE_NATIVE,			//NuDoorbell
+	eFW_DOWNLOAD_TYPE_WIFI,				//RAK439
+	eFW_DOWNLOAD_TYPE_NANO,				//NANO
+	eFW_DOWNLOAD_TYPE_CNT,	
+}E_FW_DOWNLOAD_TYPE;
 
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////// Message Header Define ///////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
 typedef struct{
+#if defined (SIGNATURE_WORD)
+	uint32_t u32SignWord;			//Signature word. SIGNATURE_WORD
+#endif
 	uint32_t eMsgType;				//E_EVENTMSG_TYPE
 	uint32_t u32MsgLen;			//include message header length
-}__attribute__ ((packed))S_EVENTMSG_HEADER; // length: 8bytes
+}__attribute__ ((packed))S_EVENTMSG_HEADER;
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -96,14 +95,14 @@ typedef struct{
 
 // Login request message
 typedef struct{
-	S_EVENTMSG_HEADER sMsgHdr; //8 bytes
-	char szUUID[DEVICE_UUID_LEN + 1]; //64+1 bytes
-	uint32_t eRole;							//E_EVENTMSG_ROLE, 4 bytes
-	char szCloudRegID[CM_REGID_LEN + 1];		// Used by client login request, 255 bytes
-	uint32_t u32DevPrivateIP;					// Used by device. Device private IP address. 4 bytes
-	uint32_t u32DevHTTPPort;					// Used by device. Device http service port. 4 bytes
-	uint32_t u32DevRTSPPort;					// Used by device. Device rtsp service port. 4 bytes
-}__attribute__ ((packed)) S_EVENTMSG_LOGIN_REQ; //total: 344 bytes
+	S_EVENTMSG_HEADER sMsgHdr;
+	char szUUID[DEVICE_UUID_LEN + 1];
+	uint32_t eRole;							//E_EVENTMSG_ROLE
+	char szCloudRegID[CM_REGID_LEN + 1];		// Used by client login request
+	uint32_t u32DevPrivateIP;					// Used by device. Device private IP address.
+	uint32_t u32DevHTTPPort;					// Used by device. Device http service port.
+	uint32_t u32DevRTSPPort;					// Used by device. Device rtsp service port.
+}__attribute__ ((packed)) S_EVENTMSG_LOGIN_REQ;
 
 // Login response message
 typedef struct {
@@ -121,7 +120,7 @@ typedef struct {
 	S_EVENTMSG_HEADER sMsgHdr;
 	char szUUID[DEVICE_UUID_LEN + 1];	
 	uint32_t eEventType;			// E_EVENT_TYPE. Event type
-	uint32_t u32Reserved;
+	uint32_t u32EventSeqNo;
 }__attribute__ ((packed)) S_EVENTMSG_EVENT_NOTIFY;
 
 // Event notify response message
@@ -130,6 +129,33 @@ typedef struct {
 	int32_t eResult;		// E_EVENTMSG_RET_CODE. eEVENTMSG_RET_SUCCESS: success; otherwise: failed.
 }__attribute__ ((packed)) S_EVENTMSG_EVENT_NOTIFY_RESP;
 
+// Get firmware version number message
+typedef struct {
+	S_EVENTMSG_HEADER sMsgHdr;
+	char szUUID[DEVICE_UUID_LEN + 1];	
+	uint32_t eFirmwareType;			// E_FW_SECTION_TYPE. Firmware section type
+}__attribute__ ((packed)) S_EVENTMSG_GET_FW_VER;
+
+// Get firmware version number response message
+typedef struct {
+	S_EVENTMSG_HEADER sMsgHdr;
+	int32_t eResult;		// E_EVENTMSG_RET_CODE. eEVENTMSG_RET_SUCCESS: success; otherwise: failed.
+	uint32_t u32FWVer;
+}__attribute__ ((packed)) S_EVENTMSG_GET_FW_VER_RESP;
+
+// Firmware download message
+typedef struct {
+	S_EVENTMSG_HEADER sMsgHdr;
+	char szUUID[DEVICE_UUID_LEN + 1];	
+	uint32_t eFirmwareType;				// E_FW_DOWNLOAD_TYPE. Firmware download type
+}__attribute__ ((packed)) S_EVENTMSG_FW_DOWNLOAD;
+
+// Firmware download response message
+typedef struct {
+	S_EVENTMSG_HEADER sMsgHdr;
+	int32_t eResult;						// E_EVENTMSG_RET_CODE. eEVENTMSG_RET_SUCCESS: success; otherwise: failed.
+	uint32_t u32FWLen;
+}__attribute__ ((packed)) S_EVENTMSG_FW_DOWNLOAD_RESP;
 
 #endif
 

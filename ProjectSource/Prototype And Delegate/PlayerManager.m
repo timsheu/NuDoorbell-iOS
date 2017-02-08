@@ -14,14 +14,6 @@
     if (self == [super init]) {
         if (_cameraAddress == nil) {
             
-            [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
-            [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
-            
-            fileLogger = [[DDFileLogger alloc] init]; // File Logger
-            fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-            fileLogger.logFileManager.maximumNumberOfLogFiles = 5;
-            [DDLog addLogger:fileLogger];
-            
             NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
             NSString *docfilePath = [basePath stringByAppendingPathComponent:@"/SettingsPropertyListLocal.plist"];
@@ -77,7 +69,7 @@
 }
 
 - (NSString *)getCurrentLogFilePath{
-    NSString *string = [NSString stringWithString:[fileLogger currentLogFileInfo].filePath];
+    NSString *string = @"";
     return string;
 }
 

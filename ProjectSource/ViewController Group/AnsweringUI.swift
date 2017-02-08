@@ -65,18 +65,18 @@ import UIKit
         let result = DeviceData.query().where(withFormat: "id = %@", withParameters: [deviceID]).fetch()
         let deviceData = result?[0] as! DeviceData
         let isHTTP = deviceData.isVoiceUploadHttp;
-        let cameraURL = "rtsp://" + deviceData.publicIP! + "/cam1/h264"
-        let port = String.init(deviceData.httpPort)
-        print("isAnswering: \(isHTTP), \(cameraURL), \(port)")
+        let cameraIP = deviceData.publicIP!
+        let port = deviceData.httpPort
+        print("isAnswering: \(isHTTP), \(cameraIP), \(port), \n\(deviceData.toString())")
         if isHTTP == true {
             if option == true {
-                (AudioRecorder.sharedInstance() as AnyObject).startRecordingMicHttp(cameraURL, port: __uint16_t(port)!)
+                (AudioRecorder.sharedInstance() as AnyObject).startRecordingMicHttp(cameraIP, port: UInt16(80))
             }else{
                 (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMicHttp()
             }
         }else{
             if option == true {
-                (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic()
+                (AudioRecorder.sharedInstance() as AnyObject).startRecordingMic(deviceID)
             }else {
                 (AudioRecorder.sharedInstance() as AnyObject).stopRecordingMic()
             }

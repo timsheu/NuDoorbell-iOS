@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import CocoaLumberjack
 
-protocol BCRDelegate{
+protocol BroadcastReceiverDelegate{
     func showToast(message: String)
-    func updateCameraURL()
+    func gotRingMessage(uuid: String)
 }
 
 class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
@@ -23,8 +22,8 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
     let serverPort: UInt16 = 5543
     let TAG = "BroadcastReceiver"
     //delegate
-    var delegate: BCRDelegate?
-    var dataSource: BCRDelegate?
+    var delegate: BroadcastReceiverDelegate?
+    var dataSource: BroadcastReceiverDelegate?
     var bcrSocket: GCDAsyncUdpSocket?
     fileprivate static var instance: BroadcastReceiver?
     static func sharedInstance() -> BroadcastReceiver{
@@ -64,11 +63,21 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
     }
     
     func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
-        if data.count == 344 {
-            let data = data as NSData
-            let eventMessage = UnsafeMutablePointer<S_EVENTMSG_LOGIN_REQ>.allocate(capacity: MemoryLayout<S_EVENTMSG_LOGIN_REQ>.size)
-            data.getBytes(eventMessage, length: MemoryLayout<S_EVENTMSG_LOGIN_REQ>.size)
-            setupCameraFromUDP(eventMessage: eventMessage.move())
+        let data = data as NSData
+        let subData = data.subdata(with: NSRange.init(location: 0, length: 12)) as NSData
+        let headerTemp = UnsafeMutablePointer<S_EVENTMSG_HEADER>.allocate(capacity: MemoryLayout<S_EVENTMSG_HEADER>.size)
+        subData.getBytes(headerTemp, length: MemoryLayout<S_EVENTMSG_HEADER>.size)
+        let header = headerTemp.move()
+        
+        if header.eMsgType == eEVENTMSG_LOGIN.rawValue {
+            let loginMessage = UnsafeMutablePointer<S_EVENTMSG_LOGIN_REQ>.allocate(capacity: MemoryLayout<S_EVENTMSG_LOGIN_REQ>.size)
+            data.getBytes(loginMessage, length: MemoryLayout<S_EVENTMSG_LOGIN_REQ>.size)
+            setupCameraFromUDP(eventMessage: loginMessage.move())
+        }else if header.eMsgType == eEVENTMSG_EVENT_NOTIFY.rawValue{
+            let ringMessage = UnsafeMutablePointer<S_EVENTMSG_EVENT_NOTIFY>.allocate(capacity: MemoryLayout<S_EVENTMSG_EVENT_NOTIFY>.size)
+            data.getBytes(ringMessage, length: MemoryLayout<S_EVENTMSG_EVENT_NOTIFY>.size)
+            let uuid = String(describing: ringMessage.move().szUUID)
+            delegate?.gotRingMessage(uuid: uuid)
         }
     }
     
@@ -85,8 +94,8 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
     }
     
     //MARK: public functions
-    func openBCReceiver() {
-        print("\(TAG): openBCReceiver")
+    func openBroadcastReceiver() {
+        print("\(TAG): openBroadcastReceiver")
         do {
             try bcrSocket?.bind(toPort: serverPort)
             try bcrSocket?.beginReceiving()
@@ -97,20 +106,34 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
     
     //MARK: public functions
     func setupCameraFromUDP(eventMessage: S_EVENTMSG_LOGIN_REQ){
+        let uuid = String(describing: eventMessage.szUUID)
         let privateIP = eventMessage.u32DevPrivateIP
         let publicIP = eventMessage.u32DevPrivateIP
-        let httpPort = String(eventMessage.u32DevHTTPPort)
-        let rtspPort = String(eventMessage.u32DevRTSPPort)
-        let cameraDic = PlayerManager.sharedInstance().dictionarySetting.object(forKey: "Setup Camera") as! NSMutableDictionary
-
-        let publicIPTemp = String(format: "publicIP: %llu", publicIP)
-        print("temp: \(publicIPTemp)")
-        cameraDic.setValue(ipConversion(number: publicIP), forKey: "PublicIPAddr")
-        cameraDic.setValue(ipConversion(number: privateIP), forKey: "PrivateIPAddr")
-        cameraDic.setValue(httpPort, forKey: "HTTPPort")
-        cameraDic.setValue(rtspPort, forKey: "RTSPPort")
-        modifyURLWithIP()
-        print("cameraDic: \(cameraDic)")
+        let httpPort = eventMessage.u32DevHTTPPort
+        let rtspPort = eventMessage.u32DevRTSPPort
+        let result = DeviceData.query().where(withFormat: "uuid = %@", withParameters: [uuid]).fetch()
+        switch (result?.count)! {
+        case 0:
+            let newDevice = DeviceData.init()
+            newDevice.uuid = uuid
+            newDevice.publicIP = ipConversion(number: publicIP)
+            newDevice.privateIP = ipConversion(number: privateIP)
+            newDevice.httpPort = Int(httpPort)
+            newDevice.rtspPort = Int(rtspPort)
+            newDevice.commit()
+            break;
+        case 1:
+            let newDevice = result?[0] as! DeviceData
+            newDevice.publicIP = ipConversion(number: publicIP)
+            newDevice.privateIP = ipConversion(number: privateIP)
+            newDevice.httpPort = Int(httpPort)
+            newDevice.rtspPort = Int(rtspPort)
+            newDevice.commit()
+            break;
+        default:
+            print("one uuid with more than one device, error!!")
+            break;
+        }
         delegate?.showToast(message: "Doorbell parameters updated")
     }
     
@@ -124,17 +147,4 @@ class BroadcastReceiver: NSObject, GCDAsyncUdpSocketDelegate{
         return string
     }
     
-    func modifyURLWithIP(){
-        let cameraDic = PlayerManager.sharedInstance().dictionarySetting["Setup Camera"] as! NSMutableDictionary
-        let cameraIP = cameraDic["PublicIPAddr"] as! String
-        let URL: String = cameraDic["URL"] as! String
-        let splitArray = URL.components(separatedBy: "/")
-        if splitArray.count > 1{
-            let oldIP = splitArray[2]
-            let newURL = URL.replacingOccurrences(of: oldIP, with: cameraIP)
-            print("newURL: \(newURL)")
-            cameraDic.setValue(newURL, forKey: "URL")
-            PlayerManager.sharedInstance().updateSettingPropertyList()
-        }
-    }
 }

@@ -39,7 +39,7 @@ class SendVoiceHttp: NSObject, GCDAsyncSocketDelegate {
     func socket(_ sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) {
         print("\(TAG): didConnectToHost")
         let command = "GET /audio.input?samplerate=8000&channel=1&volume=100 HTTP/1.1\r\n"
-        let httpHeader = "Content-Type: audio/wav\r\nContent-Length: 268435455\r\n\r\n"
+        let httpHeader = "Content-Type: audio/l16\r\nContent-Length: 268435455\r\n\r\n"
         let temp = command + httpHeader;
         socket?.write(temp.data(using: .utf8)!, withTimeout: -1, tag: 0);
         delegate?.didConnectedSendVoiceHttp()
@@ -66,6 +66,7 @@ class SendVoiceHttp: NSObject, GCDAsyncSocketDelegate {
     
     func connectVoiceHttpSocket() -> Void {
         do {
+            print("serverIP: \(serverIP), httpPort: \(httpPort)")
             try socket?.connect(toHost: serverIP, onPort: httpPort)
         } catch {
             print("\(TAG): server connect fail")

@@ -21,14 +21,6 @@
     PlayerManager *manager = [PlayerManager sharedInstance];
     NSDictionary *cameraDic = [manager.dictionarySetting objectForKey:@"Setup Camera"];
     
-    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
-    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
-    
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
-    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [DDLog addLogger:fileLogger];
-    
     application.applicationIconBadgeNumber = 0;
     tokenRefreshed = NO;
     TAG = @"AppDelegate";
@@ -39,7 +31,7 @@
     [email addConditionalAlertWithTitle:@"Crash Detected" message:@"The APP crashed last time it was launched. Send a crash report!" yesAnswer:@"Okay!" noAnswer:@"No thanks."];
     [email install];
     [email sendAllReportsWithCompletion:^(NSArray *filteredReports, BOOL completed, NSError *error) {
-        DDLogDebug(@"test");
+        NSLog(@"test");
     }];
     
     // Register for remote notifications
@@ -66,7 +58,7 @@
     }
     NSString *token = [cameraDic objectForKey:@"FCM Token"];
     if (token != nil && ![token isEqualToString:@""]) {
-        DDLogDebug(@"%@: FCM token: %@", TAG, token);
+        NSLog(@"%@: FCM token: %@", TAG, token);
         ShmadiaConnectManager *manager = [ShmadiaConnectManager sharedInstance];
         manager.delegate = self;
         NSString *port = [NSString stringWithFormat:@"%d", SHMADIA_LOGIN_DEFAULT_PORT];
@@ -108,14 +100,14 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    DDLogDebug(@"%@, enter foreground", TAG);
+    NSLog(@"%@, enter foreground", TAG);
     application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [self connectToFcm];
-    DDLogDebug(@"%@, applicationDidBecomeActive", TAG);
+    NSLog(@"%@, applicationDidBecomeActive", TAG);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -138,15 +130,15 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 #pragma following: Shmadia delegate
 
 - (void)didConnectedToShmadia{
-    DDLogDebug(@"%@: did connected to shmadia, attempt to write login message", TAG);
+    NSLog(@"%@: did connected to shmadia, attempt to write login message", TAG);
     [ShmadiaConnectManager.sharedInstance setupShmadiaLoginRequestPackage:refreshedToken];
 }
 
 - (void)didReadDataFromShmadia:(NSData *)data{
-    DDLogDebug(@"%@: %@", TAG, data);
+    NSLog(@"%@: %@", TAG, data);
     S_EVENTMSG_LOGIN_RESP response;
     [data getBytes:&response length:data.length];
-    DDLogDebug(@"%@: %d, %d, %d, %d, %@, %@, %d, %d", TAG,
+    NSLog(@"%@: %d, %d, %d, %d, %@, %@, %d, %d", TAG,
                (int)response.sMsgHdr.eMsgType,
                (int)response.sMsgHdr.u32MsgLen,
                (int)response.eResult,

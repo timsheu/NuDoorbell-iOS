@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		271B8EB029B0D12669BFD7EB /* Pods_SkyEyeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032FA6807E5CDBCC5C3F9D21 /* Pods_SkyEyeUITests.framework */; };
-		560112B51CA3EBDD00ABB3CE /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927BA1C92B33900717A2A /* SocketManager.m */; };
 		561E842B1C4C848A00B62BCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 561E842A1C4C848A00B62BCF /* main.m */; };
 		561E842E1C4C848A00B62BCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 561E842D1C4C848A00B62BCF /* AppDelegate.m */; };
 		561E84341C4C848A00B62BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561E84321C4C848A00B62BCF /* Main.storyboard */; };
@@ -30,34 +29,37 @@
 		562A99461C5F25DF00852B9A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 562A99451C5F25DF00852B9A /* libz.tbd */; };
 		562A99481C5F25E800852B9A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 562A99471C5F25E700852B9A /* libstdc++.tbd */; };
 		562A994A1C5F25F000852B9A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 562A99491C5F25F000852B9A /* libiconv.tbd */; };
-		563927AC1C92B2C500717A2A /* ConfigCommandPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563927A01C92B2C500717A2A /* ConfigCommandPropertyList.plist */; };
-		563927B41C92B2C500717A2A /* SettingsPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563927A81C92B2C500717A2A /* SettingsPropertyList.plist */; };
-		563927B51C92B2C500717A2A /* SystemCommandPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563927A91C92B2C500717A2A /* SystemCommandPropertyList.plist */; };
-		563927B61C92B2C500717A2A /* VideoCommandPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563927AA1C92B2C500717A2A /* VideoCommandPropertyList.plist */; };
-		563927BB1C92B33900717A2A /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927B81C92B33900717A2A /* PlayerManager.m */; };
-		563927DC1C92B3CF00717A2A /* CommandPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927D21C92B3CF00717A2A /* CommandPool.m */; };
-		563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927D81C92B3CF00717A2A /* SettingPool.m */; };
-		563927EA1C92B41500717A2A /* RecieveDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E31C92B41500717A2A /* RecieveDataParser.m */; };
-		563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E61C92B41500717A2A /* CommandGenerator.m */; };
-		563927EC1C92B41500717A2A /* CommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927E81C92B41500717A2A /* CommandParser.m */; };
-		563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */; };
 		56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56468CF01D6D6D8600268070 /* GoogleService-Info.plist */; };
-		565C25D41D420B7500F9EE53 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C25D31D420B7500F9EE53 /* Constants.m */; };
 		56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */ = {isa = PBXBuildFile; fileRef = 56842B761D6EF20E002CD283 /* FCMExecutive.m */; };
 		568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 568C0A6D1D700F280045E6DE /* ShmadiaConnectManager.m */; };
 		568CF8C91CAB7DB700A58490 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 568CF8C81CAB7DB700A58490 /* libc++.tbd */; };
 		56955CEC1CC222530028E78C /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 56955CEA1CC222530028E78C /* Default-568h.png */; };
 		56955CED1CC222530028E78C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56955CEB1CC222530028E78C /* Default-568h@2x.png */; };
-		569FAB191CEC44F100D1E547 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569FAB181CEC44F100D1E547 /* SettingViewController.m */; };
 		56E40E171C996CAA00DDB8A6 /* liblzma.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E40E161C996CAA00DDB8A6 /* liblzma.tbd */; };
 		74C9288F86C22EBA234B0E8B /* Pods_SkyEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246D6E0AD8B1ED9FCD4602A8 /* Pods_SkyEye.framework */; };
 		A6AD7F6E0E563FF8B179460D /* Pods_SkyEyeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B202A968F37C3ACF698FA295 /* Pods_SkyEyeTests.framework */; };
+		A829CAB21E48676F00971BDD /* FileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A829CAB11E48676F00971BDD /* FileListTableViewController.swift */; };
+		A829CAB51E48690200971BDD /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CAB41E48690200971BDD /* SocketManager.m */; };
+		A829CAC51E486F6A00971BDD /* CommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CABC1E486F6A00971BDD /* CommandGenerator.m */; };
+		A829CAC61E486F6A00971BDD /* CommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CABE1E486F6A00971BDD /* CommandParser.m */; };
+		A829CAC71E486F6A00971BDD /* RecieveDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CAC01E486F6A00971BDD /* RecieveDataParser.m */; };
+		A829CAC81E486F6A00971BDD /* SkyEyeCommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CAC21E486F6A00971BDD /* SkyEyeCommandGenerator.m */; };
+		A829CAC91E486F6A00971BDD /* SkyEyeCommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CAC41E486F6A00971BDD /* SkyEyeCommandParser.m */; };
+		A829CACF1E486F7200971BDD /* CommandPool.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CACC1E486F7200971BDD /* CommandPool.m */; };
+		A829CAD01E486F7200971BDD /* SettingPool.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CACE1E486F7200971BDD /* SettingPool.m */; };
+		A829CAD31E486F7E00971BDD /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A829CAD21E486F7E00971BDD /* PlayerManager.m */; };
+		A829CAD91E486F9700971BDD /* ConfigCommandPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A829CAD51E486F9700971BDD /* ConfigCommandPropertyList.plist */; };
+		A829CADA1E486F9700971BDD /* SettingsPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A829CAD61E486F9700971BDD /* SettingsPropertyList.plist */; };
+		A829CADB1E486F9700971BDD /* SystemCommandPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A829CAD71E486F9700971BDD /* SystemCommandPropertyList.plist */; };
+		A829CADC1E486F9700971BDD /* VideoCommandPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A829CAD81E486F9700971BDD /* VideoCommandPropertyList.plist */; };
 		A84177161DAF7E26004EAEB3 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A84177131DAF7E26004EAEB3 /* AudioRecorder.m */; };
 		A84177171DAF7E26004EAEB3 /* MicRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A84177151DAF7E26004EAEB3 /* MicRecorder.m */; };
-		A841771E1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */; };
-		A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */; };
 		A84177211DAF86D1004EAEB3 /* AnsweringUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */; };
 		A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */; };
+		A85F7DC11E27177A002DE826 /* NuPlayerCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F7DC01E27177A002DE826 /* NuPlayerCommand.swift */; };
+		A85F7DC41E2759E1002DE826 /* NuWicamCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F7DC31E2759E1002DE826 /* NuWicamCommand.swift */; };
+		A85F7DC61E276214002DE826 /* NuDoorbellCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F7DC51E276214002DE826 /* NuDoorbellCommand.swift */; };
+		A85F7DC81E27685D002DE826 /* HTTPSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F7DC71E27685D002DE826 /* HTTPSocketManager.swift */; };
 		A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */; };
 		A8676AF51E163F860087EB4C /* EditDBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */; };
 		A8676AF71E163F860087EB4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8676AF41E163F860087EB4C /* ViewController.swift */; };
@@ -76,7 +78,6 @@
 		A876F5401DACBB5F007A3541 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A876F51D1DACBAC2007A3541 /* libavutil.a */; };
 		A876F5411DACBB5F007A3541 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A876F51E1DACBAC2007A3541 /* libswresample.a */; };
 		A876F5421DACBB5F007A3541 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A876F51F1DACBAC2007A3541 /* libswscale.a */; };
-		A876F5441DACD62C007A3541 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876F5431DACD62C007A3541 /* StartViewController.swift */; };
 		A8D3EA761DFE9ECC008CC452 /* SendVoiceHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D3EA751DFE9ECC008CC452 /* SendVoiceHttp.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,30 +132,8 @@
 		562A99451C5F25DF00852B9A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		562A99471C5F25E700852B9A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		562A99491C5F25F000852B9A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		563927A01C92B2C500717A2A /* ConfigCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConfigCommandPropertyList.plist; path = plist/ConfigCommandPropertyList.plist; sourceTree = "<group>"; };
-		563927A81C92B2C500717A2A /* SettingsPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SettingsPropertyList.plist; path = plist/SettingsPropertyList.plist; sourceTree = "<group>"; };
-		563927A91C92B2C500717A2A /* SystemCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SystemCommandPropertyList.plist; path = plist/SystemCommandPropertyList.plist; sourceTree = "<group>"; };
-		563927AA1C92B2C500717A2A /* VideoCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = VideoCommandPropertyList.plist; path = plist/VideoCommandPropertyList.plist; sourceTree = "<group>"; };
-		563927B71C92B33900717A2A /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PlayerManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927B81C92B33900717A2A /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlayerManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927B91C92B33900717A2A /* SocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SocketManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927BA1C92B33900717A2A /* SocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SocketManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927D11C92B3CF00717A2A /* CommandPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = CommandPool.h; path = "Data Class/CommandPool.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927D21C92B3CF00717A2A /* CommandPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CommandPool.m; path = "Data Class/CommandPool.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927D71C92B3CF00717A2A /* SettingPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SettingPool.h; path = "Data Class/SettingPool.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927D81C92B3CF00717A2A /* SettingPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SettingPool.m; path = "Data Class/SettingPool.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927E21C92B41500717A2A /* RecieveDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RecieveDataParser.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927E31C92B41500717A2A /* RecieveDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RecieveDataParser.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927E51C92B41500717A2A /* CommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CommandGenerator.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927E61C92B41500717A2A /* CommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CommandGenerator.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927E71C92B41500717A2A /* CommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CommandParser.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927E81C92B41500717A2A /* CommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CommandParser.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		563927EF1C92B46D00717A2A /* MultipleSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MultipleSettingTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MultipleSettingTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5639280B1C92B5DC00717A2A /* SkyEye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyEye-Bridging-Header.h"; sourceTree = "<group>"; };
 		56468CF01D6D6D8600268070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		565C25D21D420B4000F9EE53 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
-		565C25D31D420B7500F9EE53 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../Constants.m; sourceTree = "<group>"; };
 		56842B751D6EF20E002CD283 /* FCMExecutive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMExecutive.h; sourceTree = "<group>"; };
 		56842B761D6EF20E002CD283 /* FCMExecutive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMExecutive.m; sourceTree = "<group>"; };
 		568C0A681D700BAF0045E6DE /* EventMsgDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventMsgDef.h; sourceTree = "<group>"; };
@@ -163,23 +142,44 @@
 		568CF8C81CAB7DB700A58490 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		56955CEA1CC222530028E78C /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		56955CEB1CC222530028E78C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		569FAB171CEC44F100D1E547 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SettingViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		569FAB181CEC44F100D1E547 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		56E40E161C996CAA00DDB8A6 /* liblzma.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.tbd; path = usr/lib/liblzma.tbd; sourceTree = SDKROOT; };
 		5B530DDAB4E065CB9745FE5A /* Pods-SkyEyeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeUITests/Pods-SkyEyeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		600650676AC96E3D7BD49A60 /* Pods-SkyEyeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEyeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEyeUITests/Pods-SkyEyeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		710D7CA8F66082B656F6B026 /* Pods-SkyEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyEye/Pods-SkyEye.debug.xcconfig"; sourceTree = "<group>"; };
+		A829CAB11E48676F00971BDD /* FileListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListTableViewController.swift; sourceTree = "<group>"; };
+		A829CAB31E48690200971BDD /* SocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketManager.h; sourceTree = "<group>"; };
+		A829CAB41E48690200971BDD /* SocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketManager.m; sourceTree = "<group>"; };
+		A829CABB1E486F6A00971BDD /* CommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandGenerator.h; sourceTree = "<group>"; };
+		A829CABC1E486F6A00971BDD /* CommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandGenerator.m; sourceTree = "<group>"; };
+		A829CABD1E486F6A00971BDD /* CommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandParser.h; sourceTree = "<group>"; };
+		A829CABE1E486F6A00971BDD /* CommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandParser.m; sourceTree = "<group>"; };
+		A829CABF1E486F6A00971BDD /* RecieveDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecieveDataParser.h; sourceTree = "<group>"; };
+		A829CAC01E486F6A00971BDD /* RecieveDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecieveDataParser.m; sourceTree = "<group>"; };
+		A829CAC11E486F6A00971BDD /* SkyEyeCommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeCommandGenerator.h; sourceTree = "<group>"; };
+		A829CAC21E486F6A00971BDD /* SkyEyeCommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandGenerator.m; sourceTree = "<group>"; };
+		A829CAC31E486F6A00971BDD /* SkyEyeCommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeCommandParser.h; sourceTree = "<group>"; };
+		A829CAC41E486F6A00971BDD /* SkyEyeCommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandParser.m; sourceTree = "<group>"; };
+		A829CACB1E486F7200971BDD /* CommandPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandPool.h; sourceTree = "<group>"; };
+		A829CACC1E486F7200971BDD /* CommandPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandPool.m; sourceTree = "<group>"; };
+		A829CACD1E486F7200971BDD /* SettingPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingPool.h; sourceTree = "<group>"; };
+		A829CACE1E486F7200971BDD /* SettingPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingPool.m; sourceTree = "<group>"; };
+		A829CAD11E486F7E00971BDD /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerManager.h; path = "Prototype And Delegate/PlayerManager.h"; sourceTree = "<group>"; };
+		A829CAD21E486F7E00971BDD /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerManager.m; path = "Prototype And Delegate/PlayerManager.m"; sourceTree = "<group>"; };
+		A829CAD51E486F9700971BDD /* ConfigCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigCommandPropertyList.plist; sourceTree = "<group>"; };
+		A829CAD61E486F9700971BDD /* SettingsPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingsPropertyList.plist; sourceTree = "<group>"; };
+		A829CAD71E486F9700971BDD /* SystemCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SystemCommandPropertyList.plist; sourceTree = "<group>"; };
+		A829CAD81E486F9700971BDD /* VideoCommandPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VideoCommandPropertyList.plist; sourceTree = "<group>"; };
 		A84177121DAF7E26004EAEB3 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
 		A84177131DAF7E26004EAEB3 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
 		A84177141DAF7E26004EAEB3 /* MicRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicRecorder.h; sourceTree = "<group>"; };
 		A84177151DAF7E26004EAEB3 /* MicRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicRecorder.m; sourceTree = "<group>"; };
-		A841771A1DAF8607004EAEB3 /* SkyEyeCommandGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeCommandGenerator.h; sourceTree = "<group>"; };
-		A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandGenerator.m; sourceTree = "<group>"; };
-		A841771C1DAF8607004EAEB3 /* SkyEyeCommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeCommandParser.h; sourceTree = "<group>"; };
-		A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeCommandParser.m; sourceTree = "<group>"; };
 		A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnsweringUI.xib; path = ProjectSource/AnsweringUI/AnsweringUI.xib; sourceTree = SOURCE_ROOT; };
 		A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweringUI.swift; sourceTree = "<group>"; };
 		A855D2141DC7262900B10892 /* SkyEye.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyEye.entitlements; sourceTree = "<group>"; };
+		A85F7DC01E27177A002DE826 /* NuPlayerCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NuPlayerCommand.swift; path = CommandClass/NuPlayerCommand.swift; sourceTree = "<group>"; };
+		A85F7DC31E2759E1002DE826 /* NuWicamCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NuWicamCommand.swift; path = CommandClass/NuWicamCommand.swift; sourceTree = "<group>"; };
+		A85F7DC51E276214002DE826 /* NuDoorbellCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NuDoorbellCommand.swift; path = CommandClass/NuDoorbellCommand.swift; sourceTree = "<group>"; };
+		A85F7DC71E27685D002DE826 /* HTTPSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSocketManager.swift; sourceTree = "<group>"; };
 		A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastReceiver.swift; sourceTree = "<group>"; };
 		A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditDBTableViewController.swift; path = SettingControllers/EditDBTableViewController.swift; sourceTree = "<group>"; };
 		A8676AF41E163F860087EB4C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SettingControllers/ViewController.swift; sourceTree = "<group>"; };
@@ -298,7 +298,6 @@
 		A876F52B1DACBAC3007A3541 /* KxMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieViewController.h; sourceTree = "<group>"; };
 		A876F52C1DACBAC3007A3541 /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
 		A876F52D1DACBAC3007A3541 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A876F5431DACD62C007A3541 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A89800901DAE364C0092475A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../../../../../Users/cchsu20/Library/Developer/Xcode/DerivedData/NuDoorbell-fegdfsigywodrparukbaiesimugd/Build/Products/Debug-iphoneos/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
 		A8D3EA751DFE9ECC008CC452 /* SendVoiceHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendVoiceHttp.swift; sourceTree = "<group>"; };
 		B202A968F37C3ACF698FA295 /* Pods_SkyEyeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyEyeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,45 +355,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		560AC2CD1C7164190021C819 /* Command Generator */ = {
-			isa = PBXGroup;
-			children = (
-				A841771A1DAF8607004EAEB3 /* SkyEyeCommandGenerator.h */,
-				A841771B1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m */,
-				A841771C1DAF8607004EAEB3 /* SkyEyeCommandParser.h */,
-				A841771D1DAF8607004EAEB3 /* SkyEyeCommandParser.m */,
-				563927E21C92B41500717A2A /* RecieveDataParser.h */,
-				563927E31C92B41500717A2A /* RecieveDataParser.m */,
-				563927E51C92B41500717A2A /* CommandGenerator.h */,
-				563927E61C92B41500717A2A /* CommandGenerator.m */,
-				563927E71C92B41500717A2A /* CommandParser.h */,
-				563927E81C92B41500717A2A /* CommandParser.m */,
-			);
-			path = "Command Generator";
-			sourceTree = "<group>";
-		};
-		560AC2D01C7169C10021C819 /* CommandPropertyList */ = {
-			isa = PBXGroup;
-			children = (
-				563927A01C92B2C500717A2A /* ConfigCommandPropertyList.plist */,
-				563927A81C92B2C500717A2A /* SettingsPropertyList.plist */,
-				563927A91C92B2C500717A2A /* SystemCommandPropertyList.plist */,
-				563927AA1C92B2C500717A2A /* VideoCommandPropertyList.plist */,
-			);
-			name = CommandPropertyList;
-			sourceTree = "<group>";
-		};
-		5617529E1C7444CB00B28CCA /* Data Class */ = {
-			isa = PBXGroup;
-			children = (
-				563927D11C92B3CF00717A2A /* CommandPool.h */,
-				563927D21C92B3CF00717A2A /* CommandPool.m */,
-				563927D71C92B3CF00717A2A /* SettingPool.h */,
-				563927D81C92B3CF00717A2A /* SettingPool.m */,
-			);
-			name = "Data Class";
-			sourceTree = "<group>";
-		};
 		561E841D1C4C848A00B62BCF = {
 			isa = PBXGroup;
 			children = (
@@ -426,7 +386,7 @@
 		561E84281C4C848A00B62BCF /* ProjectSource */ = {
 			isa = PBXGroup;
 			children = (
-				560AC2D01C7169C10021C819 /* CommandPropertyList */,
+				A829CAB91E486F3900971BDD /* ToBeDeleted */,
 				56A9EFA11C585BB800D08F74 /* Prototype And Delegate */,
 				56A9EFA01C585B8A00D08F74 /* ViewController Group */,
 				561E842C1C4C848A00B62BCF /* AppDelegate.h */,
@@ -467,24 +427,12 @@
 			path = ProjectUITests;
 			sourceTree = "<group>";
 		};
-		569C53F61C801D990072D81B /* SettingControllers */ = {
-			isa = PBXGroup;
-			children = (
-				569FAB171CEC44F100D1E547 /* SettingViewController.h */,
-				569FAB181CEC44F100D1E547 /* SettingViewController.m */,
-				563927EF1C92B46D00717A2A /* MultipleSettingTableViewController.h */,
-				563927F01C92B46D00717A2A /* MultipleSettingTableViewController.m */,
-			);
-			path = SettingControllers;
-			sourceTree = "<group>";
-		};
 		56A9EFA01C585B8A00D08F74 /* ViewController Group */ = {
 			isa = PBXGroup;
 			children = (
 				A8676AF21E163F860087EB4C /* EditDBTableViewController.swift */,
 				A8676AF41E163F860087EB4C /* ViewController.swift */,
-				569C53F61C801D990072D81B /* SettingControllers */,
-				A876F5431DACD62C007A3541 /* StartViewController.swift */,
+				A829CAB11E48676F00971BDD /* FileListTableViewController.swift */,
 				A84177201DAF86D1004EAEB3 /* AnsweringUI.xib */,
 				A84177221DAF86E3004EAEB3 /* AnsweringUI.swift */,
 				A86641C51DBDE5F10076CF47 /* BroadcastReceiver.swift */,
@@ -495,14 +443,8 @@
 		56A9EFA11C585BB800D08F74 /* Prototype And Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				563927B71C92B33900717A2A /* PlayerManager.h */,
-				563927B81C92B33900717A2A /* PlayerManager.m */,
-				563927B91C92B33900717A2A /* SocketManager.h */,
-				563927BA1C92B33900717A2A /* SocketManager.m */,
-				5617529E1C7444CB00B28CCA /* Data Class */,
-				560AC2CD1C7164190021C819 /* Command Generator */,
-				565C25D21D420B4000F9EE53 /* Constants.h */,
-				565C25D31D420B7500F9EE53 /* Constants.m */,
+				A829CAB31E48690200971BDD /* SocketManager.h */,
+				A829CAB41E48690200971BDD /* SocketManager.m */,
 				568C0A681D700BAF0045E6DE /* EventMsgDef.h */,
 				56842B751D6EF20E002CD283 /* FCMExecutive.h */,
 				56842B761D6EF20E002CD283 /* FCMExecutive.m */,
@@ -510,6 +452,8 @@
 				568C0A6D1D700F280045E6DE /* ShmadiaConnectManager.m */,
 				A8D3EA751DFE9ECC008CC452 /* SendVoiceHttp.swift */,
 				A86ACAE31E0B810600CDE311 /* DeviceData.swift */,
+				A85F7DC21E27177F002DE826 /* CommandClass */,
+				A85F7DC71E27685D002DE826 /* HTTPSocketManager.swift */,
 			);
 			path = "Prototype And Delegate";
 			sourceTree = "<group>";
@@ -527,6 +471,59 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A829CAB91E486F3900971BDD /* ToBeDeleted */ = {
+			isa = PBXGroup;
+			children = (
+				A829CAD41E486F9700971BDD /* plist */,
+				A829CAD11E486F7E00971BDD /* PlayerManager.h */,
+				A829CAD21E486F7E00971BDD /* PlayerManager.m */,
+				A829CACA1E486F7200971BDD /* Data Class */,
+				A829CABA1E486F6A00971BDD /* Command Generator */,
+			);
+			name = ToBeDeleted;
+			sourceTree = "<group>";
+		};
+		A829CABA1E486F6A00971BDD /* Command Generator */ = {
+			isa = PBXGroup;
+			children = (
+				A829CABB1E486F6A00971BDD /* CommandGenerator.h */,
+				A829CABC1E486F6A00971BDD /* CommandGenerator.m */,
+				A829CABD1E486F6A00971BDD /* CommandParser.h */,
+				A829CABE1E486F6A00971BDD /* CommandParser.m */,
+				A829CABF1E486F6A00971BDD /* RecieveDataParser.h */,
+				A829CAC01E486F6A00971BDD /* RecieveDataParser.m */,
+				A829CAC11E486F6A00971BDD /* SkyEyeCommandGenerator.h */,
+				A829CAC21E486F6A00971BDD /* SkyEyeCommandGenerator.m */,
+				A829CAC31E486F6A00971BDD /* SkyEyeCommandParser.h */,
+				A829CAC41E486F6A00971BDD /* SkyEyeCommandParser.m */,
+			);
+			name = "Command Generator";
+			path = "Prototype And Delegate/Command Generator";
+			sourceTree = "<group>";
+		};
+		A829CACA1E486F7200971BDD /* Data Class */ = {
+			isa = PBXGroup;
+			children = (
+				A829CACB1E486F7200971BDD /* CommandPool.h */,
+				A829CACC1E486F7200971BDD /* CommandPool.m */,
+				A829CACD1E486F7200971BDD /* SettingPool.h */,
+				A829CACE1E486F7200971BDD /* SettingPool.m */,
+			);
+			name = "Data Class";
+			path = "Prototype And Delegate/Data Class";
+			sourceTree = "<group>";
+		};
+		A829CAD41E486F9700971BDD /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				A829CAD51E486F9700971BDD /* ConfigCommandPropertyList.plist */,
+				A829CAD61E486F9700971BDD /* SettingsPropertyList.plist */,
+				A829CAD71E486F9700971BDD /* SystemCommandPropertyList.plist */,
+				A829CAD81E486F9700971BDD /* VideoCommandPropertyList.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
 		A84177111DAF7E26004EAEB3 /* MicRecorder */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +533,16 @@
 				A84177151DAF7E26004EAEB3 /* MicRecorder.m */,
 			);
 			path = MicRecorder;
+			sourceTree = "<group>";
+		};
+		A85F7DC21E27177F002DE826 /* CommandClass */ = {
+			isa = PBXGroup;
+			children = (
+				A85F7DC01E27177A002DE826 /* NuPlayerCommand.swift */,
+				A85F7DC31E2759E1002DE826 /* NuWicamCommand.swift */,
+				A85F7DC51E276214002DE826 /* NuDoorbellCommand.swift */,
+			);
+			name = CommandClass;
 			sourceTree = "<group>";
 		};
 		A876F4B01DACBAC2007A3541 /* ModifiedKxMovie */ = {
@@ -901,15 +908,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A829CADC1E486F9700971BDD /* VideoCommandPropertyList.plist in Resources */,
+				A829CADA1E486F9700971BDD /* SettingsPropertyList.plist in Resources */,
 				A84177211DAF86D1004EAEB3 /* AnsweringUI.xib in Resources */,
-				563927B61C92B2C500717A2A /* VideoCommandPropertyList.plist in Resources */,
 				56955CEC1CC222530028E78C /* Default-568h.png in Resources */,
 				56468CF11D6D6D8600268070 /* GoogleService-Info.plist in Resources */,
-				563927B41C92B2C500717A2A /* SettingsPropertyList.plist in Resources */,
 				561E84391C4C848A00B62BCF /* LaunchScreen.storyboard in Resources */,
-				563927B51C92B2C500717A2A /* SystemCommandPropertyList.plist in Resources */,
-				563927AC1C92B2C500717A2A /* ConfigCommandPropertyList.plist in Resources */,
 				56955CED1CC222530028E78C /* Default-568h@2x.png in Resources */,
+				A829CADB1E486F9700971BDD /* SystemCommandPropertyList.plist in Resources */,
+				A829CAD91E486F9700971BDD /* ConfigCommandPropertyList.plist in Resources */,
 				561E84361C4C848A00B62BCF /* Assets.xcassets in Resources */,
 				A876F5371DACBAC3007A3541 /* kxmovie.bundle in Resources */,
 				561E84341C4C848A00B62BCF /* Main.storyboard in Resources */,
@@ -1077,34 +1084,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				A876F5381DACBAC3007A3541 /* KxMovieDecoder.m in Sources */,
+				A829CAC51E486F6A00971BDD /* CommandGenerator.m in Sources */,
+				A85F7DC11E27177A002DE826 /* NuPlayerCommand.swift in Sources */,
+				A829CAC81E486F6A00971BDD /* SkyEyeCommandGenerator.m in Sources */,
+				A85F7DC41E2759E1002DE826 /* NuWicamCommand.swift in Sources */,
+				A829CAC61E486F6A00971BDD /* CommandParser.m in Sources */,
 				A84177171DAF7E26004EAEB3 /* MicRecorder.m in Sources */,
-				560112B51CA3EBDD00ABB3CE /* SocketManager.m in Sources */,
 				561E842E1C4C848A00B62BCF /* AppDelegate.m in Sources */,
-				565C25D41D420B7500F9EE53 /* Constants.m in Sources */,
-				569FAB191CEC44F100D1E547 /* SettingViewController.m in Sources */,
-				A876F5441DACD62C007A3541 /* StartViewController.swift in Sources */,
-				563927DF1C92B3CF00717A2A /* SettingPool.m in Sources */,
+				A829CAC91E486F6A00971BDD /* SkyEyeCommandParser.m in Sources */,
+				A85F7DC81E27685D002DE826 /* HTTPSocketManager.swift in Sources */,
+				A85F7DC61E276214002DE826 /* NuDoorbellCommand.swift in Sources */,
+				A829CAD01E486F7200971BDD /* SettingPool.m in Sources */,
+				A829CAB21E48676F00971BDD /* FileListTableViewController.swift in Sources */,
 				A876F53B1DACBAC3007A3541 /* README.md in Sources */,
 				A8676AF71E163F860087EB4C /* ViewController.swift in Sources */,
 				A86ACAE41E0B810600CDE311 /* DeviceData.swift in Sources */,
 				A8D3EA761DFE9ECC008CC452 /* SendVoiceHttp.swift in Sources */,
+				A829CAD31E486F7E00971BDD /* PlayerManager.m in Sources */,
 				568C0A6E1D700F280045E6DE /* ShmadiaConnectManager.m in Sources */,
-				563927EB1C92B41500717A2A /* CommandGenerator.m in Sources */,
 				A876F5391DACBAC3007A3541 /* KxMovieGLView.m in Sources */,
 				A876F5361DACBAC3007A3541 /* KxAudioManager.m in Sources */,
-				563927EC1C92B41500717A2A /* CommandParser.m in Sources */,
 				A86641C61DBDE5F10076CF47 /* BroadcastReceiver.swift in Sources */,
-				A841771F1DAF8607004EAEB3 /* SkyEyeCommandParser.m in Sources */,
 				561E842B1C4C848A00B62BCF /* main.m in Sources */,
+				A829CAC71E486F6A00971BDD /* RecieveDataParser.m in Sources */,
+				A829CACF1E486F7200971BDD /* CommandPool.m in Sources */,
 				A8676AF51E163F860087EB4C /* EditDBTableViewController.swift in Sources */,
 				56842B771D6EF20E002CD283 /* FCMExecutive.m in Sources */,
 				A876F53A1DACBAC3007A3541 /* KxMovieViewController.m in Sources */,
-				A841771E1DAF8607004EAEB3 /* SkyEyeCommandGenerator.m in Sources */,
-				563927EA1C92B41500717A2A /* RecieveDataParser.m in Sources */,
 				A84177161DAF7E26004EAEB3 /* AudioRecorder.m in Sources */,
-				563927F81C92B46D00717A2A /* MultipleSettingTableViewController.m in Sources */,
-				563927BB1C92B33900717A2A /* PlayerManager.m in Sources */,
-				563927DC1C92B3CF00717A2A /* CommandPool.m in Sources */,
+				A829CAB51E48690200971BDD /* SocketManager.m in Sources */,
 				A84177231DAF86E3004EAEB3 /* AnsweringUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1252,7 +1260,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 710D7CA8F66082B656F6B026 /* Pods-SkyEye.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
@@ -1304,7 +1312,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04DA03A52CE2D3A3A9D51F01 /* Pods-SkyEye.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
@@ -1355,7 +1363,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5212DA6BD44E96B3C483B878 /* Pods-SkyEyeTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1368,7 +1376,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EAD67257C51EECF0C4D1728D /* Pods-SkyEyeTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1381,7 +1389,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 600650676AC96E3D7BD49A60 /* Pods-SkyEyeUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1396,7 +1404,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B530DDAB4E065CB9745FE5A /* Pods-SkyEyeUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = XZ7PL3RVBP;
 				INFOPLIST_FILE = SkyEyeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

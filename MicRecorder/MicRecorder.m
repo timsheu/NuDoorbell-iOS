@@ -31,9 +31,9 @@
         _audioRecorder = [[AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&error];
         
         if (error != nil) {
-            DDLogDebug(@"init audio recorder error: %@", error);
+            NSLog(@"init audio recorder error: %@", error);
         }else{
-            DDLogDebug(@"init audio recorder success");
+            NSLog(@"init audio recorder success");
         }
     }
     return self;
